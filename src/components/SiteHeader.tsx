@@ -1,6 +1,7 @@
 import React from "react";
 import { ModeToggle } from "./theme/ModeToggle";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   { name: "Tax Planning", Link: "tax-planning" },
@@ -97,10 +98,10 @@ const SiteHeader: React.FC = () => {
   }, [homeOpen, servicesOpen, profileOpen, langOpen, mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md">
-      <nav className="    flex items-center justify-between px-4 py-2">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-b border-blue-200 dark:border-blue-900">
+      <nav className="flex items-center justify-between px-6 py-3">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex">
           <Image
             src="/logo-stackly.png"
             alt="Finance Logo"
@@ -113,95 +114,97 @@ const SiteHeader: React.FC = () => {
         {/* Navigation */}
         <ul className="hidden min-[980px]:flex gap-8 items-center list-none">
           {/* Home Dropdown */}
-          <li className="relative" ref={homeRef}>
+          <li className="relative group" ref={homeRef}>
             <button
-              className="px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition"
+              className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setHomeOpen((o) => !o)}
             >
               Home <span className="ml-1">▼</span>
             </button>
             {homeOpen && (
-              <ul className="absolute left-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded w-32 animate-fadeIn">
+              <ul className="absolute left-0 mt-2  dark:bg-blue-950 bg-white  rounded-lg w-36 animate-fadeIn border border-blue-100 dark:border-blue-900">
                 <li>
-                  <a
+                  <Link
                     href="/home1"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
                     Home1
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/home2"
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     Home2
-                  </a>
+                  </Link>
                 </li>
               </ul>
             )}
           </li>
           <li>
-            <a
-              className="px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition"
-              href="/about"
+            <Link
+              className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
+              href="/about-us"
             >
               About Us
-            </a>
+            </Link>
           </li>
           {/* Services Dropdown */}
-          <li className="relative" ref={servicesRef}>
+          <li className="relative group" ref={servicesRef}>
             <button
-              className="px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition"
+              className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setServicesOpen((o) => !o)}
             >
               Services <span className="ml-1">▼</span>
             </button>
             {servicesOpen && (
-              <ul className="absolute left-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded w-48 animate-fadeIn">
+              <ul className="absolute bg-white left-0 mt-2  dark:bg-blue-950  rounded-lg w-56 animate-fadeIn border border-blue-100 dark:border-blue-900">
                 {services.map((srv, idx) => (
                   <li key={idx}>
-                    <a
+                    <Link
                       href={`/${srv.Link}`}
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                     >
                       {srv.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             )}
           </li>
           <li>
-            <a
-              className="px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition"
+            <Link
+              className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
               href="/blog"
             >
               Blog
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              className="px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition"
-              href="/contact"
+            <Link
+              className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
+              href="/contact-us"
             >
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
 
         {/* Right Side: Language & Profile + Mobile Toggle */}
-        <div className="min-[980px]:flex hidden items-center gap-4">
+        <div className="min-[980px]:flex hidden items-center gap-6">
           {/* Language Switcher */}
           <div className="relative" ref={langRef}>
             <button
               onClick={() => setLangOpen((o) => !o)}
-              className="border border-gray-300 dark:border-gray-700 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+              className={`border-2 border-blue-300 dark:border-blue-700 rounded-lg px-4 py-2 text-sm font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 hover:bg-blue-100 dark:hover:bg-blue-900 transition ${
+                langOpen ? "ring-2 ring-blue-400 dark:ring-blue-600" : ""
+              }`}
             >
               {selectedLang.toUpperCase()} <span className="ml-1">▼</span>
             </button>
             {langOpen && (
-              <ul className="absolute right-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded w-20 animate-fadeIn">
+              <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg w-24 animate-fadeIn border border-blue-100 dark:border-blue-900">
                 {["en", "ar", "he"].map((lang) => (
                   <li key={lang}>
                     <button
@@ -209,7 +212,7 @@ const SiteHeader: React.FC = () => {
                         setSelectedLang(lang);
                         setLangOpen(false);
                       }}
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200"
+                      className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                     >
                       {lang.toUpperCase()}
                     </button>
@@ -223,28 +226,30 @@ const SiteHeader: React.FC = () => {
           <div className="relative" ref={profileRef}>
             <button
               onClick={() => setProfileOpen((o) => !o)}
-              className="flex items-center gap-2 px-2 py-1 text-base font-medium text-blue-900 dark:text-blue-300 bg-white dark:bg-gray-900 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+              className={`flex items-center gap-2 px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition ${
+                profileOpen ? "ring-2 ring-blue-400 dark:ring-blue-600" : ""
+              }`}
             >
               <span>Profile</span>
               <img
                 src="/window.svg"
                 alt="Profile"
-                className="h-7 rounded-full"
+                className="h-8 rounded-full border-2 border-blue-300 dark:border-blue-700 "
               />
               <span>▼</span>
             </button>
             {profileOpen && (
-              <ul className="absolute right-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded w-32 animate-fadeIn">
+              <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg w-36 animate-fadeIn border border-blue-100 dark:border-blue-900">
                 <li>
-                  <a
+                  <Link
                     href="/profile"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
                     My Profile
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <button className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200">
+                  <button className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded">
                     Logout
                   </button>
                 </li>
@@ -256,7 +261,7 @@ const SiteHeader: React.FC = () => {
         <div className="min-[980px]:hidden flex items-center">
           {/* Mobile Menu Toggle */}
           <button
-            className="min-[980px]:hidden flex items-center justify-center p-2 rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="min-[980px]:hidden flex items-center justify-center p-2 rounded-full text-blue-900 dark:text-blue-200  dark:bg-blue-950  border-2 border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900"
             aria-label="Open menu"
             id="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen((open) => !open)}
@@ -298,85 +303,85 @@ const SiteHeader: React.FC = () => {
       {/* Mobile Nav */}
       <nav
         ref={mobileMenuRef}
-        className={`min-[980px]:hidden px-4 py-2 flex flex-col gap-2 bg-white dark:bg-gray-900 transition-all duration-200 ${
+        className={`min-[980px]:hidden px-4 py-4 flex flex-col gap-3 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-t border-blue-200 dark:border-blue-900 transition-all duration-200 ${
           mobileMenuOpen ? "block" : "hidden"
         }`}
         aria-label="Mobile menu"
       >
-        <ul className="flex flex-col gap-2">
+        <ul className="flex flex-col gap-3">
           <li ref={mobileHomeRef}>
             <button
-              className="w-full text-left px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 rounded"
+              className="w-full text-left px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setHomeOpen((open) => !open)}
             >
               Home <span className="ml-1">▼</span>
             </button>
             {homeOpen && (
-              <ul className="ml-4 mt-1 bg-white dark:bg-gray-800 shadow rounded">
+              <ul className="ml-4 mt-1  dark:bg-blue-950  rounded-lg border bg-white border-blue-100 dark:border-blue-900">
                 <li>
-                  <a
+                  <Link
                     href="/home1"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="block bg-white px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
                     Home1
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/home2"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 bg-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     Home2
-                  </a>
+                  </Link>
                 </li>
               </ul>
             )}
           </li>
           <li>
-            <a
-              className="w-full block px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 rounded"
-              href="/about"
+            <Link
+              className="w-full block px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
+              href="/about-us"
             >
               About Us
-            </a>
+            </Link>
           </li>
           <li ref={mobileServicesRef}>
             <button
-              className="w-full text-left px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 rounded"
+              className="w-full text-left px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setServicesOpen((open) => !open)}
             >
               Services <span className="ml-1">▼</span>
             </button>
             {servicesOpen && (
-              <ul className="ml-4 mt-1 bg-white dark:bg-gray-800 shadow rounded">
+              <ul className="ml-4 mt-1  dark:bg-blue-950  rounded-lg border border-blue-100 dark:border-blue-900">
                 {services.map((srv, idx) => (
                   <li key={idx}>
-                    <a
+                    <Link
                       href={`/${srv.Link}`}
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                     >
                       {srv.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             )}
           </li>
           <li>
-            <a
-              className="w-full block px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 rounded"
+            <Link
+              className="w-full block px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
               href="/blog"
             >
               Blog
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              className="w-full block px-2 py-1 text-base font-medium text-gray-700 dark:text-gray-200 bg-gray-50 dark:bg-gray-800 rounded"
-              href="/contact"
+            <Link
+              className="w-full block px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
+              href="/contact-us"
             >
               Contact Us
-            </a>
+            </Link>
           </li>
           <li>
             <div className="flex justify-between  items-center gap-4">
@@ -384,12 +389,12 @@ const SiteHeader: React.FC = () => {
               <div className="relative" ref={langRef}>
                 <button
                   onClick={() => setLangOpen((o) => !o)}
-                  className="border border-gray-300 dark:border-gray-700 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                  className="border border-gray-300 dark:border-gray-700 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-200  dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
                 >
                   {selectedLang.toUpperCase()} <span className="ml-1">▼</span>
                 </button>
                 {langOpen && (
-                  <ul className="absolute right-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded w-20 animate-fadeIn">
+                  <ul className="absolute right-0 mt-2  dark:bg-gray-800  rounded w-20 animate-fadeIn">
                     {["en", "ar", "he"].map((lang) => (
                       <li key={lang}>
                         <button
@@ -411,7 +416,7 @@ const SiteHeader: React.FC = () => {
               <div className="relative" ref={profileRef}>
                 <button
                   onClick={() => setProfileOpen((o) => !o)}
-                  className="flex items-center gap-2 px-2 py-1 text-base font-medium text-blue-900 dark:text-blue-300 bg-white dark:bg-gray-900 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+                  className="flex items-center gap-2 px-2 py-1 text-base font-medium text-blue-900 dark:text-blue-300  dark:bg-gray-900 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
                 >
                   <span>Profile</span>
                   <img
@@ -422,14 +427,14 @@ const SiteHeader: React.FC = () => {
                   <span>▼</span>
                 </button>
                 {profileOpen && (
-                  <ul className="absolute right-0 mt-2 bg-white dark:bg-gray-800 shadow-lg rounded w-32 animate-fadeIn">
+                  <ul className="absolute right-0 mt-2  dark:bg-gray-800  rounded w-32 animate-fadeIn">
                     <li>
-                      <a
+                      <Link
                         href="/profile"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                       >
                         My Profile
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <button className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200">
