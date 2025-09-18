@@ -20,83 +20,6 @@ const SiteHeader: React.FC = () => {
   const [selectedLang, setSelectedLang] = React.useState("en");
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
-  // Refs for dropdowns
-  const homeRef = React.useRef<HTMLLIElement>(null);
-  const servicesRef = React.useRef<HTMLLIElement>(null);
-  const mobileHomeRef = React.useRef<HTMLLIElement>(null);
-  const mobileServicesRef = React.useRef<HTMLLIElement>(null);
-  const profileRef = React.useRef<HTMLDivElement>(null);
-  const langRef = React.useRef<HTMLDivElement>(null);
-  const mobileMenuRef = React.useRef<HTMLElement>(null);
-
-  React.useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      // If click is on the hamburger button, ignore (handled by onClick)
-      if (
-        document
-          .getElementById("mobile-menu-toggle")
-          ?.contains(event.target as Node)
-      ) {
-        return;
-      }
-      // Desktop dropdowns
-      if (
-        homeOpen &&
-        homeRef.current &&
-        !homeRef.current.contains(event.target as Node)
-      ) {
-        setHomeOpen(false);
-      }
-      if (
-        servicesOpen &&
-        servicesRef.current &&
-        !servicesRef.current.contains(event.target as Node)
-      ) {
-        setServicesOpen(false);
-      }
-      // Mobile dropdowns
-      if (
-        homeOpen &&
-        mobileHomeRef.current &&
-        !mobileHomeRef.current.contains(event.target as Node)
-      ) {
-        setHomeOpen(false);
-      }
-      if (
-        servicesOpen &&
-        mobileServicesRef.current &&
-        !mobileServicesRef.current.contains(event.target as Node)
-      ) {
-        setServicesOpen(false);
-      }
-      if (
-        profileOpen &&
-        profileRef.current &&
-        !profileRef.current.contains(event.target as Node)
-      ) {
-        setProfileOpen(false);
-      }
-      if (
-        langOpen &&
-        langRef.current &&
-        !langRef.current.contains(event.target as Node)
-      ) {
-        setLangOpen(false);
-      }
-      if (
-        mobileMenuOpen &&
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target as Node)
-      ) {
-        setMobileMenuOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [homeOpen, servicesOpen, profileOpen, langOpen, mobileMenuOpen]);
-
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-b border-blue-200 dark:border-blue-900">
       <nav className="flex items-center justify-between px-6 py-3">
@@ -114,7 +37,7 @@ const SiteHeader: React.FC = () => {
         {/* Navigation */}
         <ul className="hidden min-[980px]:flex gap-8 items-center list-none">
           {/* Home Dropdown */}
-          <li className="relative group" ref={homeRef}>
+          <li className="relative group">
             <button
               className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setHomeOpen((o) => !o)}
@@ -134,7 +57,7 @@ const SiteHeader: React.FC = () => {
                 <li>
                   <Link
                     href="/home2"
-                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
                     Home2
                   </Link>
@@ -151,7 +74,7 @@ const SiteHeader: React.FC = () => {
             </Link>
           </li>
           {/* Services Dropdown */}
-          <li className="relative group" ref={servicesRef}>
+          <li className="relative group">
             <button
               className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setServicesOpen((o) => !o)}
@@ -194,7 +117,7 @@ const SiteHeader: React.FC = () => {
         {/* Right Side: Language & Profile + Mobile Toggle */}
         <div className="min-[980px]:flex hidden items-center gap-6">
           {/* Language Switcher */}
-          <div className="relative" ref={langRef}>
+          <div className="relative">
             <button
               onClick={() => setLangOpen((o) => !o)}
               className={`border-2 border-blue-300 dark:border-blue-700 rounded-lg px-4 py-2 text-sm font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 hover:bg-blue-100 dark:hover:bg-blue-900 transition ${
@@ -223,7 +146,7 @@ const SiteHeader: React.FC = () => {
           </div>
 
           {/* Profile Dropdown */}
-          <div className="relative" ref={profileRef}>
+          <div className="relative">
             <button
               onClick={() => setProfileOpen((o) => !o)}
               className={`flex items-center gap-2 px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition ${
@@ -302,14 +225,13 @@ const SiteHeader: React.FC = () => {
       </nav>
       {/* Mobile Nav */}
       <nav
-        ref={mobileMenuRef}
-        className={`min-[980px]:hidden px-4 py-4 flex flex-col gap-3 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-t border-blue-200 dark:border-blue-900 transition-all duration-200 ${
-          mobileMenuOpen ? "block" : "hidden"
+        className={`min-[980px]:hidden px-4 py-4 flex flex-col gap-3 bg-gradient-to-br from-blue-50 w-screen via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-t border-blue-200 dark:border-blue-900 transition-all duration-200 ${
+          mobileMenuOpen ? " absolute" : "hidden"
         }`}
         aria-label="Mobile menu"
       >
         <ul className="flex flex-col gap-3">
-          <li ref={mobileHomeRef}>
+          <li>
             <button
               className="w-full text-left px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setHomeOpen((open) => !open)}
@@ -345,7 +267,7 @@ const SiteHeader: React.FC = () => {
               About Us
             </Link>
           </li>
-          <li ref={mobileServicesRef}>
+          <li>
             <button
               className="w-full text-left px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setServicesOpen((open) => !open)}
@@ -386,7 +308,7 @@ const SiteHeader: React.FC = () => {
           <li>
             <div className="flex justify-between  items-center gap-4">
               {/* Language Switcher */}
-              <div className="relative" ref={langRef}>
+              <div className="relative">
                 <button
                   onClick={() => setLangOpen((o) => !o)}
                   className="border border-gray-300 dark:border-gray-700 rounded px-3 py-1 text-sm text-gray-700 dark:text-gray-200  dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
@@ -413,7 +335,7 @@ const SiteHeader: React.FC = () => {
               </div>
 
               {/* Profile Dropdown */}
-              <div className="relative" ref={profileRef}>
+              <div className="relative">
                 <button
                   onClick={() => setProfileOpen((o) => !o)}
                   className="flex items-center gap-2 px-2 py-1 text-base font-medium text-blue-900 dark:text-blue-300  dark:bg-gray-900 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"

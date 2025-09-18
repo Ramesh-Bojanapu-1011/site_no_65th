@@ -32,7 +32,7 @@ const SiteFooter: React.FC = () => {
               className="object-contain"
             />
           </div>
-           
+
           <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
             Expert solutions for tax planning, auditing, bookkeeping, payroll,
             and financial consulting. Empowering your business with trusted
