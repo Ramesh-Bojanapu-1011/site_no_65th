@@ -1,11 +1,8 @@
 import React from "react";
-import { useRouter } from "next/router";
-import SiteHeader from "../src/components/SiteHeader";
-import SiteFooter from "../src/components/SiteFooter";
+
 import { ModeToggle } from "@/components/theme/ModeToggle";
 
 const NotFound: React.FC = () => {
-  const router = useRouter();
   return (
     <>
       <main className="flex flex-col items-center justify-center min-h-[100vh] bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 py-16">
