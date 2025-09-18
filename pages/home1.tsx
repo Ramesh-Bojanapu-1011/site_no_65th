@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import aos from "aos";
+import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 
 const Home1: React.FC = () => {
   React.useEffect(() => {
@@ -31,6 +32,7 @@ const Home1: React.FC = () => {
             accuracy, and strategic insights for growth.
           </p>
         </section>
+
         {/* About Section (Image Layout) */}
         <section className="flex py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="flex flex-col   md:flex-row items-center md:items-start max-w-6xl mx-auto gap-10">
@@ -153,7 +155,7 @@ const Home1: React.FC = () => {
                 href="/services"
                 className="inline-block px-8 py-4 rounded-full bg-blue-900 text-white font-bold shadow-lg hover:bg-blue-700 transition text-lg"
               >
-                → See All Services
+                See All Services →
               </Link>
             </div>
             <div className="flex flex-col gap-8 w-full max-w-xl">
@@ -295,156 +297,353 @@ const Home1: React.FC = () => {
             </div>
           </div>
         </section>
-
-        {/* Section 2: Our Services */}
-        <section className="py-16 px-4 max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-200 mb-6 text-center">
-            Our Core Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-blue-950 rounded-lg shadow-md p-6 flex flex-col items-center">
-              <span className="text-4xl mb-2">💼</span>
-              <h3 className="font-bold text-lg mb-2">
-                Bookkeeping &amp; Accounting
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">
-                Accurate record-keeping, financial statements, and compliance
-                for your peace of mind.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-blue-950 rounded-lg shadow-md p-6 flex flex-col items-center">
-              <span className="text-4xl mb-2">📊</span>
-              <h3 className="font-bold text-lg mb-2">Financial Analysis</h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">
-                Insightful reporting and analysis to drive smarter business
-                decisions.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-blue-950 rounded-lg shadow-md p-6 flex flex-col items-center">
-              <span className="text-4xl mb-2">🧾</span>
-              <h3 className="font-bold text-lg mb-2">
-                Tax Planning &amp; Filing
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">
-                Strategic tax solutions to maximize savings and ensure
-                compliance.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 3: Why Choose Us */}
-        <section className="py-16 px-4 bg-blue-100 dark:bg-blue-900">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-200 mb-6">
-              Why Choose Us?
-            </h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 text-lg">
-              <li className="bg-white dark:bg-blue-950 rounded-lg shadow p-6">
-                ✔️ Certified &amp; Experienced Professionals
-              </li>
-              <li className="bg-white dark:bg-blue-950 rounded-lg shadow p-6">
-                ✔️ Personalized Financial Solutions
-              </li>
-              <li className="bg-white dark:bg-blue-950 rounded-lg shadow p-6">
-                ✔️ Transparent Pricing &amp; No Hidden Fees
-              </li>
-              <li className="bg-white dark:bg-blue-950 rounded-lg shadow p-6">
-                ✔️ Secure &amp; Confidential Data Handling
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Section 4: Client Success Stories */}
-        <section className="py-16 px-4 max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-200 mb-6 text-center">
-            Client Success Stories
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-blue-950 rounded-lg shadow-md p-6">
-              <p className="italic text-gray-700 dark:text-gray-300 mb-2">
-                "Their accounting expertise helped us save thousands and grow
-                our business!"
-              </p>
-              <span className="font-bold text-blue-700 dark:text-blue-300">
-                - ABC Retail
+        {/* Why Choose Us Section - Finance & Accounting Theme */}
+        <section className="py-20 bg-gradient-to-br from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex flex-col items-center mb-16">
+              <span className="bg-gradient-to-r from-[#21c2ad] to-[#155dfc] dark:from-[#155dfc] dark:to-[#21c2ad] text-white font-bold px-8 py-3 rounded-full mb-6 text-base tracking-widest shadow-lg">
+                WHY CHOOSE US
               </span>
-            </div>
-            <div className="bg-white dark:bg-blue-950 rounded-lg shadow-md p-6">
-              <p className="italic text-gray-700 dark:text-gray-300 mb-2">
-                "Professional, reliable, and always available for advice. Highly
-                recommended."
+              <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 dark:text-blue-100 text-center mb-4 drop-shadow-lg">
+                Your Trusted Finance & Accounting Partner
+              </h2>
+              <p className="text-blue-800 dark:text-blue-200 text-center max-w-2xl mb-10 text-lg">
+                Discover the key reasons businesses rely on us for their
+                financial success and peace of mind.
               </p>
-              <span className="font-bold text-blue-700 dark:text-blue-300">
-                - XYZ Tech
+            </div>
+            <div className="flex flex-col md:flex-row gap-10 justify-center items-stretch">
+              {[
+                {
+                  title: "Certified Experts",
+                  description:
+                    "Our team consists of certified accountants and financial specialists with years of industry experience.",
+                  icon: (
+                    <span className="bg-[#21c2ad] dark:bg-[#155dfc] rounded-full p-4 mb-6 flex items-center justify-center shadow-lg">
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        className="text-white"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M8 12l2 2 4-4"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  ),
+                },
+                {
+                  title: "Personalized Solutions",
+                  description:
+                    "We tailor our services to meet your unique business needs, ensuring optimal results and satisfaction.",
+                  icon: (
+                    <span className="bg-[#155dfc] dark:bg-[#21c2ad] rounded-full p-4 mb-6 flex items-center justify-center shadow-lg">
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        className="text-white"
+                      >
+                        <rect
+                          x="4"
+                          y="4"
+                          width="16"
+                          height="16"
+                          rx="2"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M8 12h8"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                  ),
+                },
+                {
+                  title: "Transparent & Secure",
+                  description:
+                    "We prioritize transparency, confidentiality, and data security in every financial transaction and report.",
+                  icon: (
+                    <span className="bg-gradient-to-r from-[#21c2ad] to-[#155dfc] dark:from-[#155dfc] dark:to-[#21c2ad] rounded-full p-4 mb-6 flex items-center justify-center shadow-lg">
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        className="text-white"
+                      >
+                        <rect
+                          x="6"
+                          y="10"
+                          width="12"
+                          height="8"
+                          rx="2"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M12 14v2"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M9 10V8a3 3 0 0 1 6 0v2"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                  ),
+                },
+              ].map((reason, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-blue-950 rounded-3xl shadow-2xl px-10 py-12 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-blue-300 dark:hover:shadow-[#21c2ad]"
+                  style={{ minWidth: "280px", maxWidth: "340px" }}
+                >
+                  {reason.icon}
+                  <h3 className="font-extrabold text-xl text-blue-900 dark:text-blue-100 mb-3">
+                    {reason.title}
+                  </h3>
+                  <p className="text-blue-800 dark:text-blue-200 mb-2 text-base">
+                    {reason.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Our Process Section - Finance & Accounting Theme */}
+        <section className="py-20 bg-gradient-to-r from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
+          <div className="  mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              {/* Left: Business Image with Play Button Overlay */}
+              <div className="relative w-full md:w-1/2 flex-shrink-0 flex justify-center items-center">
+                <Image
+                  src="/public/team1.jpg"
+                  alt="Business Professional"
+                  width={480}
+                  height={400}
+                  className="rounded-2xl object-cover shadow-xl"
+                />
+              </div>
+              {/* Right: Text Content and Features */}
+              <div className="w-full md:w-1/2 flex flex-col justify-center items-start">
+                <span className="text-[#193cb8] font-bold tracking-widest text-sm mb-2">
+                  ABOUT FINACCOUNT
+                </span>
+                <h2 className="text-4xl md:text-5xl font-bold text-blue-900 dark:text-blue-100 mb-4 leading-tight">
+                  Largest Demand Partnership
+                  <br />
+                  Building Financial Experts
+                </h2>
+                <p className="text-gray-700 dark:text-blue-200 mb-6 max-w-xl">
+                  FinAccount is a trusted name for providing financial
+                  assistance. Our main objective is to ensure the service we
+                  provide is loyal to the industry, experienced, and
+                  professional.
+                </p>
+                <div className="flex flex-col gap-8 mt-4">
+                  <div className="flex items-start gap-4">
+                    <span className="bg-blue-100 dark:bg-blue-950 rounded-lg p-3 flex items-center justify-center">
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        className="text-[#155dfc]"
+                      >
+                        <rect
+                          x="4"
+                          y="4"
+                          width="16"
+                          height="16"
+                          rx="2"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M8 12h8"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                    <div>
+                      <h3 className="font-bold text-lg text-blue-900 dark:text-blue-100 mb-1">
+                        Support On Raising Funds
+                      </h3>
+                      <p className="text-gray-700 dark:text-blue-200 text-base">
+                        Our financial experts help you find the best way to
+                        raise your funds and grow your business.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="bg-blue-100 dark:bg-blue-950 rounded-lg p-3 flex items-center justify-center">
+                      <svg
+                        width="32"
+                        height="32"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        className="text-[#155dfc]"
+                      >
+                        <rect
+                          x="4"
+                          y="4"
+                          width="16"
+                          height="16"
+                          rx="2"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        />
+                        <path
+                          d="M8 16h8"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                        <path
+                          d="M8 12h8"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                    <div>
+                      <h3 className="font-bold text-lg text-blue-900 dark:text-blue-100 mb-1">
+                        Outsourced Consulting Business
+                      </h3>
+                      <p className="text-gray-700 dark:text-blue-200 text-base">
+                        FinAccount provides expert assistance to help you hire
+                        consultants for service and business growth.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-[#f4fbf8] dark:bg-blue-950">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="flex flex-col items-center mb-12">
+              <span className="bg-[#155dfc] dark:bg-[#8ec5ff] dark:text-black text-white font-bold px-6 py-2 rounded-full mb-4 text-sm tracking-widest">
+                TEAM MEMBER
               </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-blue-100 text-center mb-4">
+                Meet Our Expert Team Members
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+              {[
+                {
+                  name: "Priya Sharma",
+                  role: "Chief Financial Officer",
+                  img: "/public/team1.jpg",
+                  socials: [
+                    { icon: "f", url: "#" },
+                    { icon: "x", url: "#" },
+                    { icon: "in", url: "#" },
+                  ],
+                },
+                {
+                  name: "David Lee",
+                  role: "Tax & Compliance Specialist",
+                  img: "/public/team2.jpg",
+                  socials: [
+                    { icon: "f", url: "#" },
+                    { icon: "x", url: "#" },
+                    { icon: "in", url: "#" },
+                  ],
+                },
+                {
+                  name: "Maria Gomez",
+                  role: "Senior Accountant",
+                  img: "/public/team3.jpg",
+                  socials: [
+                    { icon: "f", url: "#" },
+                    { icon: "x", url: "#" },
+                    { icon: "in", url: "#" },
+                  ],
+                },
+                {
+                  name: "James O'Connor",
+                  role: "Audit & Assurance Lead",
+                  img: "/public/team4.jpg",
+                  socials: [
+                    { icon: "f", url: "#" },
+                    { icon: "x", url: "#" },
+                    { icon: "in", url: "#" },
+                  ],
+                },
+              ].map((member, idx) => (
+                <div
+                  key={idx}
+                  className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 rounded-2xl shadow-lg p-6 flex flex-col items-center w-full max-w-xs group relative"
+                >
+                  <div className="w-full h-64 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
+                    <Image
+                      src={member.img}
+                      alt={member.name}
+                      width={300}
+                      height={256}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <h3 className="font-bold text-xl text-gray-900 dark:text-blue-100 mb-1 text-center">
+                    {member.name}
+                  </h3>
+                  <p className="text-[#155dfc] dark:text-[#8ec5ff] font-semibold mb-2 text-center">
+                    {member.role}
+                  </p>
+                  {member.socials.length > 0 && (
+                    <div className="flex gap-3 justify-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute left-1/2  -translate-x-1/2 bottom-25 z-10">
+                      {member.socials.map((s, i) => (
+                        <a
+                          key={i}
+                          href={s.url}
+                          className="bg-[#155dfc] text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-[#155dfc] transition"
+                        >
+                          {s.icon === "f" ? (
+                            <FacebookIcon size={16} />
+                          ) : s.icon === "x" ? (
+                            <TwitterIcon size={16} />
+                          ) : (
+                            <LinkedinIcon size={16} />
+                          )}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
-        </section>
-
-        {/* Section 5: Meet Our Team */}
-        <section className="py-16 px-4 bg-blue-50 dark:bg-blue-950">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-200 mb-6">
-              Meet Our Team
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center">
-                <span className="w-20 h-20 rounded-full bg-blue-200 dark:bg-blue-800 flex items-center justify-center text-3xl mb-2">
-                  👩‍💼
-                </span>
-                <span className="font-bold">Priya Sharma</span>
-                <span className="text-sm text-gray-500">
-                  CPA, Senior Accountant
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="w-20 h-20 rounded-full bg-blue-200 dark:bg-blue-800 flex items-center justify-center text-3xl mb-2">
-                  👨‍💼
-                </span>
-                <span className="font-bold">Rahul Verma</span>
-                <span className="text-sm text-gray-500">Financial Analyst</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <span className="w-20 h-20 rounded-full bg-blue-200 dark:bg-blue-800 flex items-center justify-center text-3xl mb-2">
-                  👩‍💻
-                </span>
-                <span className="font-bold">Anita Patel</span>
-                <span className="text-sm text-gray-500">Tax Specialist</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 6: Contact Us */}
-        <section className="py-16 px-4 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-200 mb-6 text-center">
-            Contact Us
-          </h2>
-          <form className="bg-white dark:bg-blue-950 rounded-lg shadow-md p-8 flex flex-col gap-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="px-4 py-2 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900 text-blue-900 dark:text-blue-200"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="px-4 py-2 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900 text-blue-900 dark:text-blue-200"
-            />
-            <textarea
-              placeholder="Your Message"
-              className="px-4 py-2 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900 text-blue-900 dark:text-blue-200"
-              rows={4}
-            />
-            <button
-              type="submit"
-              className="mt-2 px-6 py-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-400 text-white font-bold shadow-lg hover:scale-105 transition"
-            >
-              Send Message
-            </button>
-          </form>
         </section>
       </main>
       <SiteFooter />

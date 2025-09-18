@@ -344,10 +344,6 @@ const AuthPage: React.FC = () => {
               {adminSuccess && (
                 <div className="text-green-600 text-sm">{adminSuccess}</div>
               )}
-              <div className="text-xs text-gray-500 mt-2">
-                Use <span className="font-bold">admin@enckonix.in</span> /{" "}
-                <span className="font-bold">admin123</span>
-              </div>
             </form>
           )}
         </div>
