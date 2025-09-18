@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import i18n from "@/i18n";
+import "aos/dist/aos.css";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import React from "react";
