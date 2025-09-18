@@ -1,3 +1,5 @@
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import { ModeToggle } from "@/components/theme/ModeToggle";
 import Head from "next/head";
 
@@ -10,12 +12,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
-        <div className="flex min-h-screen flex-col items-center justify-center py-2">
-          <h1 className="text-6xl font-bold text-amber-400 dark:text-amber-50">
-            Welcome to Next.js!
-          </h1>
-          <ModeToggle />
-        </div>
+        <SiteHeader />
+
+        <SiteFooter />
       </main>
     </>
   );
