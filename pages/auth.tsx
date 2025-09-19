@@ -1,6 +1,8 @@
+import { ModeToggle } from "@/components/theme/ModeToggle";
 import React, { useState } from "react";
+import Image from "next/image";
 
-const ADMIN_EMAIL = "admin@enckonix.in";
+const ADMIN_EMAIL = "admin@enkonix.in";
 const ADMIN_PASS = "admin123";
 
 type User = {
@@ -142,7 +144,17 @@ const AuthPage: React.FC = () => {
   return (
     <>
       <main className="flex flex-col items-center justify-center min-h-[100vh] bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 py-16">
+        <div className=" absolute top-10 right-10">
+          <ModeToggle />
+        </div>
         <div className="bg-white dark:bg-blue-950 rounded-xl shadow-xl p-8 flex flex-col items-center gap-8 border border-blue-100 dark:border-blue-900 w-full max-w-md">
+          <Image
+            src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
+            alt="Finance Logo"
+            width={120}
+            height={40}
+            className="object-contain mb-4"
+          />
           <div className="flex gap-4 mb-4">
             <button
               className={`px-6 py-2 rounded-t-lg font-bold text-lg transition border-b-2 ${
@@ -189,7 +201,7 @@ const AuthPage: React.FC = () => {
                         value={userPassword}
                         onChange={(e) => setUserPassword(e.target.value)}
                       />
-                      <div className="flex justify-between items-center text-sm">
+                      <div className="flex justify-between items-center text-sm dark:text-gray-300 text-gray-700">
                         <p>
                           Don't have an account?{" "}
                           <span
@@ -289,7 +301,7 @@ const AuthPage: React.FC = () => {
                     value={userPassword}
                     onChange={(e) => setUserPassword(e.target.value)}
                   />
-                  <p>
+                  <p className="text-sm dark:text-gray-300 text-gray-700 ">
                     Already have an account?{" "}
                     <span
                       className="text-blue-600 dark:text-blue-300 cursor-pointer underline hover:text-blue-800 dark:hover:text-blue-400"

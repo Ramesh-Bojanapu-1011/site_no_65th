@@ -25,10 +25,10 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const usersData = JSON.parse(
-      localStorage.getItem("finaccount_users") || "[]"
+      localStorage.getItem("finaccount_users") || "[]",
     );
     const loginUsersData = JSON.parse(
-      localStorage.getItem("finaccount_loggedin") || "[]"
+      localStorage.getItem("finaccount_loggedin") || "[]",
     );
     setUsers(usersData);
     setLoginUsers(loginUsersData);
