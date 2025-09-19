@@ -58,10 +58,10 @@ const Home2: React.FC = () => {
         <section className="py-20 px-8 flex flex-col md:flex-row items-center gap-16 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="flex-1 flex justify-center">
             <Image
-              src="/globe.svg"
+              src="https://i.pinimg.com/1200x/0f/64/6b/0f646bd50e3088728b6db129b87471ab.jpg"
               alt="About Finance"
-              width={220}
-              height={180}
+              width={400}
+              height={550}
               className="rounded-xl shadow-lg object-cover bg-blue-100 dark:bg-blue-900"
             />
           </div>

@@ -12,7 +12,7 @@ const serviceList = [
   {
     title: "Accounting & Bookkeeping",
     desc: "Accurate records and reporting for peace of mind.",
-    link: "/services/accounting",
+    link: "/bookkeeping",
     icon: (
       <svg
         className="w-10 h-10 text-[#21c2ad] mb-3"
@@ -31,7 +31,7 @@ const serviceList = [
   {
     title: "Tax Planning & Compliance",
     desc: "Smart strategies to minimize liabilities and stay compliant.",
-    link: "/services/tax",
+    link: "/tax-planning",
     icon: (
       <svg
         className="w-10 h-10 text-[#155dfc] mb-3"
@@ -50,7 +50,7 @@ const serviceList = [
   {
     title: "Investiment Advisory",
     desc: "Expert guidance for growth, investment, and decision-making.",
-    link: "/services/advisory",
+    link: "/investment-advisory",
     icon: (
       <svg
         className="w-10 h-10 text-[#21c2ad] mb-3"
@@ -69,7 +69,7 @@ const serviceList = [
   {
     title: "Payroll Management",
     desc: "Efficient payroll solutions for every business size.",
-    link: "/services/payroll",
+    link: "/payroll-management",
     icon: (
       <svg
         className="w-10 h-10 text-[#155dfc] mb-3"
@@ -87,7 +87,7 @@ const serviceList = [
   {
     title: "Audit & Assurance",
     desc: "Thorough reviews to ensure accuracy and reliability.",
-    link: "/services/audit",
+    link: "/audit-assurance",
     icon: (
       <svg
         className="w-10 h-10 text-[#21c2ad] mb-3"
@@ -104,7 +104,7 @@ const serviceList = [
   {
     title: "Finacial Consulting",
     desc: "Tailored advice to help you reach your goals.",
-    link: "/services/consulting",
+    link: "/financial-consulting",
     icon: (
       <svg
         className="w-10 h-10 text-[#155dfc] mb-3"
@@ -155,7 +155,7 @@ const Services = (props: Props) => {
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
-              src="/globe.svg"
+              src="https://i.pinimg.com/1200x/42/ce/89/42ce89e401941b9786f80c74ec84ce36.jpg"
               alt="Services"
               width={320}
               height={240}
@@ -350,21 +350,21 @@ const Services = (props: Props) => {
                   company: "Verma Textiles Pvt Ltd",
                   feedback:
                     "FinAccount's team streamlined our accounting processes and provided invaluable tax advice. Their expertise and dedication have made a real difference to our business growth.",
-                  img: "/public/team1.jpg",
+                  img: "https://randomuser.me/api/portraits/men/49.jpg",
                 },
                 {
                   name: "Sarah Johnson",
                   company: "Johnson Consulting",
                   feedback:
                     "Professional, reliable, and always available for support. Their financial management solutions helped us optimize cash flow and plan for expansion.",
-                  img: "/public/team2.jpg",
+                  img: "https://randomuser.me/api/portraits/men/94.jpg",
                 },
                 {
                   name: "Mohammed Al-Farsi",
                   company: "Al-Farsi Trading Co.",
                   feedback:
                     "We trust FinAccount for all our audit and compliance needs. Their attention to detail and proactive approach ensure we stay ahead of regulations.",
-                  img: "/public/team3.jpg",
+                  img: "https://randomuser.me/api/portraits/men/36.jpg",
                 },
               ].map((client, idx) => (
                 <div

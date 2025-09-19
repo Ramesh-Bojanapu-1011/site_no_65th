@@ -33,63 +33,6 @@ const faqs = [
   },
 ];
 
-const FAQAccordion: React.FC = () => {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-  return (
-    <div className="space-y-6">
-      {faqs.map((faq, idx) => (
-        <div
-          key={idx}
-          className={
-            `relative rounded-2xl shadow-xl p-0 overflow-hidden transition-all duration-300 ` +
-            `bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 ` +
-            `border-transparent ` +
-            `before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none ` +
-            `before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30`
-          }
-        >
-          <button
-            className="w-full flex items-center gap-4 px-6 py-6 text-left focus:outline-none"
-            onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-            aria-expanded={openIdx === idx}
-            aria-controls={`faq-panel-${idx}`}
-          >
-            <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
-              {faq.question}
-            </span>
-            <span className="ml-auto">
-              <svg
-                className={`w-7 h-7 transition-transform duration-300 ${
-                  openIdx === idx ? "rotate-180" : "rotate-0"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </span>
-          </button>
-          <div
-            id={`faq-panel-${idx}`}
-            className={`px-6 pb-6 transition-all duration-300 ${
-              openIdx === idx ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-            }`}
-            style={{ overflow: "hidden" }}
-          >
-            {openIdx === idx && (
-              <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
 const benefits = [
   {
     title: "Accuracy",
@@ -231,10 +174,10 @@ const PayrollManagementPage = () => {
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
-              src="/globe.svg"
+              src="https://i.pinimg.com/1200x/32/47/cb/3247cb90e51c67e0f85fa0712d1f2715.jpg"
               alt="Payroll Management"
-              width={320}
-              height={240}
+              width={500}
+              height={450}
               className="rounded-2xl shadow-2xl object-cover bg-blue-100 dark:bg-blue-900"
             />
           </div>
@@ -247,69 +190,71 @@ const PayrollManagementPage = () => {
               Why Payroll Management Matters
             </h2>
             <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-              {/* Step 1 */}
-              <div className="flex-1 flex flex-col items-center bg-gradient-to-br from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc] rounded-xl shadow-lg p-8">
-                <span className="mb-4">
-                  <svg
-                    className="w-12 h-12 text-[#21c2ad]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 8v8m0 0l-3-3m3 3l3-3" />
-                  </svg>
-                </span>
-                <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                  Accuracy
-                </h3>
-                <p className="text-gray-700 dark:text-blue-200 text-base">
-                  Payroll management ensures employees are paid correctly and on
-                  time.
-                </p>
-              </div>
-              {/* Step 2 */}
-              <div className="flex-1 flex flex-col items-center bg-gradient-to-br from-blue-100 via-white to-[#155dfc] dark:from-blue-950 dark:via-blue-900 dark:to-[#21c2ad] rounded-xl shadow-lg p-8">
-                <span className="mb-4">
-                  <svg
-                    className="w-12 h-12 text-[#155dfc]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M9 9h6v6H9z" />
-                  </svg>
-                </span>
-                <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                  Compliance
-                </h3>
-                <p className="text-gray-700 dark:text-blue-200 text-base">
-                  Stay up-to-date with tax laws and regulations.
-                </p>
-              </div>
-              {/* Step 3 */}
-              <div className="flex-1 flex flex-col items-center bg-gradient-to-br from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc] rounded-xl shadow-lg p-8">
-                <span className="mb-4">
-                  <svg
-                    className="w-12 h-12 text-[#21c2ad]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2l2 7h7l-5.5 4.5L17 21l-5-3.5L7 21l1.5-7.5L3 9h7z" />
-                  </svg>
-                </span>
-                <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                  Efficiency
-                </h3>
-                <p className="text-gray-700 dark:text-blue-200 text-base">
-                  Save time and reduce errors with automated payroll processes.
-                </p>
-              </div>
+              {[
+                {
+                  title: "Accuracy",
+                  desc: "Payroll management ensures employees are paid correctly.",
+                  icon: (
+                    <svg
+                      className="w-12 h-12 text-[#21c2ad]"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 8v8m0 0l-3-3m3 3l3-3" />
+                    </svg>
+                  ),
+                  bg: "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
+                },
+                {
+                  title: "Compliance",
+                  desc: "Stay up-to-date with tax laws and regulations.",
+                  icon: (
+                    <svg
+                      className="w-12 h-12 text-[#155dfc]"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <path d="M9 9h6v6H9z" />
+                    </svg>
+                  ),
+                  bg: "from-blue-100 via-white to-[#155dfc] dark:from-blue-950 dark:via-blue-900 dark:to-[#21c2ad]",
+                },
+                {
+                  title: "Efficiency",
+                  desc: "Save time and reduce errors with automated payroll processes.",
+                  icon: (
+                    <svg
+                      className="w-12 h-12 text-[#21c2ad]"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 2l2 7h7l-5.5 4.5L17 21l-5-3.5L7 21l1.5-7.5L3 9h7z" />
+                    </svg>
+                  ),
+                  bg: "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
+                },
+              ].map((step, idx) => (
+                <div
+                  key={step.title}
+                  className={`flex-1 flex flex-col items-center bg-gradient-to-br ${step.bg} rounded-xl shadow-lg p-8`}
+                >
+                  <span className="mb-4">{step.icon}</span>
+                  <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-700 dark:text-blue-200 text-base">
+                    {step.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -402,7 +347,62 @@ const PayrollManagementPage = () => {
                 compliance, and our services.
               </p>
             </div>
-            <FAQAccordion />
+            <div className="space-y-6">
+              {faqs.map((faq, idx) => {
+                const [openIdx, setOpenIdx] = useState<number | null>(null);
+                return (
+                  <div
+                    key={idx}
+                    className={
+                      `relative rounded-2xl shadow-xl p-0 overflow-hidden transition-all duration-300 ` +
+                      `bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 ` +
+                      `border-transparent ` +
+                      `before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none ` +
+                      `before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30`
+                    }
+                  >
+                    <button
+                      className="w-full flex items-center gap-4 px-6 py-6 text-left focus:outline-none"
+                      onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                      aria-expanded={openIdx === idx}
+                      aria-controls={`faq-panel-${idx}`}
+                    >
+                      <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
+                        {faq.question}
+                      </span>
+                      <span className="ml-auto">
+                        <svg
+                          className={`w-7 h-7 transition-transform duration-300 ${
+                            openIdx === idx ? "rotate-180" : "rotate-0"
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M6 9l6 6 6-6" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div
+                      id={`faq-panel-${idx}`}
+                      className={`px-6 pb-6 transition-all duration-300 ${
+                        openIdx === idx
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                      style={{ overflow: "hidden" }}
+                    >
+                      {openIdx === idx && (
+                        <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 

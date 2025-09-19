@@ -35,47 +35,33 @@ const Home1: React.FC = () => {
 
         {/* About Section (Image Layout) */}
         <section className="flex py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
-          <div className="flex flex-col   md:flex-row items-center md:items-start max-w-6xl mx-auto gap-10">
-            <div className="flex flex-col gap-6 md:gap-8 md:w-1/2 max-w-screen items-center md:items-start">
-              <div className="flex gap-6 mb-4">
-                <div className="bg-blue-600 dark:bg-blue-900 rounded-lg flex items-center gap-2 px-6 py-3 shadow-lg">
-                  <svg
-                    width="32"
-                    height="32"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    className="text-[#21c2ad]"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10C22 6.48 17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"
-                    />
-                  </svg>
-                  <span className="text-white font-semibold text-lg">
-                    Best Award
-                  </span>
-                </div>
-                <img
-                  src="/globe.svg"
-                  alt="Analytics"
-                  className="w-24 h-20 rounded-lg shadow-lg object-cover bg-blue-100 dark:bg-blue-950"
-                />
-              </div>
-              <div className="flex gap-6">
-                <div className="rounded-lg shadow-lg object-cover bg-blue-100 dark:bg-blue-950">
+          <div className="flex flex-col md:justify-center   md:flex-row items-center md:items-start   mx-auto gap-10">
+            <div className="flex flex-col md:w-1/2 max-w-screen items-center md:items-start gap-8">
+              {/* Image Grid */}
+              <div className=" flex  gap-6 w-full">
+                <div className="    rounded-lg shadow-lg overflow-hidden">
                   <Image
-                    src="/next.svg"
+                    src="https://i.pinimg.com/736x/03/38/39/033839f45eb8e70c0c5664547ca1c2ae.jpg"
                     alt="Business Steps"
-                    width={160}
-                    height={192}
+                    width={300}
+                    height={300}
+                    className="object-cover"
                   />
                 </div>
-                <div className="rounded-lg shadow-lg object-cover bg-blue-100 dark:bg-blue-950 relative">
+                <div className="rounded-lg flex flex-col gap-2 shadow-lg   ">
                   <Image
-                    src="/window.svg"
+                    src="https://i.pinimg.com/736x/2e/6d/82/2e6d82123a4ef5422984ea07fa6ad0cd.jpg"
+                    alt="Analytics"
+                    width={200}
+                    height={120}
+                    className="object-cover rounded-lg w-full h-1/2"
+                  />
+                  <Image
+                    src="https://i.pinimg.com/736x/18/d3/7f/18d37fc251919ef267541fd5d406c821.jpg"
                     alt="Video"
-                    width={160}
-                    height={128}
+                    width={200}
+                    height={120}
+                    className="object-cover rounded-lg w-full h-1/2"
                   />
                 </div>
               </div>
@@ -312,7 +298,7 @@ const Home1: React.FC = () => {
                 financial success and peace of mind.
               </p>
             </div>
-            <div className="flex flex-col md:flex-row gap-10 justify-center items-stretch">
+            <div className="flex flex-col md:flex-wrap md:flex-row gap-10 justify-center items-center">
               {[
                 {
                   title: "Certified Experts",
@@ -441,7 +427,7 @@ const Home1: React.FC = () => {
               {/* Left: Business Image with Play Button Overlay */}
               <div className="relative w-full md:w-1/2 flex-shrink-0 flex justify-center items-center">
                 <Image
-                  src="/team1.jpg"
+                  src="https://i.pinimg.com/736x/f7/8f/01/f78f01d3c134c2de5fc97a28a3538595.jpg"
                   alt="Business Professional"
                   width={480}
                   height={400}
@@ -564,7 +550,7 @@ const Home1: React.FC = () => {
                 {
                   name: "Priya Sharma",
                   role: "Chief Financial Officer",
-                  img: "/team1.jpg",
+                  img: "https://i.pinimg.com/736x/e5/9c/14/e59c1493e407456088bd456159d97ee7.jpg",
                   socials: [
                     { icon: "f", url: "#" },
                     { icon: "x", url: "#" },
@@ -574,7 +560,7 @@ const Home1: React.FC = () => {
                 {
                   name: "David Lee",
                   role: "Tax & Compliance Specialist",
-                  img: "/team2.jpg",
+                  img: "https://i.pinimg.com/736x/34/da/e2/34dae2b1c9a2c38bfdc18bbb5a414149.jpg",
                   socials: [
                     { icon: "f", url: "#" },
                     { icon: "x", url: "#" },
@@ -584,7 +570,7 @@ const Home1: React.FC = () => {
                 {
                   name: "Maria Gomez",
                   role: "Senior Accountant",
-                  img: "/team3.jpg",
+                  img: "https://i.pinimg.com/736x/56/85/49/56854952ea1912a7a35a6fd36c45e024.jpg",
                   socials: [
                     { icon: "f", url: "#" },
                     { icon: "x", url: "#" },
@@ -594,7 +580,7 @@ const Home1: React.FC = () => {
                 {
                   name: "James O'Connor",
                   role: "Audit & Assurance Lead",
-                  img: "/team4.jpg",
+                  img: "https://i.pinimg.com/736x/df/0a/20/df0a2049a88366c1e84ee71e565143cb.jpg",
                   socials: [
                     { icon: "f", url: "#" },
                     { icon: "x", url: "#" },
@@ -612,7 +598,7 @@ const Home1: React.FC = () => {
                       alt={member.name}
                       width={300}
                       height={256}
-                      className="object-cover w-full h-full"
+                      className="object-cover object-top w-full h-full"
                     />
                   </div>
                   <h3 className="font-bold text-xl text-gray-900 dark:text-blue-100 mb-1 text-center">
@@ -622,7 +608,7 @@ const Home1: React.FC = () => {
                     {member.role}
                   </p>
                   {member.socials.length > 0 && (
-                    <div className="flex gap-3 justify-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute left-1/2  -translate-x-1/2 bottom-25 z-10">
+                    <div className="flex gap-3 justify-center mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute left-1/2  -translate-x-1/2 bottom-30 z-10">
                       {member.socials.map((s, i) => (
                         <a
                           key={i}

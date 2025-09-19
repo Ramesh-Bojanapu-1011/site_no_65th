@@ -58,10 +58,10 @@ const AboutUs: React.FC = () => {
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
-              src="/globe.svg"
+              src="https://i.pinimg.com/736x/93/bf/d1/93bfd1c9bcce4b7b1ae589c94a0616e6.jpg"
               alt="About Us"
-              width={320}
-              height={240}
+              width={500}
+              height={450}
               className="rounded-2xl shadow-2xl object-cover bg-blue-100 dark:bg-blue-900"
             />
           </div>
@@ -433,7 +433,7 @@ const AboutUs: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
               Ready to Transform Your Finances?
             </h2>
-            <p className="text-lg md:text-xl mb-6 max-w-xl text-white/90">
+            <p className="text-lg text-center md:text-xl mb-6 max-w-xl text-white/90">
               Partner with us for expert accounting, strategic planning, and
               business growth. Take the next step toward financial clarity and
               success.

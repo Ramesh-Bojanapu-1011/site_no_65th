@@ -156,10 +156,10 @@ const ContactPage = () => {
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
-              src="/globe.svg"
+              src="https://i.pinimg.com/736x/01/4f/37/014f37e8f2d3d600dedb58f5fff0d136.jpg"
               alt="Contact"
-              width={320}
-              height={240}
+              width={500}
+              height={450}
               className="rounded-2xl shadow-2xl object-cover bg-blue-100 dark:bg-blue-900"
             />
           </div>

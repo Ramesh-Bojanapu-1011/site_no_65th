@@ -11,19 +11,19 @@ const blogList = [
     title: "Top 5 Bookkeeping Practices ",
     desc: "Discover simple methods to track expenses, organize records, and stay financially healthy all year round.",
     link: "/bookkeeping-practices",
-    img: "/globe.svg",
+    img: "https://i.pinimg.com/736x/bf/6e/b9/bf6eb92c7bd894306abb2391b5604fe5.jpg",
   },
   {
     title: "Smart Tax-Saving Moves for 2025",
     desc: "Find effective techniques to cut tax costs, maximize deductions, and boost profits for your business.",
     link: "/tax-saving-2025",
-    img: "/globe.svg",
+    img: "https://i.pinimg.com/736x/7a/9e/3a/7a9e3abe745a468b32dd81c5e4cd2eb6.jpg",
   },
   {
     title: "How Advisory Services Fuel Success",
     desc: "See how strategic guidance empowers companies to scale, innovate, and achieve long-term financial growth.",
     link: "/advisory-success",
-    img: "/globe.svg",
+    img: "https://i.pinimg.com/736x/70/52/ad/7052ad5f76a69b85133af4569959dc32.jpg",
   },
 ];
 
@@ -61,10 +61,10 @@ const Blog = () => {
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
-              src="/globe.svg"
+              src="https://i.pinimg.com/736x/65/5b/81/655b81dc33c00f9fd29ce510700bdebf.jpg"
               alt="Blog Hero"
-              width={320}
-              height={240}
+              width={500}
+              height={450}
               className="rounded-2xl shadow-2xl object-cover bg-blue-100 dark:bg-blue-900"
             />
           </div>
@@ -88,7 +88,7 @@ const Blog = () => {
                 <div
                   key={idx}
                   data-aos="fade-up"
-                  className={`group bg-white/80 dark:bg-blue-950/80 rounded-3xl shadow-2xl p-0 flex flex-col items-center border-0 relative overflow-hidden transition-all duration-300 hover:scale-[1.06] hover:shadow-3xl backdrop-blur-lg  `}
+                  className={`group bg-white/80 dark:bg-blue-950/80 rounded-3xl shadow-2xl p-0 flex flex-col items-center border-0 relative overflow-hidden transition-all duration-300 hover:shadow-3xl backdrop-blur-lg  `}
                   style={{
                     boxShadow:
                       "0 8px 32px 0 rgba(33,194,173,0.12), 0 1.5px 8px 0 rgba(21,93,252,0.08)",
@@ -107,7 +107,7 @@ const Blog = () => {
                         alt={blog.title}
                         width={320}
                         height={180}
-                        className="rounded-xl h-[180px] w-[320px] object-cover transition-transform duration-300 group-hover:scale-110 group-hover:rotate-1"
+                        className="rounded-xl h-[200px] w-full object-cover transition-transform duration-300 group-hover:scale-110  "
                       />
                     </div>
                     <h3 className="font-extrabold text-[#155dfc] dark:text-blue-100 mb-2 text-xl text-center group-hover:underline drop-shadow-md">
@@ -382,19 +382,19 @@ const Blog = () => {
                   name: "Priya Singh",
                   feedback:
                     "The accounting tips helped me organize my business finances and avoid costly mistakes.",
-                  img: "/globe.svg",
+                  img: "https://randomuser.me/api/portraits/women/50.jpg",
                 },
                 {
                   name: "John Miller",
                   feedback:
                     "I love the practical advice and easy-to-understand articles. Highly recommended!",
-                  img: "/next.svg",
+                  img: "https://randomuser.me/api/portraits/men/18.jpg",
                 },
                 {
                   name: "Fatima Al-Hassan",
                   feedback:
                     "The tax planning guides saved me a lot of money this year.",
-                  img: "https://i.postimg.cc/DwdH9gv8/logo-stackly.png",
+                  img: "https://randomuser.me/api/portraits/men/32.jpg",
                 },
               ].map((reader, idx) => (
                 <div
