@@ -1,9 +1,6 @@
-import Head from "next/head";
-
-import { useRouter } from "next/router";
-
-import Link from "next/link";
 import { ModeToggle } from "@/components/theme/ModeToggle";
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,7 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center min-h-[100vh] bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 py-16">
+      <main className="flex flex-col items-center justify-center min-h-[100vh] bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 py-16 caret-transparent">
         <div className="absolute top-4 right-4">
           <ModeToggle />
         </div>

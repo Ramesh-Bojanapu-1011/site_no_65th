@@ -24,7 +24,7 @@ const SiteHeader: React.FC = () => {
     <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-b border-blue-200 dark:border-blue-900">
       <nav className="flex items-center justify-between px-6 py-3">
         {/* Logo */}
-        <div className="flex">
+        <Link href={"/home1"} className="flex">
           <Image
             src="/logo-stackly.png"
             alt="Finance Logo"
@@ -32,7 +32,7 @@ const SiteHeader: React.FC = () => {
             width={100}
             height={100}
           />
-        </div>
+        </Link>
 
         {/* Navigation */}
         <ul className="hidden min-[980px]:flex gap-8 items-center list-none">

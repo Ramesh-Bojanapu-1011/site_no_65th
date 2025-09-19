@@ -1,11 +1,11 @@
-import React from "react";
-import SiteHeader from "../src/components/SiteHeader";
-import SiteFooter from "../src/components/SiteFooter";
+import aos from "aos";
+import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import aos from "aos";
-import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
+import React from "react";
+import SiteFooter from "../src/components/SiteFooter";
+import SiteHeader from "../src/components/SiteHeader";
 
 const Home1: React.FC = () => {
   React.useEffect(() => {
@@ -56,7 +56,7 @@ const Home1: React.FC = () => {
                   </span>
                 </div>
                 <img
-                  src="/public/globe.svg"
+                  src="/globe.svg"
                   alt="Analytics"
                   className="w-24 h-20 rounded-lg shadow-lg object-cover bg-blue-100 dark:bg-blue-950"
                 />
@@ -64,7 +64,7 @@ const Home1: React.FC = () => {
               <div className="flex gap-6">
                 <div className="rounded-lg shadow-lg object-cover bg-blue-100 dark:bg-blue-950">
                   <Image
-                    src="/public/next.svg"
+                    src="/next.svg"
                     alt="Business Steps"
                     width={160}
                     height={192}
@@ -72,7 +72,7 @@ const Home1: React.FC = () => {
                 </div>
                 <div className="rounded-lg shadow-lg object-cover bg-blue-100 dark:bg-blue-950 relative">
                   <Image
-                    src="/public/window.svg"
+                    src="/window.svg"
                     alt="Video"
                     width={160}
                     height={128}
@@ -164,7 +164,7 @@ const Home1: React.FC = () => {
                   title: "Bookkeeping",
                   description:
                     "Maintain accurate records and streamline your day-to-day financial operations with our expert bookkeeping services.",
-                  link: "/services/bookkeeping",
+                  link: "/bookkeeping",
                   icon: (
                     <svg
                       width="40"
@@ -204,7 +204,7 @@ const Home1: React.FC = () => {
                   title: "Financial Statements",
                   description:
                     "Get clear, compliant, and timely financial statements to support decision-making and regulatory needs.",
-                  link: "/services/financial-statements",
+                  link: "/financial-statements",
                   icon: (
                     <svg
                       width="40"
@@ -245,7 +245,7 @@ const Home1: React.FC = () => {
                   title: "Financial Management",
                   description:
                     "Optimize your business growth and profitability with strategic financial planning and management solutions.",
-                  link: "/services/financial-management",
+                  link: "/financial-management",
                   icon: (
                     <svg
                       width="40"
@@ -441,7 +441,7 @@ const Home1: React.FC = () => {
               {/* Left: Business Image with Play Button Overlay */}
               <div className="relative w-full md:w-1/2 flex-shrink-0 flex justify-center items-center">
                 <Image
-                  src="/public/team1.jpg"
+                  src="/team1.jpg"
                   alt="Business Professional"
                   width={480}
                   height={400}
@@ -564,7 +564,7 @@ const Home1: React.FC = () => {
                 {
                   name: "Priya Sharma",
                   role: "Chief Financial Officer",
-                  img: "/public/team1.jpg",
+                  img: "/team1.jpg",
                   socials: [
                     { icon: "f", url: "#" },
                     { icon: "x", url: "#" },
@@ -574,7 +574,7 @@ const Home1: React.FC = () => {
                 {
                   name: "David Lee",
                   role: "Tax & Compliance Specialist",
-                  img: "/public/team2.jpg",
+                  img: "/team2.jpg",
                   socials: [
                     { icon: "f", url: "#" },
                     { icon: "x", url: "#" },
@@ -584,7 +584,7 @@ const Home1: React.FC = () => {
                 {
                   name: "Maria Gomez",
                   role: "Senior Accountant",
-                  img: "/public/team3.jpg",
+                  img: "/team3.jpg",
                   socials: [
                     { icon: "f", url: "#" },
                     { icon: "x", url: "#" },
@@ -594,7 +594,7 @@ const Home1: React.FC = () => {
                 {
                   name: "James O'Connor",
                   role: "Audit & Assurance Lead",
-                  img: "/public/team4.jpg",
+                  img: "/team4.jpg",
                   socials: [
                     { icon: "f", url: "#" },
                     { icon: "x", url: "#" },
