@@ -1,5 +1,6 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import Aos from "aos";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,6 +25,9 @@ const teamMembers = [
 ];
 
 const AboutUs: React.FC = () => {
+  React.useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <>
       <Head>
@@ -248,7 +252,8 @@ const AboutUs: React.FC = () => {
               {teamMembers.map((member, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col items-center bg-gradient-to-br from-white via-blue-100 to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc] rounded-2xl shadow-xl p-8 border-2 border-transparent hover:border-[#21c2ad] transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                  data-aos="zoom-in"
+                  className="group flex flex-col items-center bg-gradient-to-br from-white via-blue-100 to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc] rounded-2xl shadow-xl p-8 border-2 border-transparent hover:border-[#21c2ad] transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                 >
                   <div className="relative mb-4">
                     <Image
@@ -258,7 +263,7 @@ const AboutUs: React.FC = () => {
                       height={100}
                       className="rounded-full shadow-lg object-cover border-4 border-[#21c2ad]"
                     />
-                    <span className="absolute text-nowrap -bottom-2 left-1/2 -translate-x-1/2 bg-[#155dfc] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
+                    <span className="absolute text-nowrap -bottom-2 left-1/2 -translate-x-1/2 bg-[#155dfc] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {member.role}
                     </span>
                   </div>
@@ -271,50 +276,146 @@ const AboutUs: React.FC = () => {
           </div>
         </section>
 
-        {/* Expertise Section */}
+        {/* Expertise Section - Redesigned */}
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="max-w-6xl mx-auto">
             <span className="text-[#21c2ad] font-bold text-lg mb-2 block text-center">
               OUR EXPERTISE
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-4 text-center">
               What We Do Best
             </h2>
+            <p className="text-blue-900 dark:text-blue-100 text-center mb-8 max-w-2xl mx-auto">
+              Our team combines deep industry knowledge with innovative
+              solutions to help your business thrive. Explore our core areas of
+              expertise below.
+            </p>
+            <blockquote className="border-l-4 border-[#21c2ad] pl-4 italic text-blue-900 dark:text-blue-100 mb-10 text-center mx-auto max-w-2xl">
+              "Expertise is not just what we do—it's how we empower our clients
+              to succeed."
+              <br />
+              <span className="text-[#155dfc] font-bold">
+                — FinAccount Experts
+              </span>
+            </blockquote>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
                   title: "Accounting & Bookkeeping",
                   desc: "Accurate records and reporting for peace of mind.",
+                  icon: (
+                    <svg
+                      className="w-10 h-10 text-[#21c2ad] mb-3"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect x="3" y="4" width="18" height="16" rx="2" />
+                      <path d="M16 2v4" />
+                      <path d="M8 2v4" />
+                      <path d="M3 10h18" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "Tax Planning & Compliance",
                   desc: "Smart strategies to minimize liabilities and stay compliant.",
+                  icon: (
+                    <svg
+                      className="w-10 h-10 text-[#155dfc] mb-3"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M9 14l6-6" />
+                      <circle cx="9" cy="14" r="1" />
+                      <circle cx="15" cy="8" r="1" />
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "Financial Advisory",
                   desc: "Expert guidance for growth, investment, and decision-making.",
+                  icon: (
+                    <svg
+                      className="w-10 h-10 text-[#21c2ad] mb-3"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 20v-6" />
+                      <path d="M18 20v-10" />
+                      <path d="M6 20v-4" />
+                      <path d="M3 20h18" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "Payroll Management",
                   desc: "Efficient payroll solutions for every business size.",
+                  icon: (
+                    <svg
+                      className="w-10 h-10 text-[#155dfc] mb-3"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect x="2" y="7" width="20" height="14" rx="2" />
+                      <path d="M16 3v4" />
+                      <path d="M8 3v4" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "Audit & Assurance",
                   desc: "Thorough reviews to ensure accuracy and reliability.",
+                  icon: (
+                    <svg
+                      className="w-10 h-10 text-[#21c2ad] mb-3"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 8v4l3 3" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "Business Consulting",
                   desc: "Tailored advice to help you reach your goals.",
+                  icon: (
+                    <svg
+                      className="w-10 h-10 text-[#155dfc] mb-3"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <rect x="2" y="7" width="20" height="14" rx="2" />
+                      <path d="M16 3v4" />
+                      <path d="M8 3v4" />
+                      <path d="M12 12v4" />
+                    </svg>
+                  ),
                 },
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white dark:bg-blue-950 rounded-xl shadow-lg p-6 flex flex-col items-center"
+                  data-aos="zoom-in"
+                  className="bg-gradient-to-br from-white via-blue-100 to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc] rounded-xl shadow-xl p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl border-2 border-transparent hover:border-[#21c2ad]"
                 >
-                  <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-center">
+                  {item.icon}
+                  <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg text-center">
                     {item.title}
                   </h3>
-                  <p className="text-gray-700 dark:text-blue-200 text-center">
+                  <p className="text-gray-700 dark:text-blue-200 text-center text-base">
                     {item.desc}
                   </p>
                 </div>
@@ -323,24 +424,28 @@ const AboutUs: React.FC = () => {
           </div>
         </section>
 
-        {/* Contact/CTA Section */}
+        {/* Contact/CTA Section - Redesigned */}
         <section
-          className="py-20 px-8 bg-gradient-to-r from-[#21c2ad] to-[#155dfc] text-white"
+          className="bg-gradient-to-r from-[#21c2ad] to-[#155dfc] text-white rounded-4xl mx-auto"
           id="contact"
         >
-          <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg">
-              Ready to Partner With Us?
+          <div className="bg-white/10 rounded-2xl shadow-2xl p-10 flex flex-col items-center w-full">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+              Ready to Transform Your Finances?
             </h2>
-            <p className="text-lg md:text-xl mb-8 max-w-xl">
-              Connect with our team for expert finance and accounting solutions.
-              Let's build your financial future together.
+            <p className="text-lg md:text-xl mb-6 max-w-xl text-white/90">
+              Partner with us for expert accounting, strategic planning, and
+              business growth. Take the next step toward financial clarity and
+              success.
             </p>
+            <span className="inline-block bg-[#155dfc] text-white px-4 py-2 rounded-full font-bold mb-6 shadow-md animate-pulse">
+              Trusted by 100+ Businesses
+            </span>
             <Link
               href="/contact"
-              className="px-10 py-5 rounded-full bg-white text-[#155dfc] font-bold shadow-lg hover:bg-blue-100 transition text-xl"
+              className="px-10 py-5 rounded-full bg-white text-[#155dfc] font-bold shadow-lg hover:bg-blue-100 transition-all duration-300 text-xl hover:scale-105"
             >
-              Contact Us
+              Get Started Now
             </Link>
           </div>
         </section>
