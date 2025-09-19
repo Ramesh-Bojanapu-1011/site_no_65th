@@ -425,19 +425,25 @@ const Blog = () => {
         {/* CTA Section */}
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100 relative overflow-hidden">
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center relative z-10">
-             
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg text-[#155dfc] dark:text-blue-100">
               Want More Insights?
             </h2>
             <p className="text-lg md:text-xl mb-8 max-w-xl text-blue-900 dark:text-blue-100">
-              Subscribe to our newsletter for the latest updates, expert tips, and exclusive content delivered straight to your inbox.
+              Subscribe to our newsletter for the latest updates, expert tips,
+              and exclusive content delivered straight to your inbox.
             </p>
             <Link
               href="/contact-us"
               className="px-10 py-5 rounded-full bg-gradient-to-r from-[#21c2ad] to-[#155dfc] text-white font-bold shadow-xl hover:scale-105 hover:shadow-2xl transition-all text-xl border-4 border-white"
             >
               <span className="inline-block mr-2 align-middle animate-pulse">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
                 </svg>
