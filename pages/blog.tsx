@@ -394,7 +394,7 @@ const Blog = () => {
                   name: "Fatima Al-Hassan",
                   feedback:
                     "The tax planning guides saved me a lot of money this year.",
-                  img: "/logo-stackly.png",
+                  img: "https://i.postimg.cc/DwdH9gv8/logo-stackly.png",
                 },
               ].map((reader, idx) => (
                 <div

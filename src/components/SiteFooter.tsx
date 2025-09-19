@@ -25,7 +25,7 @@ const SiteFooter: React.FC = () => {
         <div className="flex flex-col items-start gap-4">
           <div className=" ">
             <Image
-              src="/logo-stackly.png"
+              src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
               alt="Finance Logo"
               width={120}
               height={40}

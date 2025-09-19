@@ -26,7 +26,7 @@ const SiteHeader: React.FC = () => {
         {/* Logo */}
         <Link href={"/home1"} className="flex">
           <Image
-            src="/logo-stackly.png"
+            src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
             alt="Finance Logo"
             className=""
             width={100}
