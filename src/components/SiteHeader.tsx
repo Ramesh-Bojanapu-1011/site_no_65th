@@ -83,6 +83,14 @@ const SiteHeader: React.FC = () => {
             </button>
             {servicesOpen && (
               <ul className="absolute bg-white left-0 mt-2  dark:bg-blue-950  rounded-lg w-56 animate-fadeIn border border-blue-100 dark:border-blue-900">
+                <li >
+                    <Link
+                      href={`/services`}
+                      className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
+                    >
+                      All Services
+                    </Link>
+                  </li>
                 {services.map((srv, idx) => (
                   <li key={idx}>
                     <Link
@@ -276,6 +284,14 @@ const SiteHeader: React.FC = () => {
             </button>
             {servicesOpen && (
               <ul className="ml-4 mt-1  dark:bg-blue-950  rounded-lg border border-blue-100 dark:border-blue-900">
+                <li  >
+                    <Link
+                      href={`/services`}
+                      className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
+                    >
+                      All Services
+                    </Link>
+                  </li>
                 {services.map((srv, idx) => (
                   <li key={idx}>
                     <Link
