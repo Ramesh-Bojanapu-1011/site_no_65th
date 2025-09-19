@@ -34,63 +34,6 @@ const faqs = [
   },
 ];
 
-const FAQAccordion: React.FC = () => {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-  return (
-    <div className="space-y-6">
-      {faqs.map((faq, idx) => (
-        <div
-          key={idx}
-          className={
-            `relative rounded-2xl shadow-xl p-0 overflow-hidden transition-all duration-300 ` +
-            `bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 ` +
-            `border-transparent ` +
-            `before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none ` +
-            `before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30`
-          }
-        >
-          <button
-            className="w-full flex items-center gap-4 px-6 py-6 text-left focus:outline-none"
-            onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-            aria-expanded={openIdx === idx}
-            aria-controls={`faq-panel-${idx}`}
-          >
-            <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
-              {faq.question}
-            </span>
-            <span className="ml-auto">
-              <svg
-                className={`w-7 h-7 transition-transform duration-300 ${
-                  openIdx === idx ? "rotate-180" : "rotate-0"
-                }`}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </span>
-          </button>
-          <div
-            id={`faq-panel-${idx}`}
-            className={`px-6 pb-6 transition-all duration-300 ${
-              openIdx === idx ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-            }`}
-            style={{ overflow: "hidden" }}
-          >
-            {openIdx === idx && (
-              <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
 const infoCards = [
   {
     title: "Our Office",
@@ -149,7 +92,7 @@ const ContactPage = () => {
   const formRef = React.useRef<HTMLFormElement | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -309,14 +252,68 @@ const ContactPage = () => {
                 accounting services, support, and contact process.
               </p>
             </div>
-
-            <FAQAccordion />
+            <div className="space-y-6">
+              {faqs.map((faq, idx) => {
+                const [openIdx, setOpenIdx] = useState<number | null>(null);
+                return (
+                  <div
+                    key={idx}
+                    className={
+                      `relative rounded-2xl shadow-xl p-0 overflow-hidden transition-all duration-300 ` +
+                      `bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 ` +
+                      `border-transparent ` +
+                      `before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none ` +
+                      `before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30`
+                    }
+                  >
+                    <button
+                      className="w-full flex items-center gap-4 px-6 py-6 text-left focus:outline-none"
+                      onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                      aria-expanded={openIdx === idx}
+                      aria-controls={`faq-panel-${idx}`}
+                    >
+                      <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
+                        {faq.question}
+                      </span>
+                      <span className="ml-auto">
+                        <svg
+                          className={`w-7 h-7 transition-transform duration-300 ${
+                            openIdx === idx ? "rotate-180" : "rotate-0"
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M6 9l6 6 6-6" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div
+                      id={`faq-panel-${idx}`}
+                      className={`px-6 pb-6 transition-all duration-300 ${
+                        openIdx === idx
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                      style={{ overflow: "hidden" }}
+                    >
+                      {openIdx === idx && (
+                        <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
+                          {faq.answer}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* Map Section */}
         <section className="  bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 flex justify-center items-center">
-          <div className="  w-full rounded-2xl overflow-hidden shadow-xl">
+          <div className=" max-w-6xl  w-full rounded-2xl overflow-hidden shadow-xl">
             <iframe
               src="https://www.openstreetmap.org/export/embed.html?bbox=72.8258%2C18.975%2C72.8358%2C18.985&amp;layer=mapnik"
               width="100%"
