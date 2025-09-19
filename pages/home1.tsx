@@ -23,7 +23,7 @@ const Home1: React.FC = () => {
 
       <SiteHeader />
       <main className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 caret-transparent dark:via-gray-900 dark:to-blue-900 min-h-screen">
-        <section className="flex h-screen flex-col items-center justify-center py-20 px-4 text-center bg-gradient-to-r from-blue-600 to-blue-400 text-white dark:from-blue-900 dark:to-blue-700">
+        <section className="flex min-h-screen flex-col items-center justify-center py-20 px-4 text-center bg-gradient-to-r from-blue-600 to-blue-400 text-white dark:from-blue-900 dark:to-blue-700">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
             Finance &amp; Accounting Services
           </h1>
