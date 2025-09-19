@@ -37,7 +37,7 @@ const Home2: React.FC = () => {
               and financial solutions.
             </p>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="px-8 py-4 rounded-full bg-white text-[#155dfc] font-bold shadow-lg hover:bg-blue-100 transition text-lg"
             >
               Get Started
@@ -278,7 +278,7 @@ const Home2: React.FC = () => {
               success.
             </p>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="px-10 py-5 rounded-full bg-white text-[#155dfc] font-bold shadow-lg hover:bg-blue-100 transition text-xl"
             >
               Get Started Now

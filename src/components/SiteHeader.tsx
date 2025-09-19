@@ -45,7 +45,7 @@ const SiteHeader: React.FC = () => {
               Home <span className="ml-1">▼</span>
             </button>
             {homeOpen && (
-              <ul className="absolute left-0 mt-2  dark:bg-blue-950 bg-white  rounded-lg w-36 animate-fadeIn border border-blue-100 dark:border-blue-900">
+              <ul className="absolute left-0 mt-2  dark:bg-blue-950 bg-white  rounded-lg w-36  border border-blue-100 dark:border-blue-900">
                 <li>
                   <Link
                     href="/home1"
@@ -82,15 +82,15 @@ const SiteHeader: React.FC = () => {
               Services <span className="ml-1">▼</span>
             </button>
             {servicesOpen && (
-              <ul className="absolute bg-white left-0 mt-2  dark:bg-blue-950  rounded-lg w-56 animate-fadeIn border border-blue-100 dark:border-blue-900">
-                <li >
-                    <Link
-                      href={`/services`}
-                      className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
-                    >
-                      All Services
-                    </Link>
-                  </li>
+              <ul className="absolute bg-white left-0 mt-2  dark:bg-blue-950  rounded-lg w-56  border border-blue-100 dark:border-blue-900">
+                <li>
+                  <Link
+                    href={`/services`}
+                    className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
+                  >
+                    All Services
+                  </Link>
+                </li>
                 {services.map((srv, idx) => (
                   <li key={idx}>
                     <Link
@@ -135,7 +135,7 @@ const SiteHeader: React.FC = () => {
               {selectedLang.toUpperCase()} <span className="ml-1">▼</span>
             </button>
             {langOpen && (
-              <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg w-24 animate-fadeIn border border-blue-100 dark:border-blue-900">
+              <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg w-24  border border-blue-100 dark:border-blue-900">
                 {["en", "ar", "he"].map((lang) => (
                   <li key={lang}>
                     <button
@@ -170,7 +170,7 @@ const SiteHeader: React.FC = () => {
               <span>▼</span>
             </button>
             {profileOpen && (
-              <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg w-36 animate-fadeIn border border-blue-100 dark:border-blue-900">
+              <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg w-36  border border-blue-100 dark:border-blue-900">
                 <li>
                   <Link
                     href="/profile"
@@ -284,14 +284,14 @@ const SiteHeader: React.FC = () => {
             </button>
             {servicesOpen && (
               <ul className="ml-4 mt-1  dark:bg-blue-950  rounded-lg border border-blue-100 dark:border-blue-900">
-                <li  >
-                    <Link
-                      href={`/services`}
-                      className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
-                    >
-                      All Services
-                    </Link>
-                  </li>
+                <li>
+                  <Link
+                    href={`/services`}
+                    className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
+                  >
+                    All Services
+                  </Link>
+                </li>
                 {services.map((srv, idx) => (
                   <li key={idx}>
                     <Link
@@ -332,7 +332,7 @@ const SiteHeader: React.FC = () => {
                   {selectedLang.toUpperCase()} <span className="ml-1">▼</span>
                 </button>
                 {langOpen && (
-                  <ul className="absolute right-0 mt-2  dark:bg-gray-800  rounded w-20 animate-fadeIn">
+                  <ul className="absolute right-0 mt-2  dark:bg-gray-800  rounded w-20 ">
                     {["en", "ar", "he"].map((lang) => (
                       <li key={lang}>
                         <button
@@ -365,7 +365,7 @@ const SiteHeader: React.FC = () => {
                   <span>▼</span>
                 </button>
                 {profileOpen && (
-                  <ul className="absolute right-0 mt-2  dark:bg-gray-800  rounded w-32 animate-fadeIn">
+                  <ul className="absolute right-0 mt-2  dark:bg-gray-800  rounded w-32 ">
                     <li>
                       <Link
                         href="/profile"
@@ -387,11 +387,6 @@ const SiteHeader: React.FC = () => {
           </li>
         </ul>
       </nav>
-      {/* Tailwind animation for dropdown */}
-      <style>{`
-        .animate-fadeIn { animation: fadeIn 0.2s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-      `}</style>
     </header>
   );
 };

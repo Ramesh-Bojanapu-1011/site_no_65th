@@ -442,7 +442,7 @@ const AboutUs: React.FC = () => {
               Trusted by 100+ Businesses
             </span>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="px-10 py-5 rounded-full bg-white text-[#155dfc] font-bold shadow-lg hover:bg-blue-100 transition-all duration-300 text-xl hover:scale-105"
             >
               Get Started Now

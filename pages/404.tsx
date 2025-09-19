@@ -34,12 +34,7 @@ const NotFound: React.FC = () => {
           </p>
           <button
             className="mt-4 px-8 py-3 text-lg font-bold rounded-full bg-gradient-to-r from-blue-600 to-blue-400 text-white shadow-lg hover:scale-105 hover:from-blue-700 hover:to-blue-500 transition"
-            onClick={() => {
-              if (window.history.back.bind(window.history)) {
-                window.history.back();
-              }
-              window.location.href = "/home1";
-            }}
+            onClick={window.history.back.bind(window.history)}
           >
             Go to Back
           </button>

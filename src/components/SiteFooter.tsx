@@ -14,7 +14,7 @@ const quickLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact Us", href: "/contact" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
 const SiteFooter: React.FC = () => {
