@@ -71,19 +71,19 @@ const Home2: React.FC = () => {
   ];
   const testimonials = [
     {
-      name: t("Home2.Testimonials.AmitVerma.name"),
-      company: t("Home2.Testimonials.AmitVerma.company"),
-      feedback: t("Home2.Testimonials.AmitVerma.feedback"),
+      name: t("Home2.Testimonials.member1.name"),
+      company: t("Home2.Testimonials.member1.company"),
+      feedback: t("Home2.Testimonials.member1.feedback"),
     },
     {
-      name: t("Home2.Testimonials.SarahJohnson.name"),
-      company: t("Home2.Testimonials.SarahJohnson.company"),
-      feedback: t("Home2.Testimonials.SarahJohnson.feedback"),
+      name: t("Home2.Testimonials.member2.name"),
+      company: t("Home2.Testimonials.member2.company"),
+      feedback: t("Home2.Testimonials.member2.feedback"),
     },
     {
-      name: t("Home2.Testimonials.MohammedAlFarsi.name"),
-      company: t("Home2.Testimonials.MohammedAlFarsi.company"),
-      feedback: t("Home2.Testimonials.MohammedAlFarsi.feedback"),
+      name: t("Home2.Testimonials.member3.name"),
+      company: t("Home2.Testimonials.member3.company"),
+      feedback: t("Home2.Testimonials.member3.feedback"),
     },
   ];
   return (

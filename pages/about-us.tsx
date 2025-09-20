@@ -9,18 +9,18 @@ import { useTranslation } from "react-i18next";
 
 const teamMembers = [
   {
-    nameKey: "AboutUs.Team.AmitVerma.name",
-    roleKey: "AboutUs.Team.AmitVerma.role",
+    nameKey: "AboutUs.Team.member1.name",
+    roleKey: "AboutUs.Team.member1.role",
     img: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    nameKey: "AboutUs.Team.SarahJohnson.name",
-    roleKey: "AboutUs.Team.SarahJohnson.role",
+    nameKey: "AboutUs.Team.member2.name",
+    roleKey: "AboutUs.Team.member2.role",
     img: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    nameKey: "AboutUs.Team.MohammedAlFarsi.name",
-    roleKey: "AboutUs.Team.MohammedAlFarsi.role",
+    nameKey: "AboutUs.Team.member3.name",
+    roleKey: "AboutUs.Team.member3.role",
     img: "https://randomuser.me/api/portraits/men/65.jpg",
   },
 ];
