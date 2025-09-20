@@ -270,5 +270,107 @@
       "badge": "Trusted by 100+ Businesses",
       "cta": "Get Started Now"
     }
+  },
+  "Services": {
+    "meta": {
+      "title": "Our Services",
+      "description": "Explore our range of services."
+    },
+    "Hero": {
+      "title": "Our Services",
+      "description": "Discover how our expert solutions can help your business grow, stay compliant, and thrive in a changing world.",
+      "cta": "View All Services",
+      "image_alt": "Services"
+    },
+    "Overview": {
+      "title": "Explore Our Services",
+      "description": "Choose from our comprehensive suite of financial services, each designed to help your business thrive. Click any service to learn more.",
+      "learn_more": "Learn More →"
+    },
+    "List": {
+      "AccountingBookkeeping": {
+        "title": "Accounting & Bookkeeping",
+        "desc": "Accurate records and reporting for peace of mind."
+      },
+      "TaxPlanning": {
+        "title": "Tax Planning & Compliance",
+        "desc": "Smart strategies to minimize liabilities and stay compliant."
+      },
+      "InvestmentAdvisory": {
+        "title": "Investment Advisory",
+        "desc": "Expert guidance for growth, investment, and decision-making."
+      },
+      "PayrollManagement": {
+        "title": "Payroll Management",
+        "desc": "Efficient payroll solutions for every business size."
+      },
+      "AuditAssurance": {
+        "title": "Audit & Assurance",
+        "desc": "Thorough reviews to ensure accuracy and reliability."
+      },
+      "FinancialConsulting": {
+        "title": "Financial Consulting",
+        "desc": "Tailored advice to help you reach your goals."
+      }
+    },
+    "Benefits": {
+      "title": "Why Choose FinAccount?",
+      "ExpertTeam": {
+        "label": "Expert Team",
+        "desc": "Our professionals bring years of experience and deep industry knowledge."
+      },
+      "ProvenResults": {
+        "label": "Proven Results",
+        "desc": "We deliver measurable improvements and lasting value."
+      },
+      "PersonalizedSolutions": {
+        "label": "Personalized Solutions",
+        "desc": "We tailor our services to your unique business needs."
+      },
+      "top_choice": "Top Choice"
+    },
+    "Process": {
+      "title": "How We Work",
+      "Consultation": {
+        "title": "Consultation",
+        "desc": "We listen to your needs and goals."
+      },
+      "Strategy": {
+        "title": "Strategy",
+        "desc": "We design a custom plan for your business."
+      },
+      "Implementation": {
+        "title": "Implementation",
+        "desc": "We implement solutions and keep you informed."
+      },
+      "Support": {
+        "title": "Support",
+        "desc": "We provide ongoing advice and updates."
+      }
+    },
+    "Testimonials": {
+      "title": "What Our Clients Say",
+      "description": "Discover how our finance and accounting expertise has helped businesses achieve their goals and maintain financial health.",
+      "AmitVerma": {
+        "name": "Amit Verma",
+        "company": "Verma Textiles Pvt Ltd",
+        "feedback": "FinAccount's team streamlined our accounting processes and provided invaluable tax advice. Their expertise and dedication have made a real difference to our business growth."
+      },
+      "SarahJohnson": {
+        "name": "Sarah Johnson",
+        "company": "Johnson Consulting",
+        "feedback": "Professional, reliable, and always available for support. Their financial management solutions helped us optimize cash flow and plan for expansion."
+      },
+      "MohammedAlFarsi": {
+        "name": "Mohammed Al-Farsi",
+        "company": "Al-Farsi Trading Co.",
+        "feedback": "We trust FinAccount for all our audit and compliance needs. Their attention to detail and proactive approach ensure we stay ahead of regulations."
+      }
+    },
+    "CTA": {
+      "title": "Ready to Transform Your Finances?",
+      "description": "Partner with us for expert accounting, strategic planning, and business growth. Take the next step toward financial clarity and success.",
+      "cta": "Get Started Now"
+    }
   }
 }
