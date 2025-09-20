@@ -15,5 +15,13 @@
     "Profile": "Profile",
     "My_Profile": "My Profile",
     "Logout": "Logout"
+  },
+  "Footer": {
+    "Description": "Expert solutions for tax planning, auditing, bookkeeping, payroll, and financial consulting. Empowering your business with trusted accounting services.",
+    "Quick_Links": "Quick Links",
+    "Our_Services": "Our Services",
+    "Contact_Us": "Contact Us",
+    "Address": "123 Finance Ave, Suite 100\nNew York, NY 10001",
+    "All_rights_reserved": "All rights reserved."
   }
 }

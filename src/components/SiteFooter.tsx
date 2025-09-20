@@ -1,23 +1,25 @@
 import React from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const services = [
-  { name: "Tax Planning", Link: "tax-planning" },
-  { name: "Audit & Assurance", Link: "audit-assurance" },
-  { name: "Bookkeeping", Link: "bookkeeping" },
-  { name: "Payroll Management", Link: "payroll-management" },
-  { name: "Financial Consulting", Link: "financial-consulting" },
-  { name: "Investment Advisory", Link: "investment-advisory" },
+  { name: "Hedder.Tax_Planning", Link: "tax-planning" },
+  { name: "Hedder.Audit_&_Assurance", Link: "audit-assurance" },
+  { name: "Hedder.Bookkeeping", Link: "bookkeeping" },
+  { name: "Hedder.Payroll_Management", Link: "payroll-management" },
+  { name: "Hedder.Financial_Consulting", Link: "financial-consulting" },
+  { name: "Hedder.Investment_Advisory", Link: "investment-advisory" },
 ];
 
 const quickLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact Us", href: "/contact-us" },
+  { name: "Hedder.home", href: "/" },
+  { name: "Hedder.About_Us", href: "/about-us" },
+  { name: "Hedder.Blog", href: "/blog" },
+  { name: "Hedder.Contact_Us", href: "/contact-us" },
 ];
 
 const SiteFooter: React.FC = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 border-t border-blue-200 dark:border-blue-900">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -34,16 +36,14 @@ const SiteFooter: React.FC = () => {
           </div>
 
           <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-            Expert solutions for tax planning, auditing, bookkeeping, payroll,
-            and financial consulting. Empowering your business with trusted
-            accounting services.
+            {t("Footer.Description")}
           </p>
         </div>
 
         {/* Quick Links */}
         <div>
           <h3 className="font-bold text-blue-900 dark:text-blue-200 mb-4 text-lg">
-            Quick Links
+            {t("Footer.Quick_Links")}
           </h3>
           <ul className="space-y-2">
             {quickLinks.map((link) => (
@@ -52,7 +52,7 @@ const SiteFooter: React.FC = () => {
                   href={link.href}
                   className="text-blue-800 dark:text-blue-200 hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition text-base"
                 >
-                  {link.name}
+                  {t(link.name)}
                 </a>
               </li>
             ))}
@@ -62,7 +62,7 @@ const SiteFooter: React.FC = () => {
         {/* Services */}
         <div>
           <h3 className="font-bold text-blue-900 dark:text-blue-200 mb-4 text-lg">
-            Our Services
+            {t("Footer.Our_Services")}
           </h3>
           <ul className="space-y-2">
             {services.map((srv) => (
@@ -71,7 +71,7 @@ const SiteFooter: React.FC = () => {
                   href={`/${srv.Link}`}
                   className="text-blue-800 dark:text-blue-200 hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition text-base"
                 >
-                  {srv.name}
+                  {t(srv.name)}
                 </a>
               </li>
             ))}
@@ -81,13 +81,11 @@ const SiteFooter: React.FC = () => {
         {/* Contact Us */}
         <div>
           <h3 className="font-bold text-blue-900 dark:text-blue-200 mb-4 text-lg">
-            Contact Us
+            {t("Footer.Contact_Us")}
           </h3>
           <ul className="space-y-2 text-base">
             <li className="text-gray-700 dark:text-gray-300">
-              123 Finance Ave, Suite 100
-              <br />
-              New York, NY 10001
+              {t("Footer.Address")}
             </li>
             <li>
               <a
@@ -109,7 +107,8 @@ const SiteFooter: React.FC = () => {
         </div>
       </div>
       <div className="text-center py-4 text-gray-500 dark:text-gray-400 text-sm border-t border-blue-100 dark:border-blue-900">
-        &copy; {new Date().getFullYear()} FinAccount. All rights reserved.
+        &copy; {new Date().getFullYear()} FinAccount.{" "}
+        {t("Footer.All_rights_reserved")}
       </div>
     </footer>
   );
