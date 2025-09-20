@@ -389,6 +389,7 @@
 
       "save_money": {
         "title": "Save Money",
+
         "desc": "Strategic tax planning helps you keep more of your earnings."
       },
       "avoid_surprises": {
@@ -740,6 +741,77 @@
     "CTA": {
       "title": "Ready for Expert Financial Consulting?",
       "description": "Let our experts help you plan, grow, and protect your finances. Contact us today and take control of your financial future.",
+      "cta": "Get Started"
+    }
+  },
+  "InvestmentAdvisory": {
+    "meta": {
+      "title": "Investment Advisory | FinAccount",
+      "description": "Professional investment advisory services for individuals and businesses."
+    },
+    "Hero": {
+      "title": "Investment Advisory",
+      "description": "Grow your wealth, manage risk, and diversify your portfolio with our expert investment advisory services tailored for you.",
+      "image_alt": "Investment Advisory"
+    },
+    "Overview": {
+      "title": "Why Investment Advisory Matters"
+    },
+    "Benefits": {
+      "grow_wealth": {
+        "title": "Grow Wealth",
+        "desc": "Maximize returns and build your financial future."
+      },
+      "manage_risk": {
+        "title": "Manage Risk",
+        "desc": "Protect your investments and minimize losses."
+      },
+      "diversify_portfolio": {
+        "title": "Diversify Portfolio",
+        "desc": "Spread investments across assets for stability and growth."
+      }
+    },
+    "Process": {
+      "title": "Our Investment Advisory Process",
+      "description": "Our proven process ensures you get the most out of your investment advisory experience. We guide you every step of the way, from discovery to implementation, so you can focus on growing your wealth.",
+      "discovery": {
+        "title": "Discovery",
+        "desc": "We learn about your investment goals and risk tolerance.",
+        "note": "We learn about your investment goals and risk tolerance."
+      },
+      "analysis": {
+        "title": "Analysis",
+        "desc": "We analyze your current portfolio and market opportunities.",
+        "note": "We analyze your current portfolio and market opportunities."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "desc": "We develop a personalized investment plan for you.",
+        "note": "We develop a personalized investment plan for you."
+      },
+      "implementation": {
+        "title": "Implementation",
+        "desc": "We help you execute your plan and monitor performance.",
+        "note": "We help you execute your plan and monitor performance."
+      }
+    },
+    "FAQs": {
+      "title": "Investment Advisory FAQs",
+      "description": "Find answers to common questions about investment advisory, planning, and our services.",
+      "q1": "What is investment advisory?",
+      "a1": "Investment advisory provides expert guidance to help you make informed decisions about your investments and financial future.",
+      "q2": "Why is investment advisory important?",
+      "a2": "It helps you grow your wealth, manage risks, and achieve your financial goals with confidence.",
+      "q3": "Who can benefit from investment advisory?",
+      "a3": "Individuals, families, and businesses of all sizes can benefit from professional investment advice.",
+      "q4": "When should I seek investment advice?",
+      "a4": "Anytime you want to invest, diversify, or plan for the future, advisory services are valuable.",
+      "q5": "Do you offer personalized investment strategies?",
+      "a5": "Yes, our experts tailor investment strategies to your unique financial situation and goals."
+    },
+    "CTA": {
+      "title": "Ready for Expert Investment Advice?",
+      "description": "Let our experts help you grow, protect, and diversify your investments. Contact us today and take control of your financial future.",
       "cta": "Get Started"
     }
   }
