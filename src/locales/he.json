@@ -1,1 +1,19 @@
-{}
+{
+  "Hedder": {
+    "home": "בית",
+    "About_Us": "עלינו",
+    "Services": "שירותים",
+    "All_Services": "כל השירותים",
+    "Tax_Planning": "תכנון מס",
+    "Audit_&_Assurance": "ביקורת וביטחון",
+    "Bookkeeping": "ניהול חשבונות",
+    "Payroll_Management": "ניהול שכר",
+    "Financial_Consulting": "ייעוץ פיננסי",
+    "Investment_Advisory": "ייעוץ השקעות",
+    "Blog": "בלוג",
+    "Contact_Us": "צור קשר",
+    "Profile": "פרופיל",
+    "My_Profile": "הפרופיל שלי",
+    "Logout": "התנתק"
+  }
+}

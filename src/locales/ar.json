@@ -1,1 +1,19 @@
-{}
+{
+  "Hedder": {
+    "home": "الصفحة الرئيسية",
+    "About_Us": "معلومات عنا",
+    "Services": "الخدمات",
+    "All_Services": "جميع الخدمات",
+    "Tax_Planning": "تخطيط الضرائب",
+    "Audit_&_Assurance": "التدقيق والتأكيد",
+    "Bookkeeping": "مسك الدفاتر",
+    "Payroll_Management": "إدارة الرواتب",
+    "Financial_Consulting": "الاستشارات المالية",
+    "Investment_Advisory": "الاستشارات الاستثمارية",
+    "Blog": "مدونة",
+    "Contact_Us": "اتصل بنا",
+    "Profile": "الملف الشخصي",
+    "My_Profile": "ملفي الشخصي",
+    "Logout": "تسجيل الخروج"
+  }
+}

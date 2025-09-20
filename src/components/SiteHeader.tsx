@@ -2,14 +2,16 @@ import React from "react";
 import { ModeToggle } from "./theme/ModeToggle";
 import Image from "next/image";
 import Link from "next/link";
+import i18n from "@/i18n";
+import { useTranslation } from "react-i18next";
 
 const services = [
-  { name: "Tax Planning", Link: "tax-planning" },
-  { name: "Audit & Assurance", Link: "audit-assurance" },
-  { name: "Bookkeeping", Link: "bookkeeping" },
-  { name: "Payroll Management", Link: "payroll-management" },
-  { name: "Financial Consulting", Link: "financial-consulting" },
-  { name: "Investment Advisory", Link: "investment-advisory" },
+  { name: "Hedder.Tax_Planning", Link: "tax-planning" },
+  { name: "Hedder.Audit_&_Assurance", Link: "audit-assurance" },
+  { name: "Hedder.Bookkeeping", Link: "bookkeeping" },
+  { name: "Hedder.Payroll_Management", Link: "payroll-management" },
+  { name: "Hedder.Financial_Consulting", Link: "financial-consulting" },
+  { name: "Hedder.Investment_Advisory", Link: "investment-advisory" },
 ];
 
 const SiteHeader: React.FC = () => {
@@ -18,7 +20,47 @@ const SiteHeader: React.FC = () => {
   const [profileOpen, setProfileOpen] = React.useState(false);
   const [langOpen, setLangOpen] = React.useState(false);
   const [selectedLang, setSelectedLang] = React.useState("en");
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("selectedLang");
+      if (savedLang) setSelectedLang(savedLang);
+      else {
+        const browserLang = navigator.language.slice(0, 2);
+        if (["en", "ar", "he"].includes(browserLang))
+          setSelectedLang(browserLang);
+      }
+      i18n.changeLanguage(selectedLang);
+    }
+  }, [selectedLang]);
+
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        !target.closest("#mobile-menu-toggle") &&
+        !target.closest("nav") &&
+        mobileMenuOpen
+      ) {
+        setMobileMenuOpen(false);
+      }
+      if (
+        !target.closest("button") &&
+        !target.closest("ul") &&
+        (homeOpen || servicesOpen || profileOpen || langOpen)
+      ) {
+        setHomeOpen(false);
+        setServicesOpen(false);
+        setProfileOpen(false);
+        setLangOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [mobileMenuOpen, homeOpen, servicesOpen, profileOpen, langOpen]);
 
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-b border-blue-200 dark:border-blue-900">
@@ -42,7 +84,7 @@ const SiteHeader: React.FC = () => {
               className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setHomeOpen((o) => !o)}
             >
-              Home <span className="ml-1">▼</span>
+              {t("Hedder.home")} <span className="ml-1">▼</span>
             </button>
             {homeOpen && (
               <ul className="absolute left-0 mt-2  dark:bg-blue-950 bg-white  rounded-lg w-36  border border-blue-100 dark:border-blue-900">
@@ -51,7 +93,7 @@ const SiteHeader: React.FC = () => {
                     href="/home1"
                     className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
-                    Home1
+                    {t("Hedder.home")}1
                   </Link>
                 </li>
                 <li>
@@ -59,7 +101,7 @@ const SiteHeader: React.FC = () => {
                     href="/home2"
                     className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
-                    Home2
+                    {t("Hedder.home")}2
                   </Link>
                 </li>
               </ul>
@@ -70,7 +112,7 @@ const SiteHeader: React.FC = () => {
               className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
               href="/about-us"
             >
-              About Us
+              {t("Hedder.About_Us")}
             </Link>
           </li>
           {/* Services Dropdown */}
@@ -79,7 +121,7 @@ const SiteHeader: React.FC = () => {
               className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setServicesOpen((o) => !o)}
             >
-              Services <span className="ml-1">▼</span>
+              {t("Hedder.Services")} <span className="ml-1">▼</span>
             </button>
             {servicesOpen && (
               <ul className="absolute bg-white left-0 mt-2  dark:bg-blue-950  rounded-lg w-56  border border-blue-100 dark:border-blue-900">
@@ -97,7 +139,7 @@ const SiteHeader: React.FC = () => {
                       href={`/${srv.Link}`}
                       className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                     >
-                      {srv.name}
+                      {t(srv.name)}
                     </Link>
                   </li>
                 ))}
@@ -109,7 +151,7 @@ const SiteHeader: React.FC = () => {
               className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
               href="/blog"
             >
-              Blog
+              {t("Hedder.Blog")}
             </Link>
           </li>
           <li>
@@ -117,7 +159,7 @@ const SiteHeader: React.FC = () => {
               className="px-3 py-2 text-base font-semibold text-blue-800 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
               href="/contact-us"
             >
-              Contact Us
+              {t("Hedder.Contact_Us")}
             </Link>
           </li>
         </ul>
@@ -141,6 +183,7 @@ const SiteHeader: React.FC = () => {
                     <button
                       onClick={() => {
                         setSelectedLang(lang);
+                        localStorage.setItem("selectedLang", lang);
                         setLangOpen(false);
                       }}
                       className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
@@ -161,7 +204,6 @@ const SiteHeader: React.FC = () => {
                 profileOpen ? "ring-2 ring-blue-400 dark:ring-blue-600" : ""
               }`}
             >
-              <span>Profile</span>
               <img
                 src="/window.svg"
                 alt="Profile"
@@ -176,12 +218,12 @@ const SiteHeader: React.FC = () => {
                     href="/profile"
                     className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
-                    My Profile
+                    {t("Hedder.My_Profile")}
                   </Link>
                 </li>
                 <li>
                   <button className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded">
-                    Logout
+                    {t("Hedder.Logout")}
                   </button>
                 </li>
               </ul>
@@ -244,7 +286,7 @@ const SiteHeader: React.FC = () => {
               className="w-full text-left px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setHomeOpen((open) => !open)}
             >
-              Home <span className="ml-1">▼</span>
+              {t("Hedder.home")} <span className="ml-1">▼</span>
             </button>
             {homeOpen && (
               <ul className="ml-4 mt-1  dark:bg-blue-950  rounded-lg border bg-white border-blue-100 dark:border-blue-900">
@@ -272,7 +314,7 @@ const SiteHeader: React.FC = () => {
               className="w-full block px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
               href="/about-us"
             >
-              About Us
+              {t("About Us")}
             </Link>
           </li>
           <li>
@@ -280,7 +322,7 @@ const SiteHeader: React.FC = () => {
               className="w-full text-left px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setServicesOpen((open) => !open)}
             >
-              Services <span className="ml-1">▼</span>
+              {t("Services")} <span className="ml-1">▼</span>
             </button>
             {servicesOpen && (
               <ul className="ml-4 mt-1  dark:bg-blue-950  rounded-lg border border-blue-100 dark:border-blue-900">
@@ -298,7 +340,7 @@ const SiteHeader: React.FC = () => {
                       href={`/${srv.Link}`}
                       className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                     >
-                      {srv.name}
+                      {t(srv.name)}
                     </Link>
                   </li>
                 ))}
@@ -310,7 +352,7 @@ const SiteHeader: React.FC = () => {
               className="w-full block px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
               href="/blog"
             >
-              Blog
+              {t("Hedder.Blog")}
             </Link>
           </li>
           <li>
@@ -318,7 +360,7 @@ const SiteHeader: React.FC = () => {
               className="w-full block px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition"
               href="/contact-us"
             >
-              Contact Us
+              {t("Hedder.Contact_Us")}
             </Link>
           </li>
           <li>
@@ -338,6 +380,7 @@ const SiteHeader: React.FC = () => {
                         <button
                           onClick={() => {
                             setSelectedLang(lang);
+                            localStorage.setItem("selectedLang", lang);
                             setLangOpen(false);
                           }}
                           className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200"
@@ -371,12 +414,12 @@ const SiteHeader: React.FC = () => {
                         href="/profile"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
                       >
-                        My Profile
+                        {t("Hedder.My_Profile")}
                       </Link>
                     </li>
                     <li>
                       <button className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200">
-                        Logout
+                        {t("Hedder.Logout")}
                       </button>
                     </li>
                   </ul>

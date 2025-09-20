@@ -1,1 +1,19 @@
-{}
+{
+  "Hedder": {
+    "home": "Home",
+    "About_Us": "About Us",
+    "Services": "Services",
+    "All_Services": "All Services",
+    "Tax_Planning": "Tax Planning",
+    "Audit_&_Assurance": "Audit & Assurance",
+    "Bookkeeping": "Bookkeeping",
+    "Payroll_Management": "Payroll Management",
+    "Financial_Consulting": "Financial Consulting",
+    "Investment_Advisory": "Investment Advisory",
+    "Blog": "Blog",
+    "Contact_Us": "Contact Us",
+    "Profile": "Profile",
+    "My_Profile": "My Profile",
+    "Logout": "Logout"
+  }
+}
