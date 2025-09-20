@@ -36,6 +36,9 @@ const SiteHeader: React.FC = () => {
             (userObj.last ? userObj.last.charAt(0) : "D")
           ).toUpperCase(),
         );
+      } else {
+        setUser({ first: "", last: "", email: "" });
+        setIntials("AD");
       }
     }
   }, []);
@@ -43,8 +46,14 @@ const SiteHeader: React.FC = () => {
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       const savedLang = localStorage.getItem("selectedLang");
-      if (savedLang) setSelectedLang(savedLang);
-      else {
+      if (savedLang) {
+        setSelectedLang(savedLang);
+        if (savedLang === "ar" || savedLang === "he") {
+          document.documentElement.dir = "rtl";
+        } else {
+          document.documentElement.dir = "ltr";
+        }
+      } else {
         const browserLang = navigator.language.slice(0, 2);
         if (["en", "ar", "he"].includes(browserLang))
           setSelectedLang(browserLang);
