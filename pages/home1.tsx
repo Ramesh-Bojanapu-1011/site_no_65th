@@ -4,32 +4,30 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import SiteFooter from "../src/components/SiteFooter";
 import SiteHeader from "../src/components/SiteHeader";
 
 const Home1: React.FC = () => {
+  const { t } = useTranslation();
   React.useEffect(() => {
     aos.init({ duration: 1000 });
   }, []);
   return (
     <>
       <Head>
-        <title>FinAccount - Finance & Accounting Services</title>
-        <meta
-          name="description"
-          content="Expert financial solutions and accounting services for your business."
-        />
+        <title>{t("Home1.title")}</title>
+        <meta name="description" content={t("Home1.meta_description")} />
       </Head>
 
       <SiteHeader />
       <main className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 caret-transparent dark:via-gray-900 dark:to-blue-900 min-h-screen">
         <section className="flex min-h-screen flex-col items-center justify-center py-20 px-4 text-center bg-gradient-to-r from-blue-600 to-blue-400 text-white dark:from-blue-900 dark:to-blue-700">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-            Finance &amp; Accounting Services
+            {t("Home1.hero_title")}
           </h1>
           <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto">
-            Empowering your business with expert financial solutions, accounting
-            accuracy, and strategic insights for growth.
+            {t("Home1.hero_description")}
           </p>
         </section>
 
@@ -42,7 +40,7 @@ const Home1: React.FC = () => {
                 <div className="    rounded-lg shadow-lg overflow-hidden">
                   <Image
                     src="https://i.pinimg.com/736x/03/38/39/033839f45eb8e70c0c5664547ca1c2ae.jpg"
-                    alt="Business Steps"
+                    alt={t("Home1.about_image1_alt")}
                     width={300}
                     height={300}
                     className="object-cover"
@@ -51,14 +49,14 @@ const Home1: React.FC = () => {
                 <div className="rounded-lg flex flex-col gap-2 shadow-lg   ">
                   <Image
                     src="https://i.pinimg.com/736x/2e/6d/82/2e6d82123a4ef5422984ea07fa6ad0cd.jpg"
-                    alt="Analytics"
+                    alt={t("Home1.about_image2_alt")}
                     width={200}
                     height={120}
                     className="object-cover rounded-lg w-full h-1/2"
                   />
                   <Image
                     src="https://i.pinimg.com/736x/18/d3/7f/18d37fc251919ef267541fd5d406c821.jpg"
-                    alt="Video"
+                    alt={t("Home1.about_image3_alt")}
                     width={200}
                     height={120}
                     className="object-cover rounded-lg w-full h-1/2"
@@ -68,26 +66,21 @@ const Home1: React.FC = () => {
             </div>
             <div className="md:w-1/2 max-w-screen flex flex-col justify-center items-start mt-10 md:mt-0 md:pl-16">
               <span className="text-blue-600 dark:text-blue-300 font-bold text-xl mb-2">
-                About Us
+                {t("Hedder.About_Us")}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-6 leading-tight">
-                Expert Finance &amp; Accounting Solutions
+                {t("Home1.about_title")}
                 <br />
-                For Your Business Growth
+                {t("Home1.about_subtitle")}
               </h2>
               <p className="text-blue-800 dark:text-blue-200 mb-8 max-w-lg">
-                We specialize in providing comprehensive financial management,
-                accounting, and tax services tailored for businesses of all
-                sizes. Our team of certified professionals ensures accuracy,
-                compliance, and strategic insights to help you make informed
-                decisions and achieve sustainable growth. Partner with us for
-                transparent, reliable, and secure financial solutions.
+                {t("Home1.about_description")}
               </p>
               <Link
                 href="/about-us"
                 className="px-8 py-3 rounded-lg bg-blue-600 dark:bg-blue-700 text-white font-bold shadow-lg hover:bg-blue-700 dark:hover:bg-blue-800 transition"
               >
-                About Us
+                {t("Hedder.About_Us")}
               </Link>
             </div>
           </div>
@@ -97,22 +90,16 @@ const Home1: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto gap-16">
             <div className="max-w-xl w-full mb-10 md:mb-0">
               <span className="text-[#193cb8] font-bold tracking-widest text-sm mb-4 block">
-                WHAT WE DO
+                {t("Home1.what_we_do_badge")}
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-blue-100 mb-6">
-                Comprehensive Finance &amp; Accounting Solutions
+                {t("Home1.what_we_do_title")}
               </h1>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                We deliver tailored financial and accounting services to help
-                businesses thrive. From daily bookkeeping to advanced financial
-                reporting, our experts ensure your numbers are accurate and your
-                strategy is sound.
+                {t("Home1.what_we_do_description1")}
               </p>
               <p className="text-gray-700 dark:text-gray-300 mb-8">
-                Our commitment to excellence means you get transparent advice,
-                reliable support, and innovative solutions for tax, compliance,
-                and financial management. Let us handle the details so you can
-                focus on growth.
+                {t("Home1.what_we_do_description2")}
               </p>
               <div className="flex items-center gap-4 mb-8">
                 <svg
@@ -129,11 +116,10 @@ const Home1: React.FC = () => {
                 </svg>
                 <div>
                   <span className="font-bold text-lg text-gray-900 dark:text-blue-100">
-                    Best Service Awards
+                    {t("Home1.best_service_awards_title")}
                   </span>
                   <p className="text-gray-700 dark:text-gray-300 text-sm">
-                    Recognized for outstanding client service and trusted
-                    financial expertise in the industry.
+                    {t("Home1.best_service_awards_description")}
                   </p>
                 </div>
               </div>
@@ -141,15 +127,14 @@ const Home1: React.FC = () => {
                 href="/services"
                 className="inline-block px-8 py-4 rounded-full bg-blue-900 text-white font-bold shadow-lg hover:bg-blue-700 transition text-lg"
               >
-                See All Services →
+                {t("Hedder.All_Services")} →
               </Link>
             </div>
             <div className="flex flex-col gap-8 w-full max-w-xl">
               {[
                 {
-                  title: "Bookkeeping",
-                  description:
-                    "Maintain accurate records and streamline your day-to-day financial operations with our expert bookkeeping services.",
+                  title: t("Hedder.Bookkeeping"),
+                  description: t("Home1.bookkeeping_description"),
                   link: "/bookkeeping",
                   icon: (
                     <svg
@@ -187,9 +172,8 @@ const Home1: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Financial Statements",
-                  description:
-                    "Get clear, compliant, and timely financial statements to support decision-making and regulatory needs.",
+                  title: t("Home1.financial_statements_title"),
+                  description: t("Home1.financial_statements_description"),
                   link: "/financial-statements",
                   icon: (
                     <svg
@@ -228,9 +212,8 @@ const Home1: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Financial Management",
-                  description:
-                    "Optimize your business growth and profitability with strategic financial planning and management solutions.",
+                  title: t("Home1.financial_management_title"),
+                  description: t("Home1.financial_management_description"),
                   link: "/financial-management",
                   icon: (
                     <svg
@@ -275,7 +258,7 @@ const Home1: React.FC = () => {
                       href={service.link}
                       className="text-blue-900 dark:text-blue-300 font-semibold text-sm hover:underline"
                     >
-                      Learn More→
+                      {t("Home1.learn_more")}→
                     </Link>
                   </div>
                 </div>
@@ -288,22 +271,20 @@ const Home1: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col items-center mb-16">
               <span className="bg-gradient-to-r from-[#21c2ad] to-[#155dfc] dark:from-[#155dfc] dark:to-[#21c2ad] text-white font-bold px-8 py-3 rounded-full mb-6 text-base tracking-widest shadow-lg">
-                WHY CHOOSE US
+                {t("Home1.why_choose_us_badge")}
               </span>
               <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 dark:text-blue-100 text-center mb-4 drop-shadow-lg">
-                Your Trusted Finance & Accounting Partner
+                {t("Home1.why_choose_us_title")}
               </h2>
               <p className="text-blue-800 dark:text-blue-200 text-center max-w-2xl mb-10 text-lg">
-                Discover the key reasons businesses rely on us for their
-                financial success and peace of mind.
+                {t("Home1.why_choose_us_description")}
               </p>
             </div>
             <div className="flex flex-col md:flex-wrap md:flex-row gap-10 justify-center items-center">
               {[
                 {
-                  title: "Certified Experts",
-                  description:
-                    "Our team consists of certified accountants and financial specialists with years of industry experience.",
+                  title: t("Home1.certified_experts_title"),
+                  description: t("Home1.certified_experts_description"),
                   icon: (
                     <span className="bg-[#21c2ad] dark:bg-[#155dfc] rounded-full p-4 mb-6 flex items-center justify-center shadow-lg">
                       <svg
@@ -332,9 +313,8 @@ const Home1: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Personalized Solutions",
-                  description:
-                    "We tailor our services to meet your unique business needs, ensuring optimal results and satisfaction.",
+                  title: t("Home1.personalized_solutions_title"),
+                  description: t("Home1.personalized_solutions_description"),
                   icon: (
                     <span className="bg-[#155dfc] dark:bg-[#21c2ad] rounded-full p-4 mb-6 flex items-center justify-center shadow-lg">
                       <svg
@@ -364,9 +344,8 @@ const Home1: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Transparent & Secure",
-                  description:
-                    "We prioritize transparency, confidentiality, and data security in every financial transaction and report.",
+                  title: t("Home1.transparent_secure_title"),
+                  description: t("Home1.transparent_secure_description"),
                   icon: (
                     <span className="bg-gradient-to-r from-[#21c2ad] to-[#155dfc] dark:from-[#155dfc] dark:to-[#21c2ad] rounded-full p-4 mb-6 flex items-center justify-center shadow-lg">
                       <svg
@@ -428,7 +407,7 @@ const Home1: React.FC = () => {
               <div className="relative w-full md:w-1/2 flex-shrink-0 flex justify-center items-center">
                 <Image
                   src="https://i.pinimg.com/736x/f7/8f/01/f78f01d3c134c2de5fc97a28a3538595.jpg"
-                  alt="Business Professional"
+                  alt={t("Home1.process_image_alt")}
                   width={480}
                   height={400}
                   className="rounded-2xl object-cover shadow-xl"
@@ -437,18 +416,15 @@ const Home1: React.FC = () => {
               {/* Right: Text Content and Features */}
               <div className="w-full md:w-1/2 flex flex-col justify-center items-start">
                 <span className="text-[#193cb8] font-bold tracking-widest text-sm mb-2">
-                  ABOUT FINACCOUNT
+                  {t("Home1.about_finaccount_badge")}
                 </span>
                 <h2 className="text-4xl md:text-5xl font-bold text-blue-900 dark:text-blue-100 mb-4 leading-tight">
-                  Largest Demand Partnership
+                  {t("Home1.largest_demand_title")}
                   <br />
-                  Building Financial Experts
+                  {t("Home1.building_experts_subtitle")}
                 </h2>
                 <p className="text-gray-700 dark:text-blue-200 mb-6 max-w-xl">
-                  FinAccount is a trusted name for providing financial
-                  assistance. Our main objective is to ensure the service we
-                  provide is loyal to the industry, experienced, and
-                  professional.
+                  {t("Home1.finaccount_description")}
                 </p>
                 <div className="flex flex-col gap-8 mt-4">
                   <div className="flex items-start gap-4">
@@ -479,11 +455,10 @@ const Home1: React.FC = () => {
                     </span>
                     <div>
                       <h3 className="font-bold text-lg text-blue-900 dark:text-blue-100 mb-1">
-                        Support On Raising Funds
+                        {t("Home1.support_raising_funds_title")}
                       </h3>
                       <p className="text-gray-700 dark:text-blue-200 text-base">
-                        Our financial experts help you find the best way to
-                        raise your funds and grow your business.
+                        {t("Home1.support_raising_funds_description")}
                       </p>
                     </div>
                   </div>
@@ -521,11 +496,10 @@ const Home1: React.FC = () => {
                     </span>
                     <div>
                       <h3 className="font-bold text-lg text-blue-900 dark:text-blue-100 mb-1">
-                        Outsourced Consulting Business
+                        {t("Home1.outsourced_consulting_title")}
                       </h3>
                       <p className="text-gray-700 dark:text-blue-200 text-base">
-                        FinAccount provides expert assistance to help you hire
-                        consultants for service and business growth.
+                        {t("Home1.outsourced_consulting_description")}
                       </p>
                     </div>
                   </div>
@@ -539,17 +513,17 @@ const Home1: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex flex-col items-center mb-12">
               <span className="bg-[#155dfc] dark:bg-[#8ec5ff] dark:text-black text-white font-bold px-6 py-2 rounded-full mb-4 text-sm tracking-widest">
-                TEAM MEMBER
+                {t("Home1.team_member_badge")}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-blue-100 text-center mb-4">
-                Meet Our Expert Team Members
+                {t("Home1.meet_team_title")}
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
               {[
                 {
-                  name: "Priya Sharma",
-                  role: "Chief Financial Officer",
+                  name: t("Home1.team_priya_name"),
+                  role: t("Home1.team_priya_role"),
                   img: "https://i.pinimg.com/736x/e5/9c/14/e59c1493e407456088bd456159d97ee7.jpg",
                   socials: [
                     { icon: "f", url: "#" },
@@ -558,8 +532,8 @@ const Home1: React.FC = () => {
                   ],
                 },
                 {
-                  name: "David Lee",
-                  role: "Tax & Compliance Specialist",
+                  name: t("Home1.team_david_name"),
+                  role: t("Home1.team_david_role"),
                   img: "https://i.pinimg.com/736x/34/da/e2/34dae2b1c9a2c38bfdc18bbb5a414149.jpg",
                   socials: [
                     { icon: "f", url: "#" },
@@ -568,8 +542,8 @@ const Home1: React.FC = () => {
                   ],
                 },
                 {
-                  name: "Maria Gomez",
-                  role: "Senior Accountant",
+                  name: t("Home1.team_maria_name"),
+                  role: t("Home1.team_maria_role"),
                   img: "https://i.pinimg.com/736x/56/85/49/56854952ea1912a7a35a6fd36c45e024.jpg",
                   socials: [
                     { icon: "f", url: "#" },
@@ -578,8 +552,8 @@ const Home1: React.FC = () => {
                   ],
                 },
                 {
-                  name: "James O'Connor",
-                  role: "Audit & Assurance Lead",
+                  name: t("Home1.team_james_name"),
+                  role: t("Home1.team_james_role"),
                   img: "https://i.pinimg.com/736x/df/0a/20/df0a2049a88366c1e84ee71e565143cb.jpg",
                   socials: [
                     { icon: "f", url: "#" },
