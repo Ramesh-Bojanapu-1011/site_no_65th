@@ -32,11 +32,11 @@ const SiteHeader: React.FC = () => {
         setUser(userObj);
         setIntials(
           (
-            (userObj.first ? userObj.first.charAt(0) : "") +
-            (userObj.last ? userObj.last.charAt(0) : "")
+            (userObj.first ? userObj.first.charAt(0) : "A") +
+            (userObj.last ? userObj.last.charAt(0) : "D")
           ).toUpperCase(),
         );
-      } else setIntials("AD");
+      }
     }
   }, []);
 
@@ -81,7 +81,7 @@ const SiteHeader: React.FC = () => {
   }, [mobileMenuOpen, homeOpen, servicesOpen, profileOpen, langOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-b border-blue-200 dark:border-blue-900">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-b border-blue-200 dark:border-blue-900 text-nowrap">
       <nav className="flex items-center justify-between px-6 py-3">
         {/* Logo */}
         <Link href={"/home1"} className="flex">
@@ -226,7 +226,7 @@ const SiteHeader: React.FC = () => {
               <span>▼</span>
             </button>
             {profileOpen && (
-              <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg w-36  border border-blue-100 dark:border-blue-900">
+              <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg    border border-blue-100 dark:border-blue-900">
                 {user.email == "admin@enkonix.in" && (
                   <li>
                     <Link
