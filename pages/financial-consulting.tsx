@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,36 +8,31 @@ import SiteFooter from "@/components/SiteFooter";
 
 const faqs = [
   {
-    question: "What is financial consulting?",
-    answer:
-      "Financial consulting provides expert advice to help you manage, grow, and protect your wealth or business finances.",
+    questionKey: "FinancialConsulting.FAQs.q1",
+    answerKey: "FinancialConsulting.FAQs.a1",
   },
   {
-    question: "Why is financial consulting important?",
-    answer:
-      "It helps you make informed decisions, optimize resources, and achieve your financial goals with confidence.",
+    questionKey: "FinancialConsulting.FAQs.q2",
+    answerKey: "FinancialConsulting.FAQs.a2",
   },
   {
-    question: "Who can benefit from financial consulting?",
-    answer:
-      "Individuals, families, and businesses of all sizes can benefit from professional financial consulting.",
+    questionKey: "FinancialConsulting.FAQs.q3",
+    answerKey: "FinancialConsulting.FAQs.a3",
   },
   {
-    question: "When should I seek financial consulting?",
-    answer:
-      "Anytime you face major financial decisions, changes, or want to plan for the future, consulting is valuable.",
+    questionKey: "FinancialConsulting.FAQs.q4",
+    answerKey: "FinancialConsulting.FAQs.a4",
   },
   {
-    question: "Do you offer personalized financial consulting?",
-    answer:
-      "Yes, our experts tailor strategies to your unique financial situation and goals.",
+    questionKey: "FinancialConsulting.FAQs.q5",
+    answerKey: "FinancialConsulting.FAQs.a5",
   },
 ];
 
 const benefits = [
   {
-    title: "Expert Guidance",
-    desc: "Get professional advice for complex financial decisions.",
+    titleKey: "FinancialConsulting.Benefits.expert_guidance.title",
+    descKey: "FinancialConsulting.Benefits.expert_guidance.desc",
     icon: (
       <svg
         className="w-10 h-10 text-[#21c2ad]"
@@ -51,8 +47,8 @@ const benefits = [
     ),
   },
   {
-    title: "Strategic Planning",
-    desc: "Develop a roadmap to achieve your financial goals.",
+    titleKey: "FinancialConsulting.Benefits.strategic_planning.title",
+    descKey: "FinancialConsulting.Benefits.strategic_planning.desc",
     icon: (
       <svg
         className="w-10 h-10 text-[#155dfc]"
@@ -67,8 +63,8 @@ const benefits = [
     ),
   },
   {
-    title: "Risk Management",
-    desc: "Protect your assets and minimize financial risks.",
+    titleKey: "FinancialConsulting.Benefits.risk_management.title",
+    descKey: "FinancialConsulting.Benefits.risk_management.desc",
     icon: (
       <svg
         className="w-10 h-10 text-[#21c2ad]"
@@ -85,8 +81,9 @@ const benefits = [
 
 const processSteps = [
   {
-    title: "Discovery",
-    desc: "We learn about your financial situation and goals.",
+    titleKey: "FinancialConsulting.Process.discovery.title",
+    descKey: "FinancialConsulting.Process.discovery.desc",
+    noteKey: "FinancialConsulting.Process.discovery.note",
     icon: (
       <svg
         className="w-8 h-8 text-[#21c2ad]"
@@ -101,8 +98,9 @@ const processSteps = [
     ),
   },
   {
-    title: "Analysis",
-    desc: "We analyze your finances and identify opportunities.",
+    titleKey: "FinancialConsulting.Process.analysis.title",
+    descKey: "FinancialConsulting.Process.analysis.desc",
+    noteKey: "FinancialConsulting.Process.analysis.note",
     icon: (
       <svg
         className="w-8 h-8 text-[#155dfc]"
@@ -117,8 +115,9 @@ const processSteps = [
     ),
   },
   {
-    title: "Strategy",
-    desc: "We develop a personalized financial plan for you.",
+    titleKey: "FinancialConsulting.Process.strategy.title",
+    descKey: "FinancialConsulting.Process.strategy.desc",
+    noteKey: "FinancialConsulting.Process.strategy.note",
     icon: (
       <svg
         className="w-8 h-8 text-[#21c2ad]"
@@ -132,8 +131,9 @@ const processSteps = [
     ),
   },
   {
-    title: "Implementation",
-    desc: "We help you put your plan into action and monitor progress.",
+    titleKey: "FinancialConsulting.Process.implementation.title",
+    descKey: "FinancialConsulting.Process.implementation.desc",
+    noteKey: "FinancialConsulting.Process.implementation.note",
     icon: (
       <svg
         className="w-8 h-8 text-[#155dfc]"
@@ -150,13 +150,14 @@ const processSteps = [
 ];
 
 const FinancialConsultingPage = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Financial Consulting | FinAccount</title>
+        <title>{t("FinancialConsulting.meta.title")}</title>
         <meta
           name="description"
-          content="Professional financial consulting services for individuals and businesses."
+          content={t("FinancialConsulting.meta.description")}
         />
       </Head>
       <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen caret-transparent">
@@ -165,18 +166,16 @@ const FinancialConsultingPage = () => {
         <section className="flex flex-col md:flex-row items-center justify-between px-8 py-24 gap-12 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100 min-h-screen">
           <div className="flex-1 flex flex-col justify-center items-start">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-              Financial Consulting
+              {t("FinancialConsulting.Hero.title")}
             </h1>
             <p className="text-lg md:text-2xl mb-8 max-w-xl">
-              Make informed decisions, plan strategically, and protect your
-              assets with our expert financial consulting services tailored for
-              you.
+              {t("FinancialConsulting.Hero.description")}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
               src="https://i.pinimg.com/736x/4a/1a/36/4a1a3673a64269926efccc0e1b863fe5.jpg"
-              alt="Financial Consulting"
+              alt={t("FinancialConsulting.Hero.image_alt")}
               width={500}
               height={450}
               className="rounded-2xl shadow-2xl object-cover bg-blue-100 dark:bg-blue-900"
@@ -188,74 +187,30 @@ const FinancialConsultingPage = () => {
         <section className="py-20 px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#155dfc] dark:text-blue-100 mb-10 text-center">
-              Why Financial Consulting Matters
+              {t("FinancialConsulting.Overview.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-              {[
-                {
-                  title: "Expert Guidance",
-                  desc: "Get professional advice for complex financial decisions.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-[#21c2ad]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M12 8v8m0 0l-3-3m3 3l3-3" />
-                    </svg>
-                  ),
-                  bg: "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
-                },
-                {
-                  title: "Strategic Planning",
-                  desc: "Develop a roadmap to achieve your financial goals.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-[#155dfc]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <path d="M9 9h6v6H9z" />
-                    </svg>
-                  ),
-                  bg: "from-blue-100 via-white to-[#155dfc] dark:from-blue-950 dark:via-blue-900 dark:to-[#21c2ad]",
-                },
-                {
-                  title: "Risk Management",
-                  desc: "Protect your assets and minimize financial risks.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-[#21c2ad]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l2 7h7l-5.5 4.5L17 21l-5-3.5L7 21l1.5-7.5L3 9h7z" />
-                    </svg>
-                  ),
-                  bg: "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
-                },
-              ].map((step, idx) => (
-                <div
-                  key={step.title}
-                  className={`flex-1 flex flex-col items-center bg-gradient-to-br ${step.bg} rounded-xl shadow-lg p-8`}
-                >
-                  <span className="mb-4">{step.icon}</span>
-                  <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-700 dark:text-blue-200 text-base">
-                    {step.desc}
-                  </p>
-                </div>
-              ))}
+              {benefits.map((card, idx) => {
+                const bg = [
+                  "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
+                  "from-blue-100 via-white to-[#155dfc] dark:from-blue-950 dark:via-blue-900 dark:to-[#21c2ad]",
+                  "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
+                ];
+                return (
+                  <div
+                    key={idx}
+                    className={`flex-1 flex flex-col items-center bg-gradient-to-br ${bg[idx]} rounded-xl shadow-lg p-8`}
+                  >
+                    <span className="mb-4">{card.icon}</span>
+                    <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
+                      {t(card.titleKey)}
+                    </h3>
+                    <p className="text-gray-700 dark:text-blue-200 text-base">
+                      {t(card.descKey)}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -280,10 +235,10 @@ const FinancialConsultingPage = () => {
                     </div>
                     <div className="bg-white dark:bg-blue-950 rounded-xl shadow-lg p-8 flex-1">
                       <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                        {card.title}
+                        {t(card.titleKey)}
                       </h3>
                       <p className="text-gray-700 dark:text-blue-200 text-base">
-                        {card.desc}
+                        {t(card.descKey)}
                       </p>
                     </div>
                   </li>
@@ -297,13 +252,10 @@ const FinancialConsultingPage = () => {
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#155dfc] dark:text-blue-100 mb-10 text-center">
-              Our Financial Consulting Process
+              {t("FinancialConsulting.Process.title")}
             </h2>
             <p className="text-lg text-gray-700 dark:text-blue-200 mb-12 text-center max-w-3xl mx-auto">
-              Our proven process ensures you get the most out of your financial
-              consulting experience. We guide you every step of the way, from
-              discovery to implementation, so you can focus on your financial
-              success.
+              {t("FinancialConsulting.Process.description")}
             </p>
             <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
               {processSteps.map((step, idx) => (
@@ -316,20 +268,13 @@ const FinancialConsultingPage = () => {
                   </span>
                   <span className="mb-4 mt-8">{step.icon}</span>
                   <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                    {step.title}
+                    {t(step.titleKey)}
                   </h3>
                   <p className="text-gray-700 dark:text-blue-200 text-base mb-2">
-                    {step.desc}
+                    {t(step.descKey)}
                   </p>
                   <div className="text-sm text-gray-500 dark:text-blue-300 mt-2">
-                    {idx === 0 &&
-                      "We learn about your financial situation and goals."}
-                    {idx === 1 &&
-                      "We analyze your finances and identify opportunities."}
-                    {idx === 2 &&
-                      "We develop a personalized financial plan for you."}
-                    {idx === 3 &&
-                      "We help you put your plan into action and monitor progress."}
+                    {t(step.noteKey)}
                   </div>
                 </div>
               ))}
@@ -342,11 +287,10 @@ const FinancialConsultingPage = () => {
           <div className="max-w-4xl mx-auto px-4">
             <div className="flex flex-col items-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-blue-100 text-center mb-4">
-                Financial Consulting FAQs
+                {t("FinancialConsulting.FAQs.title")}
               </h2>
               <p className="text-gray-700 dark:text-gray-300 text-center max-w-2xl mb-8">
-                Find answers to common questions about financial consulting,
-                planning, and our services.
+                {t("FinancialConsulting.FAQs.description")}
               </p>
             </div>
             <div className="space-y-6">
@@ -370,7 +314,7 @@ const FinancialConsultingPage = () => {
                       aria-controls={`faq-panel-${idx}`}
                     >
                       <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
-                        {faq.question}
+                        {t(faq.questionKey)}
                       </span>
                       <span className="ml-auto">
                         <svg
@@ -397,7 +341,7 @@ const FinancialConsultingPage = () => {
                     >
                       {openIdx === idx && (
                         <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
-                          {faq.answer}
+                          {t(faq.answerKey)}
                         </div>
                       )}
                     </div>
@@ -412,17 +356,16 @@ const FinancialConsultingPage = () => {
         <section className="py-20 px-8 relative overflow-hidden">
           <div className="max-w-3xl py-20 px-8 mx-auto flex flex-col items-center text-center relative z-10 rounded-2xl shadow-xl bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 border-transparent before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg text-[#155dfc] dark:text-[#21c2ad]">
-              Ready for Expert Financial Consulting?
+              {t("FinancialConsulting.CTA.title")}
             </h2>
             <p className="text-lg md:text-xl mb-8 max-w-xl text-blue-900 dark:text-blue-100">
-              Let our experts help you plan, grow, and protect your finances.
-              Contact us today and take control of your financial future.
+              {t("FinancialConsulting.CTA.description")}
             </p>
             <Link
               href="/contact-us"
               className="px-10 py-5 rounded-full bg-gradient-to-r from-[#21c2ad] to-[#155dfc] text-white font-bold shadow-lg hover:scale-105 hover:bg-blue-100 transition text-xl"
             >
-              Get Started
+              {t("FinancialConsulting.CTA.cta")}
             </Link>
           </div>
         </section>

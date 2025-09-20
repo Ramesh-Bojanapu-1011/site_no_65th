@@ -386,6 +386,7 @@
     },
     "Overview": {
       "title": "Why Tax Planning Matters",
+
       "save_money": {
         "title": "Save Money",
         "desc": "Strategic tax planning helps you keep more of your earnings."
@@ -668,6 +669,77 @@
     "CTA": {
       "title": "Ready for Hassle-Free Payroll?",
       "description": "Let our experts help you manage payroll with accuracy and compliance. Contact us today and focus on growing your business and your team.",
+      "cta": "Get Started"
+    }
+  },
+  "FinancialConsulting": {
+    "meta": {
+      "title": "Financial Consulting | FinAccount",
+      "description": "Professional financial consulting services for individuals and businesses."
+    },
+    "Hero": {
+      "title": "Financial Consulting",
+      "description": "Make informed decisions, plan strategically, and protect your assets with our expert financial consulting services tailored for you.",
+      "image_alt": "Financial Consulting"
+    },
+    "Overview": {
+      "title": "Why Financial Consulting Matters"
+    },
+    "Benefits": {
+      "expert_guidance": {
+        "title": "Expert Guidance",
+        "desc": "Get professional advice for complex financial decisions."
+      },
+      "strategic_planning": {
+        "title": "Strategic Planning",
+        "desc": "Develop a roadmap to achieve your financial goals."
+      },
+      "risk_management": {
+        "title": "Risk Management",
+        "desc": "Protect your assets and minimize financial risks."
+      }
+    },
+    "Process": {
+      "title": "Our Financial Consulting Process",
+      "description": "Our proven process ensures you get the most out of your financial consulting experience. We guide you every step of the way, from discovery to implementation, so you can focus on your financial success.",
+      "discovery": {
+        "title": "Discovery",
+        "desc": "We learn about your financial situation and goals.",
+        "note": "We learn about your financial situation and goals."
+      },
+      "analysis": {
+        "title": "Analysis",
+        "desc": "We analyze your finances and identify opportunities.",
+        "note": "We analyze your finances and identify opportunities."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "desc": "We develop a personalized financial plan for you.",
+        "note": "We develop a personalized financial plan for you."
+      },
+      "implementation": {
+        "title": "Implementation",
+        "desc": "We help you put your plan into action and monitor progress.",
+        "note": "We help you put your plan into action and monitor progress."
+      }
+    },
+    "FAQs": {
+      "title": "Financial Consulting FAQs",
+      "description": "Find answers to common questions about financial consulting, planning, and our services.",
+      "q1": "What is financial consulting?",
+      "a1": "Financial consulting provides expert advice to help you manage, grow, and protect your wealth or business finances.",
+      "q2": "Why is financial consulting important?",
+      "a2": "It helps you make informed decisions, optimize resources, and achieve your financial goals with confidence.",
+      "q3": "Who can benefit from financial consulting?",
+      "a3": "Individuals, families, and businesses of all sizes can benefit from professional financial consulting.",
+      "q4": "When should I seek financial consulting?",
+      "a4": "Anytime you face major financial decisions, changes, or want to plan for the future, consulting is valuable.",
+      "q5": "Do you offer personalized financial consulting?",
+      "a5": "Yes, our experts tailor strategies to your unique financial situation and goals."
+    },
+    "CTA": {
+      "title": "Ready for Expert Financial Consulting?",
+      "description": "Let our experts help you plan, grow, and protect your finances. Contact us today and take control of your financial future.",
       "cta": "Get Started"
     }
   }
