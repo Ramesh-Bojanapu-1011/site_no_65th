@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,36 +8,31 @@ import SiteFooter from "@/components/SiteFooter";
 
 const faqs = [
   {
-    question: "What is bookkeeping?",
-    answer:
-      "Bookkeeping is the systematic recording and organizing of financial transactions for your business.",
+    questionKey: "Bookkeeping.FAQs.q1",
+    answerKey: "Bookkeeping.FAQs.a1",
   },
   {
-    question: "Why is bookkeeping important?",
-    answer:
-      "Accurate bookkeeping helps you track income and expenses, make informed decisions, and stay compliant with regulations.",
+    questionKey: "Bookkeeping.FAQs.q2",
+    answerKey: "Bookkeeping.FAQs.a2",
   },
   {
-    question: "Who needs bookkeeping services?",
-    answer:
-      "Businesses of all sizes, freelancers, and entrepreneurs benefit from professional bookkeeping.",
+    questionKey: "Bookkeeping.FAQs.q3",
+    answerKey: "Bookkeeping.FAQs.a3",
   },
   {
-    question: "How often should bookkeeping be done?",
-    answer:
-      "Bookkeeping should be done regularly—daily, weekly, or monthly—to ensure up-to-date records.",
+    questionKey: "Bookkeeping.FAQs.q4",
+    answerKey: "Bookkeeping.FAQs.a4",
   },
   {
-    question: "Do you offer customized bookkeeping solutions?",
-    answer:
-      "Yes, we tailor our bookkeeping services to fit your unique business needs and goals.",
+    questionKey: "Bookkeeping.FAQs.q5",
+    answerKey: "Bookkeeping.FAQs.a5",
   },
 ];
 
 const benefits = [
   {
-    title: "Stay Organized",
-    desc: "Keep your financial records clear, accurate, and accessible.",
+    titleKey: "Bookkeeping.Benefits.stay_organized.title",
+    descKey: "Bookkeeping.Benefits.stay_organized.desc",
     icon: (
       <svg
         className="w-10 h-10 text-[#21c2ad]"
@@ -51,8 +47,8 @@ const benefits = [
     ),
   },
   {
-    title: "Make Informed Decisions",
-    desc: "Use accurate data to guide your business strategy and growth.",
+    titleKey: "Bookkeeping.Benefits.informed_decisions.title",
+    descKey: "Bookkeeping.Benefits.informed_decisions.desc",
     icon: (
       <svg
         className="w-10 h-10 text-[#155dfc]"
@@ -67,8 +63,8 @@ const benefits = [
     ),
   },
   {
-    title: "Stay Compliant",
-    desc: "Meet tax and regulatory requirements with ease.",
+    titleKey: "Bookkeeping.Benefits.stay_compliant.title",
+    descKey: "Bookkeeping.Benefits.stay_compliant.desc",
     icon: (
       <svg
         className="w-10 h-10 text-[#21c2ad]"
@@ -85,8 +81,9 @@ const benefits = [
 
 const processSteps = [
   {
-    title: "Setup",
-    desc: "We help you establish a reliable bookkeeping system.",
+    titleKey: "Bookkeeping.Process.setup.title",
+    descKey: "Bookkeeping.Process.setup.desc",
+    noteKey: "Bookkeeping.Process.setup.note",
     icon: (
       <svg
         className="w-8 h-8 text-[#21c2ad]"
@@ -101,8 +98,9 @@ const processSteps = [
     ),
   },
   {
-    title: "Recording",
-    desc: "We record all your financial transactions accurately.",
+    titleKey: "Bookkeeping.Process.recording.title",
+    descKey: "Bookkeeping.Process.recording.desc",
+    noteKey: "Bookkeeping.Process.recording.note",
     icon: (
       <svg
         className="w-8 h-8 text-[#155dfc]"
@@ -117,8 +115,9 @@ const processSteps = [
     ),
   },
   {
-    title: "Review",
-    desc: "We regularly review your books for accuracy and completeness.",
+    titleKey: "Bookkeeping.Process.review.title",
+    descKey: "Bookkeeping.Process.review.desc",
+    noteKey: "Bookkeeping.Process.review.note",
     icon: (
       <svg
         className="w-8 h-8 text-[#21c2ad]"
@@ -132,8 +131,9 @@ const processSteps = [
     ),
   },
   {
-    title: "Reporting",
-    desc: "We provide clear financial reports to help you make decisions.",
+    titleKey: "Bookkeeping.Process.reporting.title",
+    descKey: "Bookkeeping.Process.reporting.desc",
+    noteKey: "Bookkeeping.Process.reporting.note",
     icon: (
       <svg
         className="w-8 h-8 text-[#155dfc]"
@@ -150,14 +150,12 @@ const processSteps = [
 ];
 
 const BookkeepingPage = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Head>
-        <title>Bookkeeping | FinAccount</title>
-        <meta
-          name="description"
-          content="Professional bookkeeping services for businesses and entrepreneurs."
-        />
+        <title>{t("Bookkeeping.meta.title")}</title>
+        <meta name="description" content={t("Bookkeeping.meta.description")} />
       </Head>
       <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen caret-transparent">
         <SiteHeader />
@@ -165,17 +163,16 @@ const BookkeepingPage = () => {
         <section className="flex flex-col md:flex-row items-center justify-between px-8 py-24 gap-12 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100 min-h-screen">
           <div className="flex-1 flex flex-col justify-center items-start">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-              Bookkeeping
+              {t("Bookkeeping.Hero.title")}
             </h1>
             <p className="text-lg md:text-2xl mb-8 max-w-xl">
-              Stay organized, make informed decisions, and stay compliant with
-              our expert bookkeeping services tailored for you.
+              {t("Bookkeeping.Hero.description")}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
               src="https://i.pinimg.com/1200x/0a/f6/1d/0af61d1cf6aa67e8885dd7020711e251.jpg"
-              alt="Bookkeeping"
+              alt={t("Bookkeeping.Hero.image_alt")}
               width={500}
               height={450}
               className="rounded-2xl shadow-2xl object-cover bg-blue-100 dark:bg-blue-900"
@@ -187,74 +184,30 @@ const BookkeepingPage = () => {
         <section className="py-20 px-8">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#155dfc] dark:text-blue-100 mb-10 text-center">
-              Why Bookkeeping Matters
+              {t("Bookkeeping.Overview.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-              {[
-                {
-                  title: "Stay Organized",
-                  desc: "Bookkeeping keeps your financial records clear, accurate and access.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-[#21c2ad]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M12 8v8m0 0l-3-3m3 3l3-3" />
-                    </svg>
-                  ),
-                  bg: "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
-                },
-                {
-                  title: "Make Informed Decisions",
-                  desc: "Accurate data helps guide your business strategy and growth.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-[#155dfc]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <path d="M9 9h6v6H9z" />
-                    </svg>
-                  ),
-                  bg: "from-blue-100 via-white to-[#155dfc] dark:from-blue-950 dark:via-blue-900 dark:to-[#21c2ad]",
-                },
-                {
-                  title: "Stay Compliant",
-                  desc: "Meet tax and regulatory requirements with ease.",
-                  icon: (
-                    <svg
-                      className="w-12 h-12 text-[#21c2ad]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2l2 7h7l-5.5 4.5L17 21l-5-3.5L7 21l1.5-7.5L3 9h7z" />
-                    </svg>
-                  ),
-                  bg: "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
-                },
-              ].map((step, idx) => (
-                <div
-                  key={step.title}
-                  className={`flex-1 flex flex-col items-center bg-gradient-to-br ${step.bg} rounded-xl shadow-lg p-8`}
-                >
-                  <span className="mb-4">{step.icon}</span>
-                  <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-700 dark:text-blue-200 text-base">
-                    {step.desc}
-                  </p>
-                </div>
-              ))}
+              {benefits.map((card, idx) => {
+                const bg = [
+                  "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
+                  "from-blue-100 via-white to-[#155dfc] dark:from-blue-950 dark:via-blue-900 dark:to-[#21c2ad]",
+                  "from-blue-100 via-white to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc]",
+                ];
+                return (
+                  <div
+                    key={idx}
+                    className={`flex-1 flex flex-col items-center bg-gradient-to-br ${bg[idx]} rounded-xl shadow-lg p-8`}
+                  >
+                    <span className="mb-4">{card.icon}</span>
+                    <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
+                      {t(card.titleKey)}
+                    </h3>
+                    <p className="text-gray-700 dark:text-blue-200 text-base">
+                      {t(card.descKey)}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -279,10 +232,10 @@ const BookkeepingPage = () => {
                     </div>
                     <div className="bg-white dark:bg-blue-950 rounded-xl shadow-lg p-8 flex-1">
                       <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                        {card.title}
+                        {t(card.titleKey)}
                       </h3>
                       <p className="text-gray-700 dark:text-blue-200 text-base">
-                        {card.desc}
+                        {t(card.descKey)}
                       </p>
                     </div>
                   </li>
@@ -296,12 +249,10 @@ const BookkeepingPage = () => {
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#155dfc] dark:text-blue-100 mb-10 text-center">
-              Our Bookkeeping Process
+              {t("Bookkeeping.Process.title")}
             </h2>
             <p className="text-lg text-gray-700 dark:text-blue-200 mb-12 text-center max-w-3xl mx-auto">
-              Our streamlined process ensures your books are accurate,
-              up-to-date, and ready for decision-making. We guide you from setup
-              to reporting, so you can focus on growing your business.
+              {t("Bookkeeping.Process.description")}
             </p>
             <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
               {processSteps.map((step, idx) => (
@@ -314,20 +265,13 @@ const BookkeepingPage = () => {
                   </span>
                   <span className="mb-4 mt-8">{step.icon}</span>
                   <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                    {step.title}
+                    {t(step.titleKey)}
                   </h3>
                   <p className="text-gray-700 dark:text-blue-200 text-base mb-2">
-                    {step.desc}
+                    {t(step.descKey)}
                   </p>
                   <div className="text-sm text-gray-500 dark:text-blue-300 mt-2">
-                    {idx === 0 &&
-                      "We help you establish a reliable bookkeeping system."}
-                    {idx === 1 &&
-                      "We record all your financial transactions accurately."}
-                    {idx === 2 &&
-                      "We regularly review your books for accuracy and completeness."}
-                    {idx === 3 &&
-                      "We provide clear financial reports to help you make decisions."}
+                    {t(step.noteKey)}
                   </div>
                 </div>
               ))}
@@ -340,11 +284,10 @@ const BookkeepingPage = () => {
           <div className="max-w-4xl mx-auto px-4">
             <div className="flex flex-col items-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-blue-100 text-center mb-4">
-                Bookkeeping FAQs
+                {t("Bookkeeping.FAQs.title")}
               </h2>
               <p className="text-gray-700 dark:text-gray-300 text-center max-w-2xl mb-8">
-                Find answers to common questions about bookkeeping, compliance,
-                and our services.
+                {t("Bookkeeping.FAQs.description")}
               </p>
             </div>
             <div className="space-y-6">
@@ -368,7 +311,7 @@ const BookkeepingPage = () => {
                       aria-controls={`faq-panel-${idx}`}
                     >
                       <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
-                        {faq.question}
+                        {t(faq.questionKey)}
                       </span>
                       <span className="ml-auto">
                         <svg
@@ -395,7 +338,7 @@ const BookkeepingPage = () => {
                     >
                       {openIdx === idx && (
                         <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
-                          {faq.answer}
+                          {t(faq.answerKey)}
                         </div>
                       )}
                     </div>
@@ -410,17 +353,16 @@ const BookkeepingPage = () => {
         <section className="py-20 px-8 relative overflow-hidden">
           <div className="max-w-3xl py-20 px-8 mx-auto flex flex-col items-center text-center relative z-10 rounded-2xl shadow-xl bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 border-transparent before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg text-[#155dfc] dark:text-[#21c2ad]">
-              Ready for Stress-Free Bookkeeping?
+              {t("Bookkeeping.CTA.title")}
             </h2>
             <p className="text-lg md:text-xl mb-8 max-w-xl text-blue-900 dark:text-blue-100">
-              Let our experts help you stay organized and compliant. Contact us
-              today and focus on what you do best—growing your business.
+              {t("Bookkeeping.CTA.description")}
             </p>
             <Link
               href="/contact-us"
               className="px-10 py-5 rounded-full bg-gradient-to-r from-[#21c2ad] to-[#155dfc] text-white font-bold shadow-lg hover:scale-105 hover:bg-blue-100 transition text-xl"
             >
-              Get Started
+              {t("Bookkeeping.CTA.cta")}
             </Link>
           </div>
         </section>

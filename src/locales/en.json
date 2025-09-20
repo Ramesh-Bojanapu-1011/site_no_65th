@@ -528,5 +528,76 @@
       "description": "Let our experts help you achieve financial transparency and compliance. Contact us today and build trust with your stakeholders.",
       "cta": "Get Started"
     }
+  },
+  "Bookkeeping": {
+    "meta": {
+      "title": "Bookkeeping | FinAccount",
+      "description": "Professional bookkeeping services for businesses and entrepreneurs."
+    },
+    "Hero": {
+      "title": "Bookkeeping",
+      "description": "Stay organized, make informed decisions, and stay compliant with our expert bookkeeping services tailored for you.",
+      "image_alt": "Bookkeeping"
+    },
+    "Overview": {
+      "title": "Why Bookkeeping Matters"
+    },
+    "Benefits": {
+      "stay_organized": {
+        "title": "Stay Organized",
+        "desc": "Keep your financial records clear, accurate, and accessible."
+      },
+      "informed_decisions": {
+        "title": "Make Informed Decisions",
+        "desc": "Use accurate data to guide your business strategy and growth."
+      },
+      "stay_compliant": {
+        "title": "Stay Compliant",
+        "desc": "Meet tax and regulatory requirements with ease."
+      }
+    },
+    "Process": {
+      "title": "Our Bookkeeping Process",
+      "description": "Our streamlined process ensures your books are accurate, up-to-date, and ready for decision-making. We guide you from setup to reporting, so you can focus on growing your business.",
+      "setup": {
+        "title": "Setup",
+        "desc": "We help you establish a reliable bookkeeping system.",
+        "note": "We help you establish a reliable bookkeeping system."
+      },
+      "recording": {
+        "title": "Recording",
+        "desc": "We record all your financial transactions accurately.",
+        "note": "We record all your financial transactions accurately."
+      },
+      "review": {
+        "title": "Review",
+        "desc": "We regularly review your books for accuracy and completeness.",
+        "note": "We regularly review your books for accuracy and completeness."
+      },
+      "reporting": {
+        "title": "Reporting",
+        "desc": "We provide clear financial reports to help you make decisions.",
+        "note": "We provide clear financial reports to help you make decisions."
+      }
+    },
+    "FAQs": {
+      "title": "Bookkeeping FAQs",
+      "description": "Find answers to common questions about bookkeeping, compliance, and our services.",
+      "q1": "What is bookkeeping?",
+      "a1": "Bookkeeping is the systematic recording and organizing of financial transactions for your business.",
+      "q2": "Why is bookkeeping important?",
+      "a2": "Accurate bookkeeping helps you track income and expenses, make informed decisions, and stay compliant with regulations.",
+      "q3": "Who needs bookkeeping services?",
+      "a3": "Businesses of all sizes, freelancers, and entrepreneurs benefit from professional bookkeeping.",
+      "q4": "How often should bookkeeping be done?",
+      "a4": "Bookkeeping should be done regularly—daily, weekly, or monthly—to ensure up-to-date records.",
+      "q5": "Do you offer customized bookkeeping solutions?",
+      "a5": "Yes, we tailor our bookkeeping services to fit your unique business needs and goals."
+    },
+    "CTA": {
+      "title": "Ready for Stress-Free Bookkeeping?",
+      "description": "Let our experts help you stay organized and compliant. Contact us today and focus on what you do best—growing your business.",
+      "cta": "Get Started"
+    }
   }
 }
