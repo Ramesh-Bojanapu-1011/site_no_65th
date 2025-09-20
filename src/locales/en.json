@@ -814,5 +814,104 @@
       "description": "Let our experts help you grow, protect, and diversify your investments. Contact us today and take control of your financial future.",
       "cta": "Get Started"
     }
+  },
+  "Blog": {
+    "meta": {
+      "title": "FinAccount Blog",
+      "description": "Insights and tips for finance, accounting, and business growth."
+    },
+    "Hero": {
+      "title": "FinAccount Blog",
+      "description": "Stay updated with the latest insights, tips, and strategies in finance, accounting, and business growth.",
+      "cta": "Explore Blogs"
+    },
+    "Featured": {
+      "title": "Featured Articles",
+      "description": "Read our latest posts on accounting, tax planning, and financial consulting. Click any article to learn more.",
+      "bookkeeping": {
+        "title": "Top 5 Bookkeeping Practices",
+        "desc": "Discover simple methods to track expenses, organize records, and stay financially healthy all year round."
+      },
+      "tax_saving": {
+        "title": "Smart Tax-Saving Moves for 2025",
+        "desc": "Find effective techniques to cut tax costs, maximize deductions, and boost profits for your business."
+      },
+      "advisory_success": {
+        "title": "How Advisory Services Fuel Success",
+        "desc": "See how strategic guidance empowers companies to scale, innovate, and achieve long-term financial growth."
+      },
+      "read_more": "Read More"
+    },
+    "About": {
+      "title": "About Our Blog",
+      "description": "Welcome to the FinAccount Blog—your trusted source for expert advice, actionable tips, and the latest trends in finance and accounting. Our mission is to empower entrepreneurs, business owners, and individuals with the knowledge they need to make smart financial decisions and achieve lasting success.",
+      "features": {
+        "0": {
+          "title": "Expert Insights",
+          "desc": "Articles written by seasoned professionals with years of industry experience."
+        },
+        "1": {
+          "title": "Actionable Tips",
+          "desc": "Practical advice and step-by-step guides to help you manage your finances with confidence."
+        },
+        "2": {
+          "title": "Latest Trends",
+          "desc": "Stay ahead with updates on regulations, technology, and best practices in the industry."
+        }
+      }
+    },
+    "Categories": {
+      "title": "Blog Categories",
+      "description": "Explore our diverse categories to find articles tailored to your interests and needs. Each category features expert advice, practical tips, and the latest updates in the world of finance and accounting.",
+      "items": {
+        "0": {
+          "name": "Accounting",
+          "desc": "Fundamentals, best practices, and tools for accurate record-keeping."
+        },
+        "1": {
+          "name": "Tax Planning",
+          "desc": "Strategies to minimize liabilities and stay compliant with regulations."
+        },
+        "2": {
+          "name": "Consulting",
+          "desc": "Expert guidance for business growth, investment, and decision-making."
+        },
+        "3": {
+          "name": "Business Growth",
+          "desc": "Tips and strategies to help your business scale and thrive."
+        },
+        "4": {
+          "name": "Compliance",
+          "desc": "Stay up-to-date with laws, standards, and regulatory changes."
+        },
+        "5": {
+          "name": "Tips & Resources",
+          "desc": "Handy guides, checklists, and resources for everyday financial success."
+        }
+      }
+    },
+    "Testimonials": {
+      "title": "Reader Testimonials",
+      "description": "See how our blog has helped readers stay informed and make better financial decisions.",
+      "items": {
+        "0": {
+          "name": "Priya Singh",
+          "feedback": "The accounting tips helped me organize my business finances and avoid costly mistakes."
+        },
+        "1": {
+          "name": "John Miller",
+          "feedback": "I love the practical advice and easy-to-understand articles. Highly recommended!"
+        },
+        "2": {
+          "name": "Fatima Al-Hassan",
+          "feedback": "The tax planning guides saved me a lot of money this year."
+        }
+      }
+    },
+    "CTA": {
+      "title": "Want More Insights?",
+      "description": "Subscribe to our newsletter for the latest updates, expert tips, and exclusive content delivered straight to your inbox.",
+      "cta": "Subscribe Now"
+    }
   }
 }

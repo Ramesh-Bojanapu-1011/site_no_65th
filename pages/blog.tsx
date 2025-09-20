@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,37 +9,35 @@ import SiteFooter from "@/components/SiteFooter";
 
 const blogList = [
   {
-    title: "Top 5 Bookkeeping Practices ",
-    desc: "Discover simple methods to track expenses, organize records, and stay financially healthy all year round.",
+    titleKey: "Blog.Featured.bookkeeping.title",
+    descKey: "Blog.Featured.bookkeeping.desc",
     link: "/bookkeeping-practices",
     img: "https://i.pinimg.com/736x/bf/6e/b9/bf6eb92c7bd894306abb2391b5604fe5.jpg",
   },
   {
-    title: "Smart Tax-Saving Moves for 2025",
-    desc: "Find effective techniques to cut tax costs, maximize deductions, and boost profits for your business.",
+    titleKey: "Blog.Featured.tax_saving.title",
+    descKey: "Blog.Featured.tax_saving.desc",
     link: "/tax-saving-2025",
     img: "https://i.pinimg.com/736x/7a/9e/3a/7a9e3abe745a468b32dd81c5e4cd2eb6.jpg",
   },
   {
-    title: "How Advisory Services Fuel Success",
-    desc: "See how strategic guidance empowers companies to scale, innovate, and achieve long-term financial growth.",
+    titleKey: "Blog.Featured.advisory_success.title",
+    descKey: "Blog.Featured.advisory_success.desc",
     link: "/advisory-success",
     img: "https://i.pinimg.com/736x/70/52/ad/7052ad5f76a69b85133af4569959dc32.jpg",
   },
 ];
 
 const Blog = () => {
+  const { t } = useTranslation();
   React.useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
     <>
       <Head>
-        <title>FinAccount Blog</title>
-        <meta
-          name="description"
-          content="Insights and tips for finance, accounting, and business growth."
-        />
+        <title>{t("Blog.meta.title")}</title>
+        <meta name="description" content={t("Blog.meta.description")} />
       </Head>
       <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen caret-transparent">
         <SiteHeader />
@@ -46,17 +45,16 @@ const Blog = () => {
         <section className="flex flex-col md:flex-row items-center justify-between px-8 py-24 gap-12 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100 min-h-screen">
           <div className="flex-1 flex flex-col justify-center items-start">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-              FinAccount Blog
+              {t("Blog.Hero.title")}
             </h1>
             <p className="text-lg md:text-2xl mb-8 max-w-xl">
-              Stay updated with the latest insights, tips, and strategies in
-              finance, accounting, and business growth.
+              {t("Blog.Hero.description")}
             </p>
             <Link
               href="#featured"
               className="px-8 py-4 rounded-full bg-white text-[#155dfc] font-bold shadow-lg hover:bg-blue-100 transition text-lg"
             >
-              Explore Blogs
+              {t("Blog.Hero.cta")}
             </Link>
           </div>
           <div className="flex-1 flex justify-center items-center">
@@ -77,11 +75,10 @@ const Blog = () => {
         >
           <div className=" mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold text-center text-[#155dfc] dark:text-blue-100 mb-4">
-              Featured Articles
+              {t("Blog.Featured.title")}
             </h2>
             <p className="text-blue-900 dark:text-blue-100 text-center mb-8 max-w-2xl mx-auto">
-              Read our latest posts on accounting, tax planning, and financial
-              consulting. Click any article to learn more.
+              {t("Blog.Featured.description")}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-center items-stretch">
               {blogList.map((blog, idx) => (
@@ -104,17 +101,17 @@ const Blog = () => {
                     >
                       <Image
                         src={blog.img}
-                        alt={blog.title}
+                        alt={t(blog.titleKey)}
                         width={320}
                         height={180}
                         className="rounded-xl h-[200px] w-full object-cover transition-transform duration-300 group-hover:scale-110  "
                       />
                     </div>
                     <h3 className="font-extrabold text-[#155dfc] dark:text-blue-100 mb-2 text-xl text-center group-hover:underline drop-shadow-md">
-                      {blog.title}
+                      {t(blog.titleKey)}
                     </h3>
                     <p className="text-gray-700 dark:text-blue-200 text-center text-base mb-4">
-                      {blog.desc}
+                      {t(blog.descKey)}
                     </p>
                     <Link
                       href={blog.link}
@@ -132,7 +129,7 @@ const Blog = () => {
                           <path d="M12 5l7 7-7 7" />
                         </svg>
                       </span>
-                      Read More
+                      {t("Blog.Featured.read_more")}
                     </Link>
                   </div>
                 </div>
@@ -145,14 +142,10 @@ const Blog = () => {
         <section className="py-20 px-8 bg-white dark:bg-blue-950">
           <div className="max-w-4xl mx-auto text-center flex flex-col gap-8 items-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#21c2ad] dark:text-blue-100 mb-4">
-              About Our Blog
+              {t("Blog.About.title")}
             </h2>
             <p className="text-gray-700 dark:text-blue-200 text-lg max-w-2xl mx-auto">
-              Welcome to the FinAccount Blog—your trusted source for expert
-              advice, actionable tips, and the latest trends in finance and
-              accounting. Our mission is to empower entrepreneurs, business
-              owners, and individuals with the knowledge they need to make smart
-              financial decisions and achieve lasting success.
+              {t("Blog.About.description")}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               {[
@@ -215,10 +208,10 @@ const Blog = () => {
                 >
                   <span className="mb-2">{feature.icon}</span>
                   <h3 className={`font-bold text-${feature.color} mb-2`}>
-                    {feature.title}
+                    {t(`Blog.About.features.${idx}.title`)}
                   </h3>
                   <p className="text-gray-700 dark:text-blue-200 text-center text-base">
-                    {feature.desc}
+                    {t(`Blog.About.features.${idx}.desc`)}
                   </p>
                 </div>
               ))}
@@ -230,13 +223,10 @@ const Blog = () => {
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-[#155dfc] dark:text-blue-100 mb-8">
-              Blog Categories
+              {t("Blog.Categories.title")}
             </h2>
             <p className="text-blue-900 dark:text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Explore our diverse categories to find articles tailored to your
-              interests and needs. Each category features expert advice,
-              practical tips, and the latest updates in the world of finance and
-              accounting.
+              {t("Blog.Categories.description")}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-stretch">
               {[
@@ -353,10 +343,10 @@ const Blog = () => {
                     {cat.icon}
                   </div>
                   <h3 className="font-extrabold text-[#155dfc] dark:text-blue-100 mb-2 text-lg text-center tracking-wide drop-shadow-md">
-                    {cat.name}
+                    {t(`Blog.Categories.items.${idx}.name`)}
                   </h3>
                   <p className="text-gray-700 dark:text-blue-200 text-center text-base mb-2">
-                    {cat.desc}
+                    {t(`Blog.Categories.items.${idx}.desc`)}
                   </p>
                 </div>
               ))}
@@ -369,11 +359,10 @@ const Blog = () => {
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex flex-col items-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-blue-100 text-center mb-4">
-                Reader Testimonials
+                {t("Blog.Testimonials.title")}
               </h2>
               <p className="text-gray-700 dark:text-gray-300 text-center max-w-2xl mb-8">
-                See how our blog has helped readers stay informed and make
-                better financial decisions.
+                {t("Blog.Testimonials.description")}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -411,10 +400,10 @@ const Blog = () => {
                     />
                   </div>
                   <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
-                    "{reader.feedback}"
+                    "{t(`Blog.Testimonials.items.${idx}.feedback`)}"
                   </p>
                   <span className="font-bold text-blue-900 dark:text-blue-100">
-                    {reader.name}
+                    {t(`Blog.Testimonials.items.${idx}.name`)}
                   </span>
                 </div>
               ))}
@@ -426,11 +415,10 @@ const Blog = () => {
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100 relative overflow-hidden">
           <div className="max-w-3xl mx-auto flex flex-col items-center text-center relative z-10">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg text-[#155dfc] dark:text-blue-100">
-              Want More Insights?
+              {t("Blog.CTA.title")}
             </h2>
             <p className="text-lg md:text-xl mb-8 max-w-xl text-blue-900 dark:text-blue-100">
-              Subscribe to our newsletter for the latest updates, expert tips,
-              and exclusive content delivered straight to your inbox.
+              {t("Blog.CTA.description")}
             </p>
             <Link
               href="/contact-us"
@@ -448,7 +436,7 @@ const Blog = () => {
                   <path d="M12 5l7 7-7 7" />
                 </svg>
               </span>
-              Subscribe Now
+              {t("Blog.CTA.cta")}
             </Link>
           </div>
         </section>
