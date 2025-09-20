@@ -13,10 +13,12 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { useTranslation } from "react-i18next";
 
 const COLORS = ["#155dfc", "#21c2ad", "#fbbf24", "#ef4444", "#6366f1"];
 
 const AdminDashboard = () => {
+  const { t } = useTranslation();
   const [users, setUsers] = useState([]);
   const [loginUsers, setLoginUsers] = useState([]);
   const [dailyLogins, setDailyLogins] = useState<
@@ -52,8 +54,8 @@ const AdminDashboard = () => {
 
   // Pie chart data
   const pieData = [
-    { name: "All Users", value: users.length },
-    { name: "Login Users", value: loginUsers.length },
+    { name: t("AdminDashboard.Pie.all_users"), value: users.length },
+    { name: t("AdminDashboard.Pie.login_users"), value: loginUsers.length },
   ];
 
   return (
@@ -61,21 +63,29 @@ const AdminDashboard = () => {
       <SiteHeader />
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-[#155dfc] dark:text-[#21c2ad] text-center">
-          Admin Dashboard
+          {t("AdminDashboard.title")}
         </h1>
         {/* Users Table */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-4 text-[#155dfc] dark:text-[#21c2ad]">
-            All Users
+            {t("AdminDashboard.users_table.title")}
           </h2>
           <div className="overflow-x-auto rounded-xl shadow-lg bg-white dark:bg-blue-950">
             <table className="min-w-full text-left">
               <thead>
                 <tr className="bg-blue-100 dark:bg-blue-900">
-                  <th className="py-3 px-4 font-semibold">ID</th>
-                  <th className="py-3 px-4 font-semibold">Name</th>
-                  <th className="py-3 px-4 font-semibold">Email</th>
-                  <th className="py-3 px-4 font-semibold">Logged In</th>
+                  <th className="py-3 px-4 font-semibold">
+                    {t("AdminDashboard.users_table.id")}
+                  </th>
+                  <th className="py-3 px-4 font-semibold">
+                    {t("AdminDashboard.users_table.name")}
+                  </th>
+                  <th className="py-3 px-4 font-semibold">
+                    {t("AdminDashboard.users_table.email")}
+                  </th>
+                  <th className="py-3 px-4 font-semibold">
+                    {t("AdminDashboard.users_table.logged_in")}
+                  </th>
                 </tr>
               </thead>
               <tbody className="dark:text-white">
@@ -85,7 +95,7 @@ const AdminDashboard = () => {
                       colSpan={4}
                       className="py-4 px-4 text-center text-gray-500"
                     >
-                      No users found.
+                      {t("AdminDashboard.users_table.no_users")}
                     </td>
                   </tr>
                 ) : (
@@ -101,7 +111,9 @@ const AdminDashboard = () => {
                       </td>
                       <td className="py-2 px-4">{user.email}</td>
                       <td className="py-2 px-4">
-                        {user.isLoggedIn ? "Yes" : "No"}
+                        {user.isLoggedIn
+                          ? t("AdminDashboard.users_table.yes")
+                          : t("AdminDashboard.users_table.no")}
                       </td>
                     </tr>
                   ))
@@ -116,7 +128,7 @@ const AdminDashboard = () => {
           {/* Pie Chart */}
           <div className="bg-white dark:bg-blue-950 rounded-xl shadow-lg p-6 flex flex-col items-center">
             <h3 className="text-xl font-bold mb-4 text-[#155dfc] dark:text-[#21c2ad]">
-              User Distribution
+              {t("AdminDashboard.pie_chart.title")}
             </h3>
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
@@ -142,7 +154,7 @@ const AdminDashboard = () => {
           {/* Bar Chart */}
           <div className="bg-white dark:bg-blue-950 rounded-xl shadow-lg p-6 flex flex-col items-center">
             <h3 className="text-xl font-bold mb-4 text-[#155dfc] dark:text-[#21c2ad]">
-              Daily Login Users
+              {t("AdminDashboard.bar_chart.title")}
             </h3>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart
@@ -154,7 +166,11 @@ const AdminDashboard = () => {
                 <YAxis allowDecimals={false} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="count" fill="#155dfc" name="Login Users" />
+                <Bar
+                  dataKey="count"
+                  fill="#155dfc"
+                  name={t("AdminDashboard.bar_chart.login_users")}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>

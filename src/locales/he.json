@@ -1074,5 +1074,29 @@
       "email_placeholder": "כתובת האימייל שלך",
       "subscribe": "הרשם"
     }
+  },
+  "AdminDashboard": {
+    "title": "לוח בקרה למנהל",
+    "users_table": {
+      "title": "כל המשתמשים",
+      "id": "מספר זיהוי",
+      "name": "שם",
+      "email": "אימייל",
+      "logged_in": "מחובר",
+      "no_users": "לא נמצאו משתמשים.",
+      "yes": "כן",
+      "no": "לא"
+    },
+    "Pie": {
+      "all_users": "כל המשתמשים",
+      "login_users": "משתמשים מחוברים"
+    },
+    "pie_chart": {
+      "title": "התפלגות משתמשים"
+    },
+    "bar_chart": {
+      "title": "משתמשים מחוברים יומי",
+      "login_users": "משתמשים מחוברים"
+    }
   }
 }

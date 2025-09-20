@@ -1073,5 +1073,29 @@
       "email_placeholder": "Your Email Address",
       "subscribe": "Subscribe"
     }
+  },
+  "AdminDashboard": {
+    "title": "Admin Dashboard",
+    "users_table": {
+      "title": "All Users",
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "logged_in": "Logged In",
+      "no_users": "No users found.",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "Pie": {
+      "all_users": "All Users",
+      "login_users": "Login Users"
+    },
+    "pie_chart": {
+      "title": "User Distribution"
+    },
+    "bar_chart": {
+      "title": "Daily Login Users",
+      "login_users": "Login Users"
+    }
   }
 }
