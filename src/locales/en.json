@@ -118,6 +118,7 @@
         "desc": "Guidance to boost growth, compliance, and direction."
       }
     },
+
     "Process": {
       "title": "How We Work",
       "Discovery": {
@@ -371,6 +372,90 @@
       "title": "Ready to Transform Your Finances?",
       "description": "Partner with us for expert accounting, strategic planning, and business growth. Take the next step toward financial clarity and success.",
       "cta": "Get Started Now"
+    }
+  },
+  "TaxPlanning": {
+    "meta": {
+      "title": "Tax Planning Services",
+      "description": "Expert tax planning to save money, avoid penalties, and maximize deductions."
+    },
+    "Hero": {
+      "title": "Smart Tax Planning for Your Business",
+      "description": "Optimize your taxes, reduce liabilities, and achieve your financial goals with our expert guidance.",
+      "image_alt": "Tax Planning Illustration"
+    },
+    "Overview": {
+      "title": "Why Tax Planning Matters",
+      "save_money": {
+        "title": "Save Money",
+        "desc": "Strategic tax planning helps you keep more of your earnings."
+      },
+      "avoid_surprises": {
+        "title": "Avoid Surprises",
+        "desc": "Stay ahead of deadlines and regulations to prevent costly mistakes."
+      },
+      "achieve_goals": {
+        "title": "Achieve Your Goals",
+        "desc": "Plan for growth and future investments with confidence."
+      }
+    },
+    "Benefits": {
+      "title": "Key Benefits of Tax Planning",
+      "save_money": {
+        "title": "Save Money",
+        "desc": "Reduce your tax burden and increase your savings."
+      },
+      "avoid_penalties": {
+        "title": "Avoid Penalties",
+        "desc": "Stay compliant and avoid fines or interest charges."
+      },
+      "maximize_deductions": {
+        "title": "Maximize Deductions",
+        "desc": "Identify every opportunity to claim deductions and credits."
+      }
+    },
+    "Process": {
+      "title": "Our Tax Planning Process",
+      "description": "We guide you through every step to ensure optimal tax outcomes.",
+      "consultation": {
+        "title": "Consultation",
+        "desc": "We understand your business and financial situation.",
+        "note": "Schedule a free initial consultation."
+      },
+      "analysis": {
+        "title": "Analysis",
+        "desc": "We review your records and identify tax-saving opportunities.",
+        "note": "Comprehensive review of your finances."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "desc": "We develop a custom tax plan tailored to your needs.",
+        "note": "Personalized recommendations for your business."
+      },
+      "implementation": {
+        "title": "Implementation",
+        "desc": "We help you execute the plan and stay compliant.",
+        "note": "Ongoing support and monitoring."
+      }
+    },
+    "FAQs": {
+      "title": "Frequently Asked Questions",
+      "description": "Find answers to common questions about tax planning.",
+      "q1": "What is tax planning?",
+      "a1": "Tax planning is the process of organizing your finances to minimize tax liability and maximize savings.",
+      "q2": "Who needs tax planning?",
+      "a2": "Every business and individual can benefit from tax planning to optimize their financial outcomes.",
+      "q3": "How often should I review my tax plan?",
+      "a3": "It's best to review your tax plan annually or whenever your financial situation changes.",
+      "q4": "Can tax planning help me avoid penalties?",
+      "a4": "Yes, proper tax planning ensures compliance and helps you avoid fines or interest charges.",
+      "q5": "Do you offer consultations?",
+      "a5": "Yes, we offer free initial consultations to discuss your tax planning needs."
+    },
+    "CTA": {
+      "title": "Ready to Optimize Your Taxes?",
+      "description": "Contact us today for expert tax planning and personalized advice.",
+      "cta": "Get Started"
     }
   }
 }
