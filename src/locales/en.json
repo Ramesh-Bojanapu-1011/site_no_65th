@@ -599,5 +599,76 @@
       "description": "Let our experts help you stay organized and compliant. Contact us today and focus on what you do best—growing your business.",
       "cta": "Get Started"
     }
+  },
+  "PayrollManagement": {
+    "meta": {
+      "title": "Payroll Management | FinAccount",
+      "description": "Professional payroll management services for businesses of all sizes."
+    },
+    "Hero": {
+      "title": "Payroll Management",
+      "description": "Ensure accuracy, compliance, and efficiency with our expert payroll management services tailored for your business.",
+      "image_alt": "Payroll Management"
+    },
+    "Overview": {
+      "title": "Why Payroll Management Matters"
+    },
+    "Benefits": {
+      "accuracy": {
+        "title": "Accuracy",
+        "desc": "Ensure employees are paid correctly and on time."
+      },
+      "compliance": {
+        "title": "Compliance",
+        "desc": "Stay up-to-date with tax laws and regulations."
+      },
+      "efficiency": {
+        "title": "Efficiency",
+        "desc": "Save time and reduce errors with automated payroll processes."
+      }
+    },
+    "Process": {
+      "title": "Our Payroll Management Process",
+      "description": "Our efficient process ensures your payroll is accurate, compliant, and hassle-free. We guide you from setup to compliance, so you can focus on your business and your team.",
+      "setup": {
+        "title": "Setup",
+        "desc": "We help you establish a reliable payroll system.",
+        "note": "We help you establish a reliable payroll system."
+      },
+      "processing": {
+        "title": "Processing",
+        "desc": "We process payroll accurately and on schedule.",
+        "note": "We process payroll accurately and on schedule."
+      },
+      "reporting": {
+        "title": "Reporting",
+        "desc": "We provide clear payroll reports and records.",
+        "note": "We provide clear payroll reports and records."
+      },
+      "compliance": {
+        "title": "Compliance",
+        "desc": "We ensure your payroll meets all legal requirements.",
+        "note": "We ensure your payroll meets all legal requirements."
+      }
+    },
+    "FAQs": {
+      "title": "Payroll Management FAQs",
+      "description": "Find answers to common questions about payroll management, compliance, and our services.",
+      "q1": "What is payroll management?",
+      "a1": "Payroll management is the process of administering employee salaries, wages, bonuses, deductions, and tax withholdings.",
+      "q2": "Why is payroll management important?",
+      "a2": "Accurate payroll ensures employees are paid correctly and on time, and helps your business stay compliant with regulations.",
+      "q3": "Who needs payroll management services?",
+      "a3": "Businesses of all sizes benefit from professional payroll management to reduce errors and save time.",
+      "q4": "How often should payroll be processed?",
+      "a4": "Payroll is typically processed weekly, bi-weekly, or monthly, depending on your business needs.",
+      "q5": "Do you offer customized payroll solutions?",
+      "a5": "Yes, we tailor our payroll management services to fit your unique business requirements."
+    },
+    "CTA": {
+      "title": "Ready for Hassle-Free Payroll?",
+      "description": "Let our experts help you manage payroll with accuracy and compliance. Contact us today and focus on growing your business and your team.",
+      "cta": "Get Started"
+    }
   }
 }
