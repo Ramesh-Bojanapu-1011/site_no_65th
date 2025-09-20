@@ -50,7 +50,13 @@ const AuthPage: React.FC = () => {
     e.preventDefault();
     if (adminEmail === ADMIN_EMAIL && adminPassword === ADMIN_PASS) {
       setAdminError("");
+      localStorage.setItem(
+        "finaccount_loggedin",
+        JSON.stringify({ email: adminEmail }),
+      );
+
       window.location.href = "/admin-dashboard"; // Redirect to admin dashboard
+
       setAdminSuccess("Admin login successful!");
     } else {
       setAdminError("Invalid credentials");

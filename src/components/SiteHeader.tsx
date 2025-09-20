@@ -19,6 +19,7 @@ const SiteHeader: React.FC = () => {
   const [servicesOpen, setServicesOpen] = React.useState(false);
   const [profileOpen, setProfileOpen] = React.useState(false);
   const [langOpen, setLangOpen] = React.useState(false);
+  const [user, setUser] = React.useState<any>(null);
   const [selectedLang, setSelectedLang] = React.useState("en");
   const [intials, setIntials] = React.useState("");
   const { t } = useTranslation();
@@ -28,6 +29,7 @@ const SiteHeader: React.FC = () => {
       const user = localStorage.getItem("finaccount_loggedin");
       if (user) {
         const userObj = JSON.parse(user);
+        setUser(userObj);
         setIntials(
           (
             (userObj.first ? userObj.first.charAt(0) : "") +
@@ -146,7 +148,7 @@ const SiteHeader: React.FC = () => {
                     href={`/services`}
                     className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
-                    All Services
+                    {t("Hedder.All_Services")}
                   </Link>
                 </li>
                 {services.map((srv, idx) => (
@@ -225,21 +227,25 @@ const SiteHeader: React.FC = () => {
             </button>
             {profileOpen && (
               <ul className="absolute bg-white right-0 mt-2  dark:bg-blue-950  rounded-lg w-36  border border-blue-100 dark:border-blue-900">
-                <li>
-                  <Link
-                    href="/profile"
-                    className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
-                  >
-                    {t("Hedder.My_Profile")}
-                  </Link>
-                </li>
+                {user.email == "admin@enkonix.in" && (
+                  <li>
+                    <Link
+                      href="/admin-dashboard"
+                      className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
+                    >
+                      {t("Hedder.AdminDashboard")}
+                    </Link>
+                  </li>
+                )}
                 <li>
                   <button
-                   onClick={()=>{
-                        // logout function
-                        localStorage.removeItem("finaccount_loggedin");
-                        window.location.href = "/auth";
-                      }} className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded">
+                    onClick={() => {
+                      // logout function
+                      localStorage.removeItem("finaccount_loggedin");
+                      window.location.href = "/auth";
+                    }}
+                    className="block w-full text-left px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
+                  >
                     {t("Hedder.Logout")}
                   </button>
                 </li>
@@ -312,7 +318,7 @@ const SiteHeader: React.FC = () => {
                     href="/home1"
                     className="block bg-white px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
-                    Home1
+                    {t("Hedder.home")}1
                   </Link>
                 </li>
                 <li>
@@ -320,7 +326,7 @@ const SiteHeader: React.FC = () => {
                     href="/home2"
                     className="block px-4 py-2 bg-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
-                    Home2
+                    {t("Hedder.home")}2
                   </Link>
                 </li>
               </ul>
@@ -348,7 +354,7 @@ const SiteHeader: React.FC = () => {
                     href={`/services`}
                     className="block px-4 py-2 text-blue-900 dark:text-blue-200 hover:bg-blue-50 dark:hover:bg-blue-900 rounded"
                   >
-                    All Services
+                    {t("Hedder.All_Services")}
                   </Link>
                 </li>
                 {services.map((srv, idx) => (
@@ -422,21 +428,25 @@ const SiteHeader: React.FC = () => {
                 </button>
                 {profileOpen && (
                   <ul className="absolute right-0 mt-2  dark:bg-gray-800  rounded w-32 ">
-                    <li>
-                      <Link
-                        href="/profile"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-                      >
-                        {t("Hedder.My_Profile")}
-                      </Link>
-                    </li>
+                    {user.email == "admin@enkonix.in" && (
+                      <li>
+                        <Link
+                          href="/admin-dashboard"
+                          className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {t("Hedder.AdminDashboard")}
+                        </Link>
+                      </li>
+                    )}
                     <li>
                       <button
-                      onClick={()=>{
-                        // logout function
-                        localStorage.removeItem("finaccount_loggedin");
-                        window.location.href = "/auth";
-                      }} className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200">
+                        onClick={() => {
+                          // logout function
+                          localStorage.removeItem("finaccount_loggedin");
+                          window.location.href = "/auth";
+                        }}
+                        className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-200"
+                      >
                         {t("Hedder.Logout")}
                       </button>
                     </li>
