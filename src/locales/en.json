@@ -457,5 +457,76 @@
       "description": "Contact us today for expert tax planning and personalized advice.",
       "cta": "Get Started"
     }
+  },
+  "AuditAssurance": {
+    "meta": {
+      "title": "Audit & Assurance | FinAccount",
+      "description": "Professional audit and assurance services for financial transparency and compliance."
+    },
+    "Hero": {
+      "title": "Audit & Assurance",
+      "description": "Ensure financial transparency, build trust, and stay compliant with our expert audit and assurance services.",
+      "image_alt": "Audit Assurance"
+    },
+    "Overview": {
+      "title": "Why Audit Assurance Matters"
+    },
+    "Benefits": {
+      "build_trust": {
+        "title": "Build Trust",
+        "desc": "Assure stakeholders of your financial integrity and reliability."
+      },
+      "detect_errors": {
+        "title": "Detect Errors",
+        "desc": "Identify mistakes and prevent fraud with expert review."
+      },
+      "meet_regulations": {
+        "title": "Meet Regulations",
+        "desc": "Stay compliant with legal and industry standards."
+      }
+    },
+    "Process": {
+      "title": "Our Audit Assurance Process",
+      "description": "Our thorough process ensures your financial statements are accurate, transparent, and compliant. We work closely with you from engagement to follow-up, providing actionable insights and ongoing support.",
+      "engagement": {
+        "title": "Engagement",
+        "desc": "We start with a clear agreement and understanding of your needs.",
+        "note": "We begin with a clear agreement and understanding of your needs."
+      },
+      "fieldwork": {
+        "title": "Fieldwork",
+        "desc": "Our team reviews your records and gathers evidence.",
+        "note": "Our team reviews your records and gathers evidence for accuracy."
+      },
+      "reporting": {
+        "title": "Reporting",
+        "desc": "We deliver clear, actionable reports and recommendations.",
+        "note": "Receive clear, actionable reports and recommendations."
+      },
+      "followup": {
+        "title": "Follow-up",
+        "desc": "We help you implement recommendations and stay compliant.",
+        "note": "We help you implement recommendations and stay compliant."
+      }
+    },
+    "FAQs": {
+      "title": "Audit Assurance FAQs",
+      "description": "Find answers to common questions about audit assurance, compliance, and our services.",
+      "q1": "What is audit assurance?",
+      "a1": "Audit assurance is an independent review of financial statements to ensure accuracy, transparency, and compliance with regulations.",
+      "q2": "Why do I need audit assurance?",
+      "a2": "It builds trust with stakeholders, helps detect errors, and ensures your business meets legal requirements.",
+      "q3": "Who performs audit assurance?",
+      "a3": "Qualified auditors and assurance professionals conduct thorough reviews using industry standards.",
+      "q4": "How often should audits be done?",
+      "a4": "Annual audits are common, but frequency depends on your business type and regulatory needs.",
+      "q5": "Do you offer customized audit solutions?",
+      "a5": "Yes, we tailor our audit and assurance services to fit your unique business requirements."
+    },
+    "CTA": {
+      "title": "Ready for Reliable Audit Assurance?",
+      "description": "Let our experts help you achieve financial transparency and compliance. Contact us today and build trust with your stakeholders.",
+      "cta": "Get Started"
+    }
   }
 }
