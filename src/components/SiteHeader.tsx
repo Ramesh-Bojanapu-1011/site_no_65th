@@ -20,8 +20,24 @@ const SiteHeader: React.FC = () => {
   const [profileOpen, setProfileOpen] = React.useState(false);
   const [langOpen, setLangOpen] = React.useState(false);
   const [selectedLang, setSelectedLang] = React.useState("en");
+  const [intials, setIntials] = React.useState("");
   const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const user = localStorage.getItem("finaccount_loggedin");
+      if (user) {
+        const userObj = JSON.parse(user);
+        setIntials(
+          (
+            (userObj.first ? userObj.first.charAt(0) : "") +
+            (userObj.last ? userObj.last.charAt(0) : "")
+          ).toUpperCase(),
+        );
+      } else setIntials("AD");
+    }
+  }, []);
+
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       const savedLang = localStorage.getItem("selectedLang");
@@ -204,11 +220,7 @@ const SiteHeader: React.FC = () => {
                 profileOpen ? "ring-2 ring-blue-400 dark:ring-blue-600" : ""
               }`}
             >
-              <img
-                src="/window.svg"
-                alt="Profile"
-                className="h-8 rounded-full border-2 border-blue-300 dark:border-blue-700 "
-              />
+              {intials}
               <span>▼</span>
             </button>
             {profileOpen && (
@@ -399,12 +411,8 @@ const SiteHeader: React.FC = () => {
                   onClick={() => setProfileOpen((o) => !o)}
                   className="flex items-center gap-2 px-2 py-1 text-base font-medium text-blue-900 dark:text-blue-300  dark:bg-gray-900 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
                 >
-                  <span>Profile</span>
-                  <img
-                    src="/window.svg"
-                    alt="Profile"
-                    className="h-7 rounded-full"
-                  />
+                  {intials}
+
                   <span>▼</span>
                 </button>
                 {profileOpen && (

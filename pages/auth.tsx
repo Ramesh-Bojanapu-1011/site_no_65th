@@ -33,7 +33,8 @@ const AuthPage: React.FC = () => {
   const [userForm, setUserForm] = useState<"login" | "register">("login");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const [userName, setUserName] = useState("");
+  const [userFirstName, setUserFirstName] = useState("");
+  const [userLastName, setUserLastName] = useState("");
   const [adminEmail, setAdminEmail] = useState("");
   const [adminPassword, setAdminPassword] = useState("");
   const [adminError, setAdminError] = useState("");
@@ -103,7 +104,7 @@ const AuthPage: React.FC = () => {
 
   function handleUserRegister(e: React.FormEvent) {
     e.preventDefault();
-    if (userName && userEmail && userPassword) {
+    if (userFirstName && userLastName && userEmail && userPassword) {
       // Get users from localStorage
       let users: User[] = [];
       try {
@@ -121,13 +122,11 @@ const AuthPage: React.FC = () => {
         return;
       }
       // Add new user with registration time
-      const nameParts = userName.trim().split(" ");
       const newUser: User & { registerTime: string } = {
         email: userEmail,
         password: userPassword,
-        first: nameParts[0] || "",
-        last: nameParts.slice(1).join(" ") || "",
-
+        first: userFirstName.trim(),
+        last: userLastName.trim(),
         registerTime: new Date().toISOString(),
       };
       users.push(newUser);
@@ -282,10 +281,17 @@ const AuthPage: React.FC = () => {
                 >
                   <input
                     type="text"
-                    placeholder="Name"
+                    placeholder="First Name"
                     className="px-4 py-2 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900 text-blue-900 dark:text-blue-200"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
+                    value={userFirstName}
+                    onChange={(e) => setUserFirstName(e.target.value)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    className="px-4 py-2 rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-900 text-blue-900 dark:text-blue-200"
+                    value={userLastName}
+                    onChange={(e) => setUserLastName(e.target.value)}
                   />
                   <input
                     type="email"
