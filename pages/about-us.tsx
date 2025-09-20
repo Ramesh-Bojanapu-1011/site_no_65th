@@ -5,37 +5,36 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const teamMembers = [
   {
-    name: "Amit Verma",
-    role: "Founder & CEO",
+    nameKey: "AboutUs.Team.AmitVerma.name",
+    roleKey: "AboutUs.Team.AmitVerma.role",
     img: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    name: "Sarah Johnson",
-    role: "Lead Accountant",
+    nameKey: "AboutUs.Team.SarahJohnson.name",
+    roleKey: "AboutUs.Team.SarahJohnson.role",
     img: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    name: "Mohammed Al-Farsi",
-    role: "Tax Specialist",
+    nameKey: "AboutUs.Team.MohammedAlFarsi.name",
+    roleKey: "AboutUs.Team.MohammedAlFarsi.role",
     img: "https://randomuser.me/api/portraits/men/65.jpg",
   },
 ];
 
 const AboutUs: React.FC = () => {
+  const { t } = useTranslation();
   React.useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
     <>
       <Head>
-        <title>About Us - FinAccount</title>
-        <meta
-          name="description"
-          content="Learn more about our team, mission, and expertise in finance and accounting."
-        />
+        <title>{t("AboutUs.meta.title")}</title>
+        <meta name="description" content={t("AboutUs.meta.description")} />
       </Head>
       <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen caret-transparent">
         <SiteHeader />
@@ -43,23 +42,22 @@ const AboutUs: React.FC = () => {
         <section className="flex flex-col md:flex-row items-center justify-between px-8 py-24 gap-12 bg-gradient-to-tr from-blue-100 via-white min-h-screen to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100">
           <div className="flex-1 flex flex-col justify-center items-start">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-              About FinAccount
+              {t("AboutUs.Hero.title")}
             </h1>
             <p className="text-lg md:text-2xl mb-8 max-w-xl">
-              Empowering businesses with expert finance and accounting solutions
-              for growth and clarity.
+              {t("AboutUs.Hero.description")}
             </p>
             <Link
               href="#contact"
               className="px-8 py-4 rounded-full bg-white text-[#155dfc] font-bold shadow-lg hover:bg-blue-100 transition text-lg"
             >
-              Meet Our Team
+              {t("AboutUs.Hero.cta")}
             </Link>
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
               src="https://i.pinimg.com/736x/93/bf/d1/93bfd1c9bcce4b7b1ae589c94a0616e6.jpg"
-              alt="About Us"
+              alt={t("AboutUs.Hero.image_alt")}
               width={500}
               height={450}
               className="rounded-2xl shadow-2xl object-cover bg-blue-100 dark:bg-blue-900"
@@ -73,63 +71,57 @@ const AboutUs: React.FC = () => {
             <div className="relative">
               <Image
                 src="https://i.pinimg.com/1200x/a6/e9/f6/a6e9f6ee10fd676fc64aba5390a74a52.jpg"
-                alt="Our Story"
+                alt={t("AboutUs.Story.image_alt")}
                 width={500}
                 height={500}
                 className="rounded-2xl shadow-2xl object-cover"
               />
               <span className="absolute bottom-4 right-4 bg-[#21c2ad] text-white px-4 py-2 rounded-full shadow-lg text-sm font-bold">
-                10+ Years of Excellence
+                {t("AboutUs.Story.badge")}
               </span>
             </div>
           </div>
           <div className="flex-1 flex flex-col justify-center items-start">
             <span className="text-[#21c2ad] font-bold text-lg mb-2">
-              OUR STORY
+              {t("AboutUs.Story.badge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-4">
-              From Startup to Trusted Partner
+              {t("AboutUs.Story.title")}
             </h2>
             <p className="text-gray-700 dark:text-blue-200 mb-6 max-w-lg">
-              FinAccount was founded in 2015 by a group of passionate finance
-              professionals who believed that every business deserves clarity,
-              confidence, and growth. What started as a small consultancy in a
-              single-room office has grown into a leading firm serving hundreds
-              of clients across industries.
+              {t("AboutUs.Story.description")}
             </p>
             <ul className="mb-6 space-y-3">
               <li className="flex items-start gap-2">
                 <span className="text-[#21c2ad] text-xl">&#9679;</span>
                 <span className="text-gray-700 dark:text-blue-200">
-                  2015: Founded with a vision for transparent finance.
+                  {t("AboutUs.Story.timeline.0")}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#21c2ad] text-xl">&#9679;</span>
                 <span className="text-gray-700 dark:text-blue-200">
-                  2017: Expanded services to include tax, payroll, and advisory.
+                  {t("AboutUs.Story.timeline.1")}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#21c2ad] text-xl">&#9679;</span>
                 <span className="text-gray-700 dark:text-blue-200">
-                  2020: Reached 100+ clients, launched digital solutions.
+                  {t("AboutUs.Story.timeline.2")}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#21c2ad] text-xl">&#9679;</span>
                 <span className="text-gray-700 dark:text-blue-200">
-                  2023: Recognized as a top finance partner for SMEs.
+                  {t("AboutUs.Story.timeline.3")}
                 </span>
               </li>
             </ul>
             <blockquote className="border-l-4 border-[#21c2ad] pl-4 italic text-blue-900 dark:text-blue-100 mb-4">
-              "Our journey is defined by our clients' success. Every milestone
-              reflects our commitment to integrity, innovation, and
-              partnership."
+              {t("AboutUs.Story.quote")}
             </blockquote>
             <span className="text-[#155dfc] font-bold">
-              — The FinAccount Team
+              {t("AboutUs.Story.signature")}
             </span>
           </div>
         </section>
@@ -140,31 +132,27 @@ const AboutUs: React.FC = () => {
             {/* Mission Statement */}
             <div className="flex-1 flex flex-col justify-center items-start md:items-start mb-8 md:mb-0">
               <span className="text-[#21c2ad] font-bold text-lg mb-2 block">
-                MISSION & VALUES
+                {t("AboutUs.Mission.badge")}
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-4">
-                Our Mission
+                {t("AboutUs.Mission.title")}
               </h2>
               <p className="text-gray-700 dark:text-blue-200 mb-6 text-lg max-w-md">
-                To deliver transparent, reliable, and innovative financial
-                solutions that empower our clients to thrive. We believe in
-                building trust, embracing change, and always putting our clients
-                first.
+                {t("AboutUs.Mission.description")}
               </p>
               <blockquote className="border-l-4 border-[#21c2ad] pl-4 italic text-blue-900 dark:text-blue-100 mb-4">
-                "Integrity, innovation, and client focus are the pillars of our
-                success."
+                {t("AboutUs.Mission.quote")}
               </blockquote>
               <span className="text-[#155dfc] font-bold">
-                — FinAccount Leadership
+                {t("AboutUs.Mission.signature")}
               </span>
             </div>
             {/* Values Cards */}
             <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Integrity",
-                  desc: "We uphold the highest standards of honesty and ethics in all our work.",
+                  title: t("AboutUs.Values.cards.0.title"),
+                  desc: t("AboutUs.Values.cards.0.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#21c2ad] mb-3"
@@ -179,8 +167,8 @@ const AboutUs: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Innovation",
-                  desc: "We embrace technology and new ideas to deliver better results.",
+                  title: t("AboutUs.Values.cards.1.title"),
+                  desc: t("AboutUs.Values.cards.1.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#155dfc] mb-3"
@@ -195,8 +183,8 @@ const AboutUs: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Client Focus",
-                  desc: "We put our clients' needs first, building lasting relationships.",
+                  title: t("AboutUs.Values.cards.2.title"),
+                  desc: t("AboutUs.Values.cards.2.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#21c2ad] mb-3"
@@ -235,17 +223,16 @@ const AboutUs: React.FC = () => {
         >
           <div className="max-w-5xl mx-auto">
             <span className="text-[#21c2ad] font-bold text-lg mb-2 block text-center">
-              OUR TEAM
+              {t("AboutUs.Team.badge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-8 text-center">
-              Meet the Experts
+              {t("AboutUs.Team.title")}
             </h2>
-            <p className="  pl-4 italic text-blue-900 dark:text-blue-100 mb-10 text-center mx-auto max-w-2xl">
-              "Our strength lies in our people. Every client success is a team
-              achievement."
+            <p className="pl-4 italic text-blue-900 dark:text-blue-100 mb-10 text-center mx-auto max-w-2xl">
+              {t("AboutUs.Team.quote")}
               <br />
               <span className="text-[#155dfc] font-bold">
-                — FinAccount Team
+                {t("AboutUs.Team.signature")}
               </span>
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-center items-stretch">
@@ -258,17 +245,17 @@ const AboutUs: React.FC = () => {
                   <div className="relative mb-4">
                     <Image
                       src={member.img}
-                      alt={member.name}
+                      alt={t(member.nameKey)}
                       width={100}
                       height={100}
                       className="rounded-full shadow-lg object-cover border-4 border-[#21c2ad]"
                     />
                     <span className="absolute text-nowrap -bottom-2 left-1/2 -translate-x-1/2 bg-[#155dfc] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {member.role}
+                      {t(member.roleKey)}
                     </span>
                   </div>
                   <span className="font-bold text-[#155dfc] dark:text-blue-100 text-lg mb-1 text-center">
-                    {member.name}
+                    {t(member.nameKey)}
                   </span>
                 </div>
               ))}
@@ -280,29 +267,26 @@ const AboutUs: React.FC = () => {
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="max-w-6xl mx-auto">
             <span className="text-[#21c2ad] font-bold text-lg mb-2 block text-center">
-              OUR EXPERTISE
+              {t("AboutUs.Expertise.badge")}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 dark:text-blue-100 mb-4 text-center">
-              What We Do Best
+              {t("AboutUs.Expertise.title")}
             </h2>
             <p className="text-blue-900 dark:text-blue-100 text-center mb-8 max-w-2xl mx-auto">
-              Our team combines deep industry knowledge with innovative
-              solutions to help your business thrive. Explore our core areas of
-              expertise below.
+              {t("AboutUs.Expertise.description")}
             </p>
             <blockquote className="border-l-4 border-[#21c2ad] pl-4 italic text-blue-900 dark:text-blue-100 mb-10 text-center mx-auto max-w-2xl">
-              "Expertise is not just what we do—it's how we empower our clients
-              to succeed."
+              {t("AboutUs.Expertise.quote")}
               <br />
               <span className="text-[#155dfc] font-bold">
-                — FinAccount Experts
+                {t("AboutUs.Expertise.signature")}
               </span>
             </blockquote>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Accounting & Bookkeeping",
-                  desc: "Accurate records and reporting for peace of mind.",
+                  title: t("AboutUs.Expertise.cards.0.title"),
+                  desc: t("AboutUs.Expertise.cards.0.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#21c2ad] mb-3"
@@ -319,8 +303,8 @@ const AboutUs: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Tax Planning & Compliance",
-                  desc: "Smart strategies to minimize liabilities and stay compliant.",
+                  title: t("AboutUs.Expertise.cards.1.title"),
+                  desc: t("AboutUs.Expertise.cards.1.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#155dfc] mb-3"
@@ -337,8 +321,8 @@ const AboutUs: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Financial Advisory",
-                  desc: "Expert guidance for growth, investment, and decision-making.",
+                  title: t("AboutUs.Expertise.cards.2.title"),
+                  desc: t("AboutUs.Expertise.cards.2.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#21c2ad] mb-3"
@@ -355,8 +339,8 @@ const AboutUs: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Payroll Management",
-                  desc: "Efficient payroll solutions for every business size.",
+                  title: t("AboutUs.Expertise.cards.3.title"),
+                  desc: t("AboutUs.Expertise.cards.3.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#155dfc] mb-3"
@@ -372,8 +356,8 @@ const AboutUs: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Audit & Assurance",
-                  desc: "Thorough reviews to ensure accuracy and reliability.",
+                  title: t("AboutUs.Expertise.cards.4.title"),
+                  desc: t("AboutUs.Expertise.cards.4.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#21c2ad] mb-3"
@@ -388,8 +372,8 @@ const AboutUs: React.FC = () => {
                   ),
                 },
                 {
-                  title: "Business Consulting",
-                  desc: "Tailored advice to help you reach your goals.",
+                  title: t("AboutUs.Expertise.cards.5.title"),
+                  desc: t("AboutUs.Expertise.cards.5.desc"),
                   icon: (
                     <svg
                       className="w-10 h-10 text-[#155dfc] mb-3"
@@ -431,21 +415,19 @@ const AboutUs: React.FC = () => {
         >
           <div className="bg-white/10 rounded-2xl shadow-2xl p-10 flex flex-col items-center w-full">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
-              Ready to Transform Your Finances?
+              {t("AboutUs.CTA.title")}
             </h2>
             <p className="text-lg text-center md:text-xl mb-6 max-w-xl text-white/90">
-              Partner with us for expert accounting, strategic planning, and
-              business growth. Take the next step toward financial clarity and
-              success.
+              {t("AboutUs.CTA.description")}
             </p>
             <span className="inline-block bg-[#155dfc] text-white px-4 py-2 rounded-full font-bold mb-6 shadow-md animate-pulse">
-              Trusted by 100+ Businesses
+              {t("AboutUs.CTA.badge")}
             </span>
             <Link
               href="/contact-us"
               className="px-10 py-5 rounded-full bg-white text-[#155dfc] font-bold shadow-lg hover:bg-blue-100 transition-all duration-300 text-xl hover:scale-105"
             >
-              Get Started Now
+              {t("AboutUs.CTA.cta")}
             </Link>
           </div>
         </section>

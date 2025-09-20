@@ -164,5 +164,111 @@
       "description": "Partner with us for expert accounting, strategic planning, and business growth. Take the next step toward financial clarity and success.",
       "cta": "Get Started Now"
     }
+  },
+  "AboutUs": {
+    "meta": {
+      "title": "About Us - FinAccount",
+      "description": "Learn more about our team, mission, and expertise in finance and accounting."
+    },
+    "Hero": {
+      "title": "About FinAccount",
+      "description": "Empowering businesses with expert finance and accounting solutions for growth and clarity.",
+      "cta": "Meet Our Team",
+      "image_alt": "About Us"
+    },
+    "Story": {
+      "badge": "10+ Years of Excellence",
+      "title": "From Startup to Trusted Partner",
+      "description": "FinAccount was founded in 2015 by a group of passionate finance professionals who believed that every business deserves clarity, confidence, and growth. What started as a small consultancy in a single-room office has grown into a leading firm serving hundreds of clients across industries.",
+      "timeline": [
+        "2015: Founded with a vision for transparent finance.",
+        "2017: Expanded services to include tax, payroll, and advisory.",
+        "2020: Reached 100+ clients, launched digital solutions.",
+        "2023: Recognized as a top finance partner for SMEs."
+      ],
+      "quote": "Our journey is defined by our clients' success. Every milestone reflects our commitment to integrity, innovation, and partnership.",
+      "signature": "— The FinAccount Team",
+      "image_alt": "Our Story"
+    },
+    "Mission": {
+      "badge": "MISSION & VALUES",
+      "title": "Our Mission",
+      "description": "To deliver transparent, reliable, and innovative financial solutions that empower our clients to thrive. We believe in building trust, embracing change, and always putting our clients first.",
+      "quote": "Integrity, innovation, and client focus are the pillars of our success.",
+      "signature": "— FinAccount Leadership"
+    },
+    "Values": {
+      "cards": [
+        {
+          "title": "Integrity",
+          "desc": "We uphold the highest standards of honesty and ethics in all our work."
+        },
+        {
+          "title": "Innovation",
+          "desc": "We embrace technology and new ideas to deliver better results."
+        },
+        {
+          "title": "Client Focus",
+          "desc": "We put our clients' needs first, building lasting relationships."
+        }
+      ]
+    },
+    "Team": {
+      "badge": "OUR TEAM",
+      "title": "Meet the Experts",
+      "quote": "Our strength lies in our people. Every client success is a team achievement.",
+      "signature": "— FinAccount Team",
+      "AmitVerma": {
+        "name": "Amit Verma",
+        "role": "Founder & CEO"
+      },
+      "SarahJohnson": {
+        "name": "Sarah Johnson",
+        "role": "Lead Accountant"
+      },
+      "MohammedAlFarsi": {
+        "name": "Mohammed Al-Farsi",
+        "role": "Tax Specialist"
+      }
+    },
+    "Expertise": {
+      "badge": "OUR EXPERTISE",
+      "title": "What We Do Best",
+      "description": "Our team combines deep industry knowledge with innovative solutions to help your business thrive. Explore our core areas of expertise below.",
+      "quote": "Expertise is not just what we do—it's how we empower our clients to succeed.",
+      "signature": "— FinAccount Experts",
+      "cards": {
+        "0": {
+          "title": "Accounting & Bookkeeping",
+          "desc": "Accurate records and reporting for peace of mind."
+        },
+        "1": {
+          "title": "Tax Planning & Compliance",
+          "desc": "Smart strategies to minimize liabilities and stay compliant."
+        },
+        "2": {
+          "title": "Financial Advisory",
+          "desc": "Expert guidance for growth, investment, and decision-making."
+        },
+        "3": {
+          "title": "Payroll Management",
+          "desc": "Efficient payroll solutions for every business size."
+        },
+        "4": {
+          "title": "Audit & Assurance",
+          "desc": "Thorough reviews to ensure accuracy and reliability."
+        },
+        "5": {
+          "title": "Business Consulting",
+          "desc": "Tailored advice to help you reach your goals."
+        }
+      }
+    },
+    "CTA": {
+      "title": "Ready to Transform Your Finances?",
+      "description": "Partner with us for expert accounting, strategic planning, and business growth. Take the next step toward financial clarity and success.",
+      "badge": "Trusted by 100+ Businesses",
+      "cta": "Get Started Now"
+    }
   }
 }
