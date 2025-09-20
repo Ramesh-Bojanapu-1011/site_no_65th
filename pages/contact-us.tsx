@@ -3,41 +3,36 @@ import React, { useState } from "react";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 // FAQ data and accordion component
 const faqs = [
   {
-    question:
-      "How quickly will I get a response after submitting the contact form?",
-    answer:
-      "We aim to respond to all inquiries within 24 hours during business days. Urgent requests are prioritized.",
+    questionKey: "ContactUs.FAQ.0.question",
+    answerKey: "ContactUs.FAQ.0.answer",
   },
   {
-    question: "Can I schedule a consultation with your finance experts?",
-    answer:
-      "Absolutely! Please mention your preferred time in the message field, and our team will reach out to confirm your appointment.",
+    questionKey: "ContactUs.FAQ.1.question",
+    answerKey: "ContactUs.FAQ.1.answer",
   },
   {
-    question: "What information should I include in my message?",
-    answer:
-      "Please provide your name, contact details, and a brief description of your query or requirements for faster assistance.",
+    questionKey: "ContactUs.FAQ.2.question",
+    answerKey: "ContactUs.FAQ.2.answer",
   },
   {
-    question: "Do you offer support for international clients?",
-    answer:
-      "Yes, we work with clients globally and can accommodate different time zones and languages as needed.",
+    questionKey: "ContactUs.FAQ.3.question",
+    answerKey: "ContactUs.FAQ.3.answer",
   },
   {
-    question: "Is my information safe when I contact you?",
-    answer:
-      "Your privacy is important to us. All information shared is kept confidential and used only for service purposes.",
+    questionKey: "ContactUs.FAQ.4.question",
+    answerKey: "ContactUs.FAQ.4.answer",
   },
 ];
 
 const infoCards = [
   {
-    title: "Our Office",
-    desc: "123 Finance St, Suite 456, Mumbai, India",
+    titleKey: "ContactUs.InfoCards.0.title",
+    descKey: "ContactUs.InfoCards.0.desc",
     icon: (
       <svg
         className="w-8 h-8 text-[#21c2ad]"
@@ -52,8 +47,8 @@ const infoCards = [
     ),
   },
   {
-    title: "Email Us",
-    desc: "contact@finaccount.com",
+    titleKey: "ContactUs.InfoCards.1.title",
+    descKey: "ContactUs.InfoCards.1.desc",
     icon: (
       <svg
         className="w-8 h-8 text-[#155dfc]"
@@ -68,8 +63,8 @@ const infoCards = [
     ),
   },
   {
-    title: "Call Us",
-    desc: "+91 98765 43210",
+    titleKey: "ContactUs.InfoCards.2.title",
+    descKey: "ContactUs.InfoCards.2.desc",
     icon: (
       <svg
         className="w-8 h-8 text-[#21c2ad]"
@@ -87,9 +82,11 @@ const infoCards = [
 // FAQ data and accordion component
 
 const ContactPage = () => {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [success, setSuccess] = useState(false);
   const formRef = React.useRef<HTMLFormElement | null>(null);
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -107,7 +104,7 @@ const ContactPage = () => {
     const action = form.getAttribute("action");
 
     if (!action) {
-      alert("Form action URL not found.");
+      alert(t("ContactUs.Form.error"));
       return;
     }
 
@@ -124,22 +121,19 @@ const ContactPage = () => {
         setForm({ name: "", email: "", message: "" });
         setSuccess(true);
       } else {
-        alert("contactUs.form.error");
+        alert(t("ContactUs.Form.error"));
       }
     } catch (error) {
       console.error("Submission error:", error);
-      alert("contactUs.form.error");
+      alert(t("ContactUs.Form.error"));
     }
   };
 
   return (
     <>
       <Head>
-        <title>Contact Us | FinAccount</title>
-        <meta
-          name="description"
-          content="Get in touch with our finance and accounting experts."
-        />
+        <title>{t("ContactUs.Meta.title")}</title>
+        <meta name="description" content={t("ContactUs.Meta.description")} />
       </Head>
       <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen caret-transparent">
         <SiteHeader />
@@ -147,17 +141,16 @@ const ContactPage = () => {
         <section className="flex flex-col md:flex-row items-center justify-between px-8 py-24 gap-12 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100 min-h-screen">
           <div className="flex-1 flex flex-col justify-center items-start">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-              Contact Us
+              {t("ContactUs.Hero.title")}
             </h1>
             <p className="text-lg md:text-2xl mb-8 max-w-xl">
-              Reach out for expert advice, support, or partnership
-              opportunities. We're here to help your business grow.
+              {t("ContactUs.Hero.description")}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center">
             <Image
               src="https://i.pinimg.com/736x/01/4f/37/014f37e8f2d3d600dedb58f5fff0d136.jpg"
-              alt="Contact"
+              alt={t("ContactUs.Hero.image_alt")}
               width={500}
               height={450}
               className="rounded-2xl shadow-2xl object-cover bg-blue-100 dark:bg-blue-900"
@@ -169,11 +162,11 @@ const ContactPage = () => {
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="max-w-2xl mx-auto bg-white dark:bg-blue-950 rounded-2xl shadow-xl p-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#155dfc] dark:text-blue-100 mb-6 text-center">
-              Send Us a Message
+              {t("ContactUs.Form.title")}
             </h2>
             {success && (
               <div className="mb-6 p-4 bg-[#21c2ad] text-white rounded-xl text-center font-bold animate-pulse shadow-lg">
-                Thank you! Your message has been sent.
+                {t("ContactUs.Form.success")}
               </div>
             )}
             <form
@@ -188,7 +181,7 @@ const ContactPage = () => {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="Your Name"
+                placeholder={t("ContactUs.Form.name")}
                 required
                 className="px-5 py-4 rounded-xl border-2 border-[#21c2ad] focus:border-[#155dfc] focus:outline-none text-lg bg-blue-50 dark:bg-blue-900 dark:text-white"
               />
@@ -197,7 +190,7 @@ const ContactPage = () => {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="Your Email"
+                placeholder={t("ContactUs.Form.email")}
                 required
                 className="px-5 py-4 rounded-xl border-2 border-[#21c2ad] focus:border-[#155dfc] focus:outline-none text-lg bg-blue-50 dark:bg-blue-900 dark:text-white"
               />
@@ -205,7 +198,7 @@ const ContactPage = () => {
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Your Message"
+                placeholder={t("ContactUs.Form.message")}
                 required
                 rows={5}
                 className="px-5 py-4 rounded-xl border-2 border-[#21c2ad] focus:border-[#155dfc] focus:outline-none text-lg bg-blue-50 dark:bg-blue-900 dark:text-white"
@@ -214,7 +207,7 @@ const ContactPage = () => {
                 type="submit"
                 className="px-8 py-4 rounded-full bg-gradient-to-r from-[#21c2ad] to-[#155dfc] text-white font-bold shadow-lg hover:scale-105 hover:shadow-2xl transition text-lg"
               >
-                Send Message
+                {t("ContactUs.Form.submit")}
               </button>
             </form>
           </div>
@@ -230,10 +223,10 @@ const ContactPage = () => {
               >
                 <span className="mb-4">{card.icon}</span>
                 <h3 className="font-bold text-[#155dfc] dark:text-blue-100 mb-2 text-lg">
-                  {card.title}
+                  {t(card.titleKey)}
                 </h3>
                 <p className="text-gray-700 dark:text-blue-200 text-base">
-                  {card.desc}
+                  {t(card.descKey)}
                 </p>
               </div>
             ))}
@@ -245,68 +238,64 @@ const ContactPage = () => {
           <div className="max-w-4xl mx-auto px-4">
             <div className="flex flex-col items-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-blue-100 text-center mb-4">
-                Frequently Asked Questions
+                {t("ContactUs.FAQ.title")}
               </h2>
               <p className="text-gray-700 dark:text-gray-300 text-center max-w-2xl mb-8">
-                Find answers to common questions about our finance and
-                accounting services, support, and contact process.
+                {t("ContactUs.FAQ.description")}
               </p>
             </div>
             <div className="space-y-6">
-              {faqs.map((faq, idx) => {
-                const [openIdx, setOpenIdx] = useState<number | null>(null);
-                return (
-                  <div
-                    key={idx}
-                    className={
-                      `relative rounded-2xl shadow-xl p-0 overflow-hidden transition-all duration-300 ` +
-                      `bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 ` +
-                      `border-transparent ` +
-                      `before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none ` +
-                      `before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30`
-                    }
+              {faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className={
+                    `relative rounded-2xl shadow-xl p-0 overflow-hidden transition-all duration-300 ` +
+                    `bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 ` +
+                    `border-transparent ` +
+                    `before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none ` +
+                    `before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30`
+                  }
+                >
+                  <button
+                    className="w-full flex items-center gap-4 px-6 py-6 text-left focus:outline-none"
+                    onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                    aria-expanded={openIdx === idx}
+                    aria-controls={`faq-panel-${idx}`}
                   >
-                    <button
-                      className="w-full flex items-center gap-4 px-6 py-6 text-left focus:outline-none"
-                      onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                      aria-expanded={openIdx === idx}
-                      aria-controls={`faq-panel-${idx}`}
-                    >
-                      <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
-                        {faq.question}
-                      </span>
-                      <span className="ml-auto">
-                        <svg
-                          className={`w-7 h-7 transition-transform duration-300 ${
-                            openIdx === idx ? "rotate-180" : "rotate-0"
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M6 9l6 6 6-6" />
-                        </svg>
-                      </span>
-                    </button>
-                    <div
-                      id={`faq-panel-${idx}`}
-                      className={`px-6 pb-6 transition-all duration-300 ${
-                        openIdx === idx
-                          ? "max-h-96 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
-                      style={{ overflow: "hidden" }}
-                    >
-                      {openIdx === idx && (
-                        <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
-                          {faq.answer}
-                        </div>
-                      )}
-                    </div>
+                    <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
+                      {t(faq.questionKey)}
+                    </span>
+                    <span className="ml-auto">
+                      <svg
+                        className={`w-7 h-7 transition-transform duration-300 ${
+                          openIdx === idx ? "rotate-180" : "rotate-0"
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    id={`faq-panel-${idx}`}
+                    className={`px-6 pb-6 transition-all duration-300 ${
+                      openIdx === idx
+                        ? "max-h-96 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                    style={{ overflow: "hidden" }}
+                  >
+                    {openIdx === idx && (
+                      <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
+                        {t(faq.answerKey)}
+                      </div>
+                    )}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -321,7 +310,7 @@ const ContactPage = () => {
               style={{ border: 0 }}
               allowFullScreen={true}
               loading="lazy"
-              title="Our Office Location"
+              title={t("ContactUs.Map.title")}
             ></iframe>
           </div>
         </section>
@@ -330,17 +319,16 @@ const ContactPage = () => {
         <section className=" py-20 px-8 relative overflow-hidden">
           <div className="max-w-3xl py-20 px-8 mx-auto flex flex-col items-center text-center relative z-10 rounded-2xl shadow-xl bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 border-transparent before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg text-[#155dfc] dark:text-[#21c2ad]">
-              Ready to Connect?
+              {t("ContactUs.CTA.title")}
             </h2>
             <p className="text-lg md:text-xl mb-8 max-w-xl text-blue-900 dark:text-blue-100">
-              Let us help you with your finance and accounting needs. Reach out
-              today and take the next step toward success.
+              {t("ContactUs.CTA.description")}
             </p>
             <form className="w-full max-w-md mx-auto flex flex-col sm:flex-row items-center gap-4 mt-4">
               <div className="relative w-full">
                 <input
                   type="email"
-                  placeholder="Your Email Address"
+                  placeholder={t("ContactUs.CTA.email_placeholder")}
                   className="w-full px-6 py-4 rounded-full border-2 border-[#21c2ad] focus:border-[#155dfc] bg-white/80 dark:bg-blue-950/80 text-lg text-blue-900 dark:text-blue-100 shadow-md focus:outline-none transition-all duration-300"
                   required
                 />
@@ -359,7 +347,7 @@ const ContactPage = () => {
                   <path d="M5 12h14" />
                   <path d="M12 5l7 7-7 7" />
                 </svg>
-                Subscribe
+                {t("ContactUs.CTA.subscribe")}
               </button>
             </form>
           </div>

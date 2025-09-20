@@ -1006,5 +1006,72 @@
       "title": "Conclusion",
       "desc": "Advisory services are a catalyst for business success, providing strategic guidance, financial planning, risk management, and innovation. By partnering with experts, companies can navigate challenges, seize opportunities, and achieve sustainable growth. Make advisory support a cornerstone of your business strategy for lasting results."
     }
+  },
+  "ContactUs": {
+    "Meta": {
+      "title": "Contact Us | FinAccount",
+      "description": "Get in touch with our finance and accounting experts."
+    },
+    "Hero": {
+      "title": "Contact Us",
+      "description": "Reach out for expert advice, support, or partnership opportunities. We're here to help your business grow.",
+      "image_alt": "Contact"
+    },
+    "Form": {
+      "title": "Send Us a Message",
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Thank you! Your message has been sent.",
+      "error": "There was an error submitting your message. Please try again."
+    },
+    "InfoCards": {
+      "0": {
+        "title": "Our Office",
+        "desc": "123 Finance St, Suite 456, Mumbai, India"
+      },
+      "1": {
+        "title": "Email Us",
+        "desc": "contact@finaccount.com"
+      },
+      "2": {
+        "title": "Call Us",
+        "desc": "+91 98765 43210"
+      }
+    },
+    "FAQ": {
+      "title": "Frequently Asked Questions",
+      "description": "Find answers to common questions about our finance and accounting services, support, and contact process.",
+      "0": {
+        "question": "How quickly will I get a response after submitting the contact form?",
+        "answer": "We aim to respond to all inquiries within 24 hours during business days. Urgent requests are prioritized."
+      },
+      "1": {
+        "question": "Can I schedule a consultation with your finance experts?",
+        "answer": "Absolutely! Please mention your preferred time in the message field, and our team will reach out to confirm your appointment."
+      },
+      "2": {
+        "question": "What information should I include in my message?",
+        "answer": "Please provide your name, contact details, and a brief description of your query or requirements for faster assistance."
+      },
+      "3": {
+        "question": "Do you offer support for international clients?",
+        "answer": "Yes, we work with clients globally and can accommodate different time zones and languages as needed."
+      },
+      "4": {
+        "question": "Is my information safe when I contact you?",
+        "answer": "Your privacy is important to us. All information shared is kept confidential and used only for service purposes."
+      }
+    },
+    "Map": {
+      "title": "Our Office Location"
+    },
+    "CTA": {
+      "title": "Ready to Connect?",
+      "description": "Let us help you with your finance and accounting needs. Reach out today and take the next step toward success.",
+      "email_placeholder": "Your Email Address",
+      "subscribe": "Subscribe"
+    }
   }
 }
