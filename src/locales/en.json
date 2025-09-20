@@ -75,5 +75,94 @@
     "team_maria_role": "Senior Accountant",
     "team_james_name": "James O'Connor",
     "team_james_role": "Audit & Assurance Lead"
+  },
+  "Home2": {
+    "meta": {
+      "title": "FinAccount - Elevate Your Business with Finance Expertise",
+      "description": "Unlock growth, compliance, and clarity with our modern accounting and financial solutions."
+    },
+    "Hero": {
+      "title1": "Elevate Your Business",
+      "title2": "with Finance Expertise",
+      "description": "Unlock growth, compliance, and clarity with our modern accounting and financial solutions.",
+      "cta": "Get Started",
+      "image_alt": "Finance Team"
+    },
+    "About": {
+      "badge": "ABOUT US",
+      "title": "Trusted Financial Guidance for Modern Businesses",
+      "description": "Our team delivers expert accounting, tax, and advisory services tailored for startups, SMEs, and enterprises. We combine technology and experience to help you make confident decisions.",
+      "cta": "Learn More",
+      "image_alt": "About Finance"
+    },
+    "Services": {
+      "title": "Our Services",
+      "TaxStrategy": {
+        "title": "Tax Strategy",
+        "desc": "Reduce tax burdens and enhance savings with smart planning."
+      },
+      "Payroll": {
+        "title": "Payroll Services",
+        "desc": "Seamless, precise payroll processing for every workforce."
+      },
+      "RiskAssurance": {
+        "title": "Risk & Assurance",
+        "desc": "Thorough reviews to ensure accuracy and reliability."
+      },
+      "FinancialInsights": {
+        "title": "Financial Insights",
+        "desc": "Accurate, up-to-date data for better business choices."
+      },
+      "StrategicAdvisory": {
+        "title": "Strategic Advisory",
+        "desc": "Guidance to boost growth, compliance, and direction."
+      }
+    },
+    "Process": {
+      "title": "How We Work",
+      "Discovery": {
+        "title": "Discovery",
+        "desc": "We listen to your needs and goals."
+      },
+      "Analysis": {
+        "title": "Analysis",
+        "desc": "We review your finances and identify opportunities."
+      },
+      "Strategy": {
+        "title": "Strategy",
+        "desc": "We design a custom plan for your business."
+      },
+      "Execution": {
+        "title": "Execution",
+        "desc": "We implement solutions and keep you informed."
+      },
+      "Support": {
+        "title": "Support",
+        "desc": "We provide ongoing advice and updates."
+      }
+    },
+    "Testimonials": {
+      "title": "Client Stories",
+      "AmitVerma": {
+        "name": "Amit Verma",
+        "company": "Verma Textiles",
+        "feedback": "Their team helped us streamline our finances and plan for growth."
+      },
+      "SarahJohnson": {
+        "name": "Sarah Johnson",
+        "company": "Johnson Consulting",
+        "feedback": "Professional, reliable, and always available for support."
+      },
+      "MohammedAlFarsi": {
+        "name": "Mohammed Al-Farsi",
+        "company": "Al-Farsi Trading",
+        "feedback": "We trust them for all our audit and compliance needs."
+      }
+    },
+    "CTA": {
+      "title": "Ready to Transform Your Finances?",
+      "description": "Partner with us for expert accounting, strategic planning, and business growth. Take the next step toward financial clarity and success.",
+      "cta": "Get Started Now"
+    }
   }
 }
