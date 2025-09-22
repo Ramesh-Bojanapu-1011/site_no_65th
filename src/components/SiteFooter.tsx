@@ -11,15 +11,17 @@ const services = [
   { name: "Hedder.Investment_Advisory", Link: "investment-advisory" },
 ];
 
-const quickLinks = [
-  { name: "Hedder.home", href: "/" },
-  { name: "Hedder.About_Us", href: "/about-us" },
-  { name: "Hedder.Blog", href: "/blog" },
-  { name: "Hedder.Contact_Us", href: "/contact-us" },
-];
-
 const SiteFooter: React.FC = () => {
   const { t } = useTranslation();
+
+  const quickLinks = [
+    { name: `${t("Hedder.home")}1`, href: "/home1" },
+    { name: `${t("Hedder.home")}2`, href: "/home2" },
+    { name: `${t("Hedder.About_Us")}`, href: "/about-us" },
+    { name: `${t("Hedder.Services")}`, href: "/services" },
+    { name: `${t("Hedder.Blog")}`, href: "/blog" },
+    { name: `${t("Hedder.Contact_Us")}`, href: "/contact-us" },
+  ];
   return (
     <footer className="bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 border-t border-blue-200 dark:border-blue-900">
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -52,7 +54,7 @@ const SiteFooter: React.FC = () => {
                   href={link.href}
                   className="text-blue-800 dark:text-blue-200 hover:underline hover:text-blue-600 dark:hover:text-blue-400 transition text-base"
                 >
-                  {t(link.name)}
+                  {link.name}
                 </a>
               </li>
             ))}

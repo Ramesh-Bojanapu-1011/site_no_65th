@@ -124,7 +124,7 @@ const AdminDashboard = () => {
         </section>
 
         {/* Charts Section */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-12  ">
+        <section className="grid grid-cols-1 pb-10 md:grid-cols-2 gap-12  ">
           {/* Pie Chart */}
           <div className="bg-white dark:bg-blue-950 rounded-xl shadow-lg p-6 flex flex-col items-center">
             <h3 className="text-xl font-bold mb-4 text-[#155dfc] dark:text-[#21c2ad]">
