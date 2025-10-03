@@ -93,10 +93,24 @@ const Home2: React.FC = () => {
         <meta name="description" content={t("Home2.meta.description")} />
       </Head>
       <SiteHeader />
-      <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen">
+      <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen caret-transparent">
         {/* Hero Section */}
-        <section className="flex flex-col min-h-screen md:flex-row items-center justify-between px-8 py-24 gap-12 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100">
-          <div className="flex-1 flex flex-col justify-center items-start">
+        <section className="relative flex flex-col min-h-screen md:flex-row items-center justify-between px-8 py-24 gap-12 overflow-hidden">
+          {/* Background Video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          >
+            <source src="home2_bg_vedio.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/80 via-white/80 to-blue-200/80 dark:from-blue-950/80 dark:via-gray-900/80 dark:to-blue-900/80 z-10"></div>
+          {/* Content */}
+          <div className="relative flex-1 flex flex-col justify-center items-start z-20 text-blue-900 dark:text-blue-100">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
               {t("Home2.Hero.title1")}
               <br />
@@ -112,7 +126,7 @@ const Home2: React.FC = () => {
               {t("Home2.Hero.cta")}
             </Link>
           </div>
-          <div className="flex-1 flex justify-center items-center">
+          <div className="relative flex-1 flex justify-center items-center z-20">
             <Image
               src="https://i.pinimg.com/736x/d4/35/ed/d435ed9e28566f1c51838931a449d97c.jpg"
               alt={t("Home2.Hero.image_alt")}

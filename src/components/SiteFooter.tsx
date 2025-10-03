@@ -91,10 +91,10 @@ const SiteFooter: React.FC = () => {
             </li>
             <li>
               <a
-                href="mailto:info@finaccount.com"
+                href="mailto:info@stackly.com"
                 className="text-blue-800 dark:text-blue-200 hover:underline hover:text-blue-600 dark:hover:text-blue-400"
               >
-                info@finaccount.com
+                info@stackly.com
               </a>
             </li>
             <li>

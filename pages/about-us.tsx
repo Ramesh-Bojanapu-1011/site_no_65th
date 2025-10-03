@@ -39,8 +39,22 @@ const AboutUs: React.FC = () => {
       <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen caret-transparent">
         <SiteHeader />
         {/* Hero Section */}
-        <section className="flex flex-col md:flex-row items-center justify-between px-8 py-24 gap-12 bg-gradient-to-tr from-blue-100 via-white min-h-screen to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100">
-          <div className="flex-1 flex flex-col justify-center items-start">
+        <section className="relative flex flex-col md:flex-row items-center justify-between px-8 py-24 gap-12 min-h-screen overflow-hidden">
+          {/* Background Video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          >
+            <source src="about_us_bg_vedio.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/80 via-white/80 to-blue-200/80 dark:from-blue-950/80 dark:via-gray-900/80 dark:to-blue-900/80 z-10"></div>
+          {/* Content */}
+          <div className="relative flex-1 flex flex-col justify-center items-start z-20 text-blue-900 dark:text-blue-100">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
               {t("AboutUs.Hero.title")}
             </h1>
@@ -54,7 +68,7 @@ const AboutUs: React.FC = () => {
               {t("AboutUs.Hero.cta")}
             </Link>
           </div>
-          <div className="flex-1 flex justify-center items-center">
+          <div className="relative flex-1 flex justify-center items-center z-20">
             <Image
               src="https://i.pinimg.com/736x/93/bf/d1/93bfd1c9bcce4b7b1ae589c94a0616e6.jpg"
               alt={t("AboutUs.Hero.image_alt")}
@@ -392,7 +406,7 @@ const AboutUs: React.FC = () => {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  data-aos="zoom-in"
+                  data-aos="fade-up"
                   className="bg-gradient-to-br from-white via-blue-100 to-[#21c2ad] dark:from-blue-950 dark:via-blue-900 dark:to-[#155dfc] rounded-xl shadow-xl p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl border-2 border-transparent hover:border-[#21c2ad]"
                 >
                   {item.icon}

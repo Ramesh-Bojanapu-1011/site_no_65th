@@ -89,7 +89,7 @@ const ContactPage = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -135,11 +135,25 @@ const ContactPage = () => {
         <title>{t("ContactUs.Meta.title")}</title>
         <meta name="description" content={t("ContactUs.Meta.description")} />
       </Head>
-      <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen caret-transparent">
+      <main className="bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 min-h-screen ">
         <SiteHeader />
         {/* Hero Section */}
-        <section className="flex flex-col md:flex-row items-center justify-between px-8 py-24 gap-12 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 text-blue-900 dark:text-blue-100 min-h-screen">
-          <div className="flex-1 flex flex-col justify-center items-start">
+        <section className="relative flex flex-col md:flex-row items-center justify-between caret-transparent px-8 py-24 gap-12 min-h-screen overflow-hidden">
+          {/* Background Video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          >
+            <source src="contact-us_bg_vedio.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-blue-100/80 via-white/80 to-blue-200/80 dark:from-blue-950/80 dark:via-gray-900/80 dark:to-blue-900/80 z-10"></div>
+          {/* Content */}
+          <div className="relative flex-1 flex flex-col justify-center items-start z-20 text-blue-900 dark:text-blue-100">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
               {t("ContactUs.Hero.title")}
             </h1>
@@ -147,7 +161,7 @@ const ContactPage = () => {
               {t("ContactUs.Hero.description")}
             </p>
           </div>
-          <div className="flex-1 flex justify-center items-center">
+          <div className="relative flex-1 flex justify-center items-center z-20">
             <Image
               src="https://i.pinimg.com/736x/01/4f/37/014f37e8f2d3d600dedb58f5fff0d136.jpg"
               alt={t("ContactUs.Hero.image_alt")}
@@ -161,11 +175,11 @@ const ContactPage = () => {
         {/* Contact Form Section */}
         <section className="py-20 px-8 bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="max-w-2xl mx-auto bg-white dark:bg-blue-950 rounded-2xl shadow-xl p-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#155dfc] dark:text-blue-100 mb-6 text-center">
+            <h2 className="text-3xl caret-transparent md:text-4xl font-bold text-[#155dfc] dark:text-blue-100 mb-6 text-center">
               {t("ContactUs.Form.title")}
             </h2>
             {success && (
-              <div className="mb-6 p-4 bg-[#21c2ad] text-white rounded-xl text-center font-bold animate-pulse shadow-lg">
+              <div className="mb-6 p-4 bg-[#21c2ad] text-white rounded-xl text-center font-bold caret-transparent animate-pulse shadow-lg">
                 {t("ContactUs.Form.success")}
               </div>
             )}
@@ -214,7 +228,7 @@ const ContactPage = () => {
         </section>
 
         {/* Info Cards Section */}
-        <section className="py-20 px-8 bg-white dark:bg-blue-950">
+        <section className="py-20 px-8 bg-white dark:bg-blue-950 caret-transparent">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {infoCards.map((card, idx) => (
               <div
@@ -234,7 +248,7 @@ const ContactPage = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
+        <section className="py-20 caret-transparent bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900">
           <div className="max-w-4xl mx-auto px-4">
             <div className="flex flex-col items-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-blue-100 text-center mb-4">
@@ -257,7 +271,7 @@ const ContactPage = () => {
                   }
                 >
                   <button
-                    className="w-full flex items-center gap-4 px-6 py-6 text-left focus:outline-none"
+                    className="w-full flex items-center   px-6 py-6 text-left focus:outline-none"
                     onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
                     aria-expanded={openIdx === idx}
                     aria-controls={`faq-panel-${idx}`}
@@ -281,15 +295,15 @@ const ContactPage = () => {
                   </button>
                   <div
                     id={`faq-panel-${idx}`}
-                    className={`px-6 pb-6 transition-all duration-300 ${
+                    className={`px-6   transition-all duration-300 ${
                       openIdx === idx
-                        ? "max-h-96 opacity-100"
+                        ? "max-h-96 opacity-100 border-t border-gray-300 dark:border-gray-700 py-4 "
                         : "max-h-0 opacity-0"
                     }`}
                     style={{ overflow: "hidden" }}
                   >
                     {openIdx === idx && (
-                      <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
+                      <div className="mt-2 text-gray-700 dark:text-blue-200 text-base">
                         {t(faq.answerKey)}
                       </div>
                     )}
@@ -301,8 +315,8 @@ const ContactPage = () => {
         </section>
 
         {/* Map Section */}
-        <section className="  bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 flex justify-center items-center">
-          <div className=" max-w-6xl  w-full rounded-2xl overflow-hidden shadow-xl">
+        <section className=" caret-transparent  bg-gradient-to-tr from-blue-100 via-white to-blue-200 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 flex justify-center items-center">
+          <div className=" max-w-7xl  w-full rounded-2xl overflow-hidden shadow-xl">
             <iframe
               src="https://www.openstreetmap.org/export/embed.html?bbox=72.8258%2C18.975%2C72.8358%2C18.985&amp;layer=mapnik"
               width="100%"
@@ -316,7 +330,7 @@ const ContactPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className=" py-20 px-8 relative overflow-hidden">
+        <section className=" caret-transparent py-20 px-8 relative overflow-hidden">
           <div className="max-w-3xl py-20 px-8 mx-auto flex flex-col items-center text-center relative z-10 rounded-2xl shadow-xl bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 border-transparent before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg text-[#155dfc] dark:text-[#21c2ad]">
               {t("ContactUs.CTA.title")}

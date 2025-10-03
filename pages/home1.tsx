@@ -21,14 +21,32 @@ const Home1: React.FC = () => {
       </Head>
 
       <SiteHeader />
-      <main className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 caret-transparent dark:via-gray-900 dark:to-blue-900 min-h-screen">
-        <section className="flex min-h-screen flex-col items-center justify-center py-20 px-4 text-center bg-gradient-to-r from-blue-600 to-blue-400 text-white dark:from-blue-900 dark:to-blue-700">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-            {t("Home1.hero_title")}
-          </h1>
-          <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto">
-            {t("Home1.hero_description")}
-          </p>
+      <main className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 caret-transparent dark:via-gray-900 dark:to-blue-900 min-h-screen ">
+        <section className="relative flex min-h-screen flex-col items-center justify-center py-20 px-4 text-center overflow-hidden">
+          {/* Background Video */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          >
+            <source src="home1_bg_video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-blue-400/80 dark:from-blue-900/80 dark:to-blue-700/80 z-10"></div>
+
+          {/* Content */}
+          <div className="relative z-20 text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+              {t("Home1.hero_title")}
+            </h1>
+            <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto">
+              {t("Home1.hero_description")}
+            </p>
+          </div>
         </section>
 
         {/* About Section (Image Layout) */}
@@ -243,6 +261,7 @@ const Home1: React.FC = () => {
                 },
               ].map((service) => (
                 <div
+                  data-aos="fade-left"
                   key={service.title}
                   className="bg-blue-100 dark:bg-blue-950 rounded-2xl shadow-lg p-8 flex items-center gap-6"
                 >
@@ -383,6 +402,7 @@ const Home1: React.FC = () => {
               ].map((reason, idx) => (
                 <div
                   key={idx}
+                  data-aos="zoom-in"
                   className="bg-white dark:bg-blue-950 rounded-3xl shadow-2xl px-10 py-12 flex flex-col items-center text-center transition-all duration-300 hover:scale-105 hover:shadow-blue-300 dark:hover:shadow-[#21c2ad]"
                   style={{ minWidth: "280px", maxWidth: "340px" }}
                 >

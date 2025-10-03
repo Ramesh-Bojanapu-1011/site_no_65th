@@ -90,7 +90,7 @@ const SiteHeader: React.FC = () => {
   }, [mobileMenuOpen, homeOpen, servicesOpen, profileOpen, langOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-b border-blue-200 dark:border-blue-900 text-nowrap">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-white to-blue-50 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900  border-b border-blue-200 dark:border-blue-900 text-nowrap caret-transparent">
       <nav className="flex items-center justify-between px-6 py-3">
         {/* Logo */}
         <Link href={"/home1"} className="flex">
