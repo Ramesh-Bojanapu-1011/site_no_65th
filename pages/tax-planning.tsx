@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const faqs = [

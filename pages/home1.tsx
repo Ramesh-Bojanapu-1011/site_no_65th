@@ -1,4 +1,4 @@
-import aos from "aos";
+import Aos from "aos";
 import { FacebookIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 import Head from "next/head";
 import Image from "next/image";
@@ -11,7 +11,7 @@ import SiteHeader from "../src/components/SiteHeader";
 const Home1: React.FC = () => {
   const { t } = useTranslation();
   React.useEffect(() => {
-    aos.init({ duration: 1000 });
+    Aos.init({});
   }, []);
   return (
     <>

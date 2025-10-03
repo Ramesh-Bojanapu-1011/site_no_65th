@@ -1,5 +1,6 @@
 import SiteHeader from "@/components/SiteHeader";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Bar,
   BarChart,
@@ -13,7 +14,6 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { useTranslation } from "react-i18next";
 
 const COLORS = ["#155dfc", "#21c2ad", "#fbbf24", "#ef4444", "#6366f1"];
 

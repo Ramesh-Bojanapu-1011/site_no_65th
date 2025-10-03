@@ -28,7 +28,7 @@ const teamMembers = [
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   React.useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({});
   }, []);
   return (
     <>

@@ -1,8 +1,8 @@
-import Head from "next/head";
-import React, { useState } from "react";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import Head from "next/head";
 import Image from "next/image";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // FAQ data and accordion component

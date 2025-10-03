@@ -1,13 +1,13 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import Aos from "aos";
 import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 type Props = {};
-
-import Image from "next/image";
-import Link from "next/link";
 
 const serviceList = [
   {
@@ -126,9 +126,7 @@ const serviceList = [
 const Services = (props: Props) => {
   const { t } = useTranslation();
   React.useEffect(() => {
-    import("aos").then((AOS) => {
-      AOS.init({ duration: 1000 });
-    });
+    Aos.init({});
   }, []);
   const benefits = [
     {

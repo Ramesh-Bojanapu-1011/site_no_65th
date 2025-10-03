@@ -1,7 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+import Head from "next/head";
 import { useTranslation } from "react-i18next";
 
 const blogContentKeys = [

@@ -1,11 +1,11 @@
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+import Aos from "aos";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import Aos from "aos";
-import SiteHeader from "@/components/SiteHeader";
-import SiteFooter from "@/components/SiteFooter";
 
 const blogList = [
   {
@@ -31,7 +31,7 @@ const blogList = [
 const Blog = () => {
   const { t } = useTranslation();
   React.useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({});
   }, []);
   return (
     <>
