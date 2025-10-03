@@ -215,6 +215,7 @@ const AboutUs: React.FC = () => {
               ].map((value, idx) => (
                 <div
                   key={idx}
+                  data-aos="fade-up"
                   className="bg-white dark:bg-blue-950 rounded-xl shadow-lg p-8 flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
                 >
                   {value.icon}
@@ -265,11 +266,11 @@ const AboutUs: React.FC = () => {
                       className="rounded-full shadow-lg object-cover border-4 border-[#21c2ad]"
                     />
                     <span className="absolute text-nowrap -bottom-2 left-1/2 -translate-x-1/2 bg-[#155dfc] text-white px-3 py-1 rounded-full text-xs font-bold shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {t(member.roleKey)}
+                      {t(member.nameKey)}
                     </span>
                   </div>
                   <span className="font-bold text-[#155dfc] dark:text-blue-100 text-lg mb-1 text-center">
-                    {t(member.nameKey)}
+                    {t(member.roleKey)}
                   </span>
                 </div>
               ))}

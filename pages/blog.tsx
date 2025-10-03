@@ -245,11 +245,11 @@ const Blog = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-stretch">
               {[
                 {
-                  name: "Accounting",
-                  desc: "Fundamentals, best practices, and tools for accurate record-keeping.",
+                  name: "Blog.Categories.items.0.name",
+                  desc: "Blog.Categories.items.0.desc",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#21c2ad] mb-2"
+                      className="w-8 h-8 text-[#21c2ad]  "
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -263,11 +263,11 @@ const Blog = () => {
                   ),
                 },
                 {
-                  name: "Tax Planning",
-                  desc: "Strategies to minimize liabilities and stay compliant with regulations.",
+                  name: "Blog.Categories.items.1.name",
+                  desc: "Blog.Categories.items.1.desc",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#155dfc] mb-2"
+                      className="w-8 h-8 text-[#155dfc]  "
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -281,11 +281,11 @@ const Blog = () => {
                   ),
                 },
                 {
-                  name: "Consulting",
-                  desc: "Expert guidance for business growth, investment, and decision-making.",
+                  name: "Blog.Categories.items.2.name",
+                  desc: "Blog.Categories.items.2.desc",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#21c2ad] mb-2"
+                      className="w-8 h-8 text-[#21c2ad]  "
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -299,11 +299,11 @@ const Blog = () => {
                   ),
                 },
                 {
-                  name: "Business Growth",
-                  desc: "Tips and strategies to help your business scale and thrive.",
+                  name: "Blog.Categories.items.3.name",
+                  desc: "Blog.Categories.items.3.desc",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#155dfc] mb-2"
+                      className="w-8 h-8 text-[#155dfc]  "
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -316,11 +316,11 @@ const Blog = () => {
                   ),
                 },
                 {
-                  name: "Compliance",
-                  desc: "Stay up-to-date with laws, standards, and regulatory changes.",
+                  name: "Blog.Categories.items.4.name",
+                  desc: "Blog.Categories.items.4.desc",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#21c2ad] mb-2"
+                      className="w-8 h-8 text-[#21c2ad]  "
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -332,11 +332,11 @@ const Blog = () => {
                   ),
                 },
                 {
-                  name: "Tips & Resources",
-                  desc: "Handy guides, checklists, and resources for everyday financial success.",
+                  name: "Blog.Categories.items.5.name",
+                  desc: "Blog.Categories.items.5.desc",
                   icon: (
                     <svg
-                      className="w-8 h-8 text-[#155dfc] mb-2"
+                      className="w-8 h-8 text-[#155dfc]  "
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
@@ -357,10 +357,10 @@ const Blog = () => {
                     {cat.icon}
                   </div>
                   <h3 className="font-extrabold text-[#155dfc] dark:text-blue-100 mb-2 text-lg text-center tracking-wide drop-shadow-md">
-                    {t(`Blog.Categories.items.${idx}.name`)}
+                    {t(`${cat.name.trim()}`)}
                   </h3>
                   <p className="text-gray-700 dark:text-blue-200 text-center text-base mb-2">
-                    {t(`Blog.Categories.items.${idx}.desc`)}
+                    {t(`${cat.desc.trim()}`)}
                   </p>
                 </div>
               ))}

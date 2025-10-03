@@ -584,6 +584,7 @@ const Home1: React.FC = () => {
               ].map((member, idx) => (
                 <div
                   key={idx}
+                  data-aos="fade-up"
                   className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 dark:via-gray-900 dark:to-blue-900 rounded-2xl shadow-lg p-6 flex flex-col items-center w-full max-w-xs group relative"
                 >
                   <div className="w-full h-64 rounded-xl overflow-hidden mb-4 flex items-center justify-center">
