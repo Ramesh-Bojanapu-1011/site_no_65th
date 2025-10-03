@@ -27,7 +27,9 @@ const teamMembers = [
 
 const AboutUs: React.FC = () => {
   const { t } = useTranslation();
-  React.useEffect(() => {
+  // Initialize AOS (Animate on Scroll) library when the component mounts 🌀✨
+
+React.useEffect(() => {
     Aos.init({});
   }, []);
   return (

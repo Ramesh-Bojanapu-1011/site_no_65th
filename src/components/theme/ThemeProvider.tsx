@@ -4,6 +4,8 @@ import * as React from "react";
 // Custom ThemeProvider for per-tab theme (no localStorage/global sync)
 import { createContext, useContext, useState } from "react";
 
+// Defines a type for "light" or "dark" themes and a context interface for managing theme changes. 🌞🌙
+
 type Theme = "light" | "dark";
 interface ThemeContextType {
   theme: Theme;
@@ -12,6 +14,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// A function to provide theme context, managing light/dark mode and saving preferences in sessionStorage 🌙🌞
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
@@ -42,6 +45,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+// This function retrieves the theme context and ensures it's used within a ThemeProvider. 🎨🔧
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) throw new Error("useTheme must be used within ThemeProvider");

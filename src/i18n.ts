@@ -5,6 +5,8 @@ import ar from "./locales/ar.json";
 import en from "./locales/en.json";
 import he from "./locales/he.json";
 
+// Initialize internationalization with language resources for English, Arabic, and Hebrew. 🌍✨
+
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },

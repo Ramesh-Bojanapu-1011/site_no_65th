@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+// Configuration object for Next.js with strict React mode enabled and custom image settings 🚀🖼️
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
