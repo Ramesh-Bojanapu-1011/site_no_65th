@@ -147,6 +147,7 @@ const processSteps = [
 
 const TaxPlanningPage = () => {
   const { t } = useTranslation();
+  const [openIdx, setOpenIdx] = useState<number | null>(null);
   return (
     <>
       <Head>
@@ -340,60 +341,57 @@ const TaxPlanningPage = () => {
               </p>
             </div>
             <div className="space-y-6">
-              {faqs.map((faq, idx) => {
-                const [openIdx, setOpenIdx] = useState<number | null>(null);
-                return (
-                  <div
-                    key={idx}
-                    className={
-                      `relative rounded-2xl shadow-xl p-0 overflow-hidden transition-all duration-300 ` +
-                      `bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 ` +
-                      `border-transparent ` +
-                      `before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none ` +
-                      `before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30`
-                    }
+              {faqs.map((faq, idx) => (
+                <div
+                  key={idx}
+                  className={
+                    `relative rounded-2xl shadow-xl p-0 overflow-hidden transition-all duration-300 ` +
+                    `bg-white/80 dark:bg-blue-950/80 backdrop-blur-lg border-2 ` +
+                    `border-transparent ` +
+                    `before:absolute before:inset-0 before:rounded-2xl before:pointer-events-none ` +
+                    `before:bg-gradient-to-r before:from-[#21c2ad] before:via-[#155dfc] before:to-[#21c2ad] before:opacity-30`
+                  }
+                >
+                  <button
+                    className="w-full flex items-center   px-6 py-6 text-left focus:outline-none"
+                    onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+                    aria-expanded={openIdx === idx}
+                    aria-controls={`faq-panel-${idx}`}
                   >
-                    <button
-                      className="w-full flex items-center gap-4 px-6 py-6 text-left focus:outline-none"
-                      onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                      aria-expanded={openIdx === idx}
-                      aria-controls={`faq-panel-${idx}`}
-                    >
-                      <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
-                        {t(faq.questionKey)}
-                      </span>
-                      <span className="ml-auto">
-                        <svg
-                          className={`w-7 h-7 transition-transform duration-300 ${
-                            openIdx === idx ? "rotate-180" : "rotate-0"
-                          }`}
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M6 9l6 6 6-6" />
-                        </svg>
-                      </span>
-                    </button>
-                    <div
-                      id={`faq-panel-${idx}`}
-                      className={`px-6 pb-6 transition-all duration-300 ${
-                        openIdx === idx
-                          ? "max-h-96 opacity-100"
-                          : "max-h-0 opacity-0"
-                      }`}
-                      style={{ overflow: "hidden" }}
-                    >
-                      {openIdx === idx && (
-                        <div className="mt-2 text-gray-700 dark:text-blue-200 text-base border-t pt-4 animate-fade-in">
-                          {t(faq.answerKey)}
-                        </div>
-                      )}
-                    </div>
+                    <span className="font-semibold text-lg text-[#155dfc] dark:text-[#21c2ad]">
+                      {t(faq.questionKey)}
+                    </span>
+                    <span className="ml-auto">
+                      <svg
+                        className={`w-7 h-7 transition-transform duration-300 ${
+                          openIdx === idx ? "rotate-180" : "rotate-0"
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </span>
+                  </button>
+                  <div
+                    id={`faq-panel-${idx}`}
+                    className={`px-6   transition-all duration-300 ${
+                      openIdx === idx
+                        ? "max-h-96 opacity-100 border-t border-gray-300 dark:border-gray-700 py-4 "
+                        : "max-h-0 opacity-0"
+                    }`}
+                    style={{ overflow: "hidden" }}
+                  >
+                    {openIdx === idx && (
+                      <div className="mt-2 text-gray-700 dark:text-blue-200 text-base">
+                        {t(faq.answerKey)}
+                      </div>
+                    )}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
         </section>
