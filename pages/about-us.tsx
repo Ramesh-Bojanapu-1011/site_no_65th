@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
   const { t } = useTranslation();
   // Initialize AOS (Animate on Scroll) library when the component mounts 🌀✨
 
-React.useEffect(() => {
+  React.useEffect(() => {
     Aos.init({});
   }, []);
   return (

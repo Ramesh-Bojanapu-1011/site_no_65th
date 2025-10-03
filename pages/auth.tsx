@@ -48,7 +48,7 @@ const AuthPage: React.FC = () => {
   const [forgotMsg, setForgotMsg] = useState("");
   const [adminSuccess, setAdminSuccess] = useState("");
 
-// Handles admin login, checks credentials, and redirects to dashboard if successful! 🔑🚀
+  // Handles admin login, checks credentials, and redirects to dashboard if successful! 🔑🚀
   function handleAdminLogin(e: React.FormEvent) {
     e.preventDefault();
     if (adminEmail === ADMIN_EMAIL && adminPassword === ADMIN_PASS) {
@@ -67,8 +67,8 @@ const AuthPage: React.FC = () => {
     }
   }
 
- // Function that handles user login by checking email and password, saving login time, and redirecting to the dashboard 🖥️🔒
- function handleUserLogin(e: React.FormEvent) {
+  // Function that handles user login by checking email and password, saving login time, and redirecting to the dashboard 🖥️🔒
+  function handleUserLogin(e: React.FormEvent) {
     e.preventDefault();
     if (userEmail && userPassword) {
       // Get users from localStorage
@@ -96,7 +96,7 @@ const AuthPage: React.FC = () => {
     }
   }
 
-// This function handles the password reset process, checks if email is provided, and updates the password if the email exists. 🔐💻
+  // This function handles the password reset process, checks if email is provided, and updates the password if the email exists. 🔐💻
   function handleForgotPassword(e: React.FormEvent) {
     e.preventDefault();
     if (forgotEmail) {
@@ -114,7 +114,7 @@ const AuthPage: React.FC = () => {
   }
 
   // Handles user registration by validating fields, checking for existing emails, and storing new user data. 🚀📝
-function handleUserRegister(e: React.FormEvent) {
+  function handleUserRegister(e: React.FormEvent) {
     e.preventDefault();
     if (userFirstName && userLastName && userEmail && userPassword) {
       // Get users from localStorage
