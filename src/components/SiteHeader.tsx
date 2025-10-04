@@ -354,7 +354,7 @@ const SiteHeader: React.FC = () => {
               className="w-full text-left px-4 py-2 text-base font-semibold text-blue-900 dark:text-blue-200  dark:bg-blue-950 rounded-lg  hover:bg-blue-100 dark:hover:bg-blue-900 transition flex items-center gap-1"
               onClick={() => setServicesOpen((open) => !open)}
             >
-              {t("Services")} <span className="ml-1">▼</span>
+              {t("Hedder.Services")} <span className="ml-1">▼</span>
             </button>
             {servicesOpen && (
               <ul className="ml-4 mt-1  dark:bg-blue-950  rounded-lg border border-blue-100 dark:border-blue-900">

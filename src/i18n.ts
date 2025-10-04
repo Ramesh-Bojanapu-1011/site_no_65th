@@ -17,8 +17,6 @@ import ar from "./locales/ar.json";
 import en from "./locales/en.json";
 import he from "./locales/he.json";
 
- 
-
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },

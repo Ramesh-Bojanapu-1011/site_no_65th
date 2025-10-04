@@ -21,7 +21,7 @@ const Home1: React.FC = () => {
       </Head>
 
       <SiteHeader />
-      <main className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 caret-transparent dark:via-gray-900 dark:to-blue-900 min-h-screen ">
+      <main className="bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-blue-950 caret-transparent dark:via-gray-900 dark:to-blue-900 min-h-screen max-w-screen overflow-x-hidden">
         <section className="relative flex min-h-screen flex-col items-center justify-center py-20 px-4 text-center overflow-hidden">
           {/* Background Video */}
           <video
