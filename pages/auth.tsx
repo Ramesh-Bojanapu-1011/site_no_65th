@@ -12,7 +12,6 @@ type User = {
   last: string;
 };
 
-// Get users from local storage if in a browser environment, otherwise return an empty array. 📦🖥️
 export const getUsers = (): User[] => {
   if (typeof window !== "undefined") {
     const users = localStorage.getItem("finaccount_users");
@@ -21,7 +20,6 @@ export const getUsers = (): User[] => {
   return [];
 };
 
-// Saves the list of users to localStorage if the window object is available 🌐💾
 const saveUsers = (users: User[]) => {
   if (typeof window !== "undefined") {
     localStorage.setItem("finaccount_users", JSON.stringify(users));
@@ -29,8 +27,6 @@ const saveUsers = (users: User[]) => {
 };
 
 const AuthPage: React.FC = () => {
-  // Ensure all users have registerTime
-
   const [tab, setTab] = useState<"user" | "admin">("user");
   const [userForm, setUserForm] = useState<"login" | "register">("login");
   const [userEmail, setUserEmail] = useState("");
@@ -48,7 +44,22 @@ const AuthPage: React.FC = () => {
   const [forgotMsg, setForgotMsg] = useState("");
   const [adminSuccess, setAdminSuccess] = useState("");
 
-  // Handles admin login, checks credentials, and redirects to dashboard if successful! 🔑🚀
+  /**
+   * Handles the admin login form submission.
+   *
+   * Prevents the default form submission behavior, checks if the entered admin email and password
+   * match the predefined admin credentials, and performs the following actions:
+   * - If credentials are valid:
+   *   - Clears any existing admin error message.
+   *   - Stores the admin's email in localStorage under the key "finaccount_loggedin".
+   *   - Redirects the user to the admin dashboard page.
+   *   - Sets a success message indicating successful login.
+   * - If credentials are invalid:
+   *   - Sets an error message indicating invalid credentials.
+   *   - Clears any existing success message.
+   *
+   * @param e - The form event triggered by the admin login form submission.
+   */
   function handleAdminLogin(e: React.FormEvent) {
     e.preventDefault();
     if (adminEmail === ADMIN_EMAIL && adminPassword === ADMIN_PASS) {
@@ -67,7 +78,18 @@ const AuthPage: React.FC = () => {
     }
   }
 
-  // Function that handles user login by checking email and password, saving login time, and redirecting to the dashboard 🖥️🔒
+  /**
+   * Handles the user login form submission.
+   *
+   * Prevents the default form submission behavior, validates the presence of user email and password,
+   * and attempts to authenticate the user against the list of users stored in localStorage under the key "finaccount_users".
+   * If authentication is successful, updates the user's login time, saves the updated users list,
+   * sets the logged-in user in localStorage under "finaccount_loggedin", displays a success message,
+   * and redirects the user to the dashboard page ("/home1").
+   * If authentication fails, displays an error message.
+   *
+   * @param e - The form submission event.
+   */
   function handleUserLogin(e: React.FormEvent) {
     e.preventDefault();
     if (userEmail && userPassword) {
@@ -96,7 +118,20 @@ const AuthPage: React.FC = () => {
     }
   }
 
-  // This function handles the password reset process, checks if email is provided, and updates the password if the email exists. 🔐💻
+  /**
+   * Handles the forgot password form submission.
+   * - Validates that the email field is filled.
+   * - Looks up the user by email in localStorage.
+   * - If found, updates the user's password to the provided value or a default.
+   * - Saves the updated users list to localStorage.
+   * - Sets success or error messages and switches form to login on success.
+   *
+   * @param e React.FormEvent - The form submission event.
+   *
+   * Side Effects:
+   * - Updates localStorage with the new password for the user.
+   * - Updates component state for messages and form view.
+   */
   function handleForgotPassword(e: React.FormEvent) {
     e.preventDefault();
     if (forgotEmail) {
@@ -113,7 +148,20 @@ const AuthPage: React.FC = () => {
     }
   }
 
-  // Handles user registration by validating fields, checking for existing emails, and storing new user data. 🚀📝
+  /**
+   * Handles user registration form submission.
+   * - Validates that all required fields are filled.
+   * - Retrieves the current users from localStorage.
+   * - Checks if the email is already registered.
+   * - If not, creates a new user object with registration time and saves it to localStorage.
+   * - Sets error or success messages accordingly and switches form to login on success.
+   *
+   * @param e React.FormEvent - The form submission event.
+   *
+   * Side Effects:
+   * - Updates localStorage with new user data.
+   * - Updates component state for error/success messages and form view.
+   */
   function handleUserRegister(e: React.FormEvent) {
     e.preventDefault();
     if (userFirstName && userLastName && userEmail && userPassword) {

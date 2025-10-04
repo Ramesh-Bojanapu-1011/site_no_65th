@@ -17,6 +17,18 @@ import {
 
 const COLORS = ["#155dfc", "#21c2ad", "#fbbf24", "#ef4444", "#6366f1"];
 
+/**
+ * AdminDashboard component displays an administrative dashboard for managing and visualizing user data.
+ *
+ * Features:
+ * - Fetches and displays user information from localStorage, including all users and currently logged-in users.
+ * - Renders a table listing user details such as ID, name, email, and login status.
+ * - Shows a pie chart comparing the total number of users to the number of logged-in users.
+ * - Displays a bar chart of daily login counts based on user login times.
+ * - Utilizes translation hooks for internationalization.
+ * - Styled with Tailwind CSS and supports dark mode.
+ 
+ */
 const AdminDashboard = () => {
   const { t } = useTranslation();
   const [users, setUsers] = useState([]);
@@ -35,16 +47,14 @@ const AdminDashboard = () => {
     setUsers(usersData);
     setLoginUsers(loginUsersData);
 
-    // Compute daily login counts from usersData
-    // loginTime: "2025-09-18T16:46:22.253Z"
     const loginCounts: Record<string, number> = {};
     usersData.forEach((user: any) => {
       if (user.loginTime) {
-        const date = new Date(user.loginTime).toISOString().slice(0, 10); // YYYY-MM-DD
+        const date = new Date(user.loginTime).toISOString().slice(0, 10);
         loginCounts[date] = (loginCounts[date] || 0) + 1;
       }
     });
-    // Convert to array for recharts
+
     const dailyLoginsArr = Object.entries(loginCounts).map(([date, count]) => ({
       date,
       count,
@@ -52,7 +62,6 @@ const AdminDashboard = () => {
     setDailyLogins(dailyLoginsArr);
   }, []);
 
-  // Pie chart data
   const pieData = [
     { name: t("AdminDashboard.Pie.all_users"), value: users.length },
     { name: t("AdminDashboard.Pie.login_users"), value: loginUsers.length },

@@ -5,7 +5,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-// FAQ data and accordion component
 const faqs = [
   {
     questionKey: "ContactUs.FAQ.0.question",
@@ -78,8 +77,6 @@ const infoCards = [
     ),
   },
 ];
-
-// FAQ data and accordion component
 
 const ContactPage = () => {
   const { t } = useTranslation();

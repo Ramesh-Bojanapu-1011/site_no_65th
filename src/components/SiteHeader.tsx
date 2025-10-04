@@ -25,7 +25,6 @@ const SiteHeader: React.FC = () => {
   const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
-  // This React hook checks if the user is logged in by retrieving data from localStorage, then sets the user object and initials accordingly. 👤💾
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       const user = localStorage.getItem("finaccount_loggedin");
@@ -45,7 +44,6 @@ const SiteHeader: React.FC = () => {
     }
   }, []);
 
-  // This code sets the language direction (LTR or RTL) based on user preferences or browser settings 🌍🔄
   React.useEffect(() => {
     if (typeof window !== "undefined") {
       const savedLang = localStorage.getItem("selectedLang");
@@ -65,7 +63,6 @@ const SiteHeader: React.FC = () => {
     }
   }, [selectedLang]);
 
-  // Closes mobile menu or dropdowns when clicking outside of them 🖱️🚪
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -253,7 +250,6 @@ const SiteHeader: React.FC = () => {
                 <li>
                   <button
                     onClick={() => {
-                      // logout function
                       localStorage.removeItem("finaccount_loggedin");
                       window.location.href = "/auth";
                     }}
@@ -454,7 +450,6 @@ const SiteHeader: React.FC = () => {
                     <li>
                       <button
                         onClick={() => {
-                          // logout function
                           localStorage.removeItem("finaccount_loggedin");
                           window.location.href = "/auth";
                         }}
