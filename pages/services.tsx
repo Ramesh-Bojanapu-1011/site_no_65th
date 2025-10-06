@@ -424,11 +424,11 @@ const Services = (props: Props) => {
               <circle cx="50" cy="50" r="25" stroke="#155dfc" strokeWidth="6" />
             </svg>
           </div>
-          <div className="max-w-3xl mx-auto flex flex-col items-center text-center relative z-10">
+          <div className="  mx-auto flex flex-col items-center text-center relative z-10">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg text-[#155dfc] dark:text-blue-100">
               {t("Services.CTA.title")}
             </h2>
-            <p className="text-lg md:text-xl mb-8 max-w-xl text-blue-900 dark:text-blue-100">
+            <p className="text-lg md:text-xl mb-8 max-w-xl   dark:text-blue-100">
               {t("Services.CTA.description")}
             </p>
             <Link

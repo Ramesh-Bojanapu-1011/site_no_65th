@@ -204,7 +204,7 @@ const Home2: React.FC = () => {
               {t("Home2.Process.title")}
             </h2>
             <div className="relative flex flex-col items-center">
-              <div className="absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-[#21c2ad] to-[#155dfc] -translate-x-1/2 z-0"></div>
+              <div className="absolute hidden md:block left-1/2 top-0 h-full w-1 bg-gradient-to-b from-[#21c2ad] to-[#155dfc] -translate-x-1/2 z-0"></div>
               {processSteps.map((step, idx) => (
                 <div
                   key={idx}
@@ -229,7 +229,7 @@ const Home2: React.FC = () => {
                   </div>
                   <div className="hidden md:block"></div>
                   {/* Connector Dot */}
-                  <span className="absolute left-1/2 top-8 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#21c2ad] shadow-lg z-20"></span>
+                  <span className="absolute hidden md:block left-1/2 top-8 -translate-x-1/2 w-6 h-6 rounded-full bg-white border-4 border-[#21c2ad] shadow-lg z-20"></span>
                 </div>
               ))}
             </div>
