@@ -1079,6 +1079,19 @@
 
   "AdminDashboard": {
     "title": "لوحة تحكم الإدارة",
+    "all_Users": "جميع المستخدمين",
+    "user_activaty": "نشاط المستخدم",
+    "statistics": "الإحصائيات",
+    "stats": {
+      "total_users": "إجمالي المستخدمين",
+      "description_total_users": "عدد المستخدمين المسجلين",
+      "logged_in_users": "المستخدمون الذين قاموا بتسجيل الدخول",
+      "description_logged_in": "المستخدمون الذين قاموا بتسجيل الدخول اليوم",
+      "avg_daily_logins": "متوسط تسجيلات الدخول اليومية",
+      "description_avg_logins": "متوسط عدد تسجيلات الدخول في اليوم",
+      "total_accounts": "إجمالي الحسابات",
+      "description_total_accounts": "عدد الحسابات المالية المُدارة"
+    },
     "users_table": {
       "title": "جميع المستخدمين",
       "id": "المعرف",

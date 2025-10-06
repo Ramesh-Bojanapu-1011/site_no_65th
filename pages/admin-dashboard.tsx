@@ -18,6 +18,8 @@ import {
 // KEEPING THE ORIGINAL COLORS FOR CHARTS
 const COLORS = ["#155dfc", "#21c2ad", "#fbbf24", "#ef4444", "#6366f1"];
 
+const TOTAL_ACCOUNTS_CREATED = 345; // Updated value
+
 // --- Custom Tooltip Component for Recharts ---
 interface CustomTooltipProps {
   active?: boolean;
@@ -63,16 +65,20 @@ const AdminDashboard = () => {
   const [dailyLogins, setDailyLogins] = useState<
     { date: string; count: number }[]
   >([]);
+  // Hardcoded value for a service-related metric
+  const [totalAccountsCreated, setTotalAccountsCreated] =
+    useState<number>(Number); // Using the updated sample value
   const [activeTab, setActiveTab] = useState<
     "statistics" | "activity" | "users"
   >("statistics");
 
   useEffect(() => {
     const usersData = JSON.parse(
-      localStorage.getItem("finaccount_users") || "[]"
+      localStorage.getItem("finaccount_users") || "[]",
     );
+    setTotalAccountsCreated(usersData.length);
     let loginUsersData = JSON.parse(
-      localStorage.getItem("finaccount_loggedin") || "[]"
+      localStorage.getItem("finaccount_loggedin") || "[]",
     );
     // Ensure loginUsersData is always an array
     if (!Array.isArray(loginUsersData)) {
@@ -89,7 +95,7 @@ const AdminDashboard = () => {
     usersData.forEach((user: any) => {
       // Use the actual login status from loginUsersData to determine if a user is logged in
       const isLoggedIn = loginUsersData.some(
-        (loginUser: any) => loginUser.email === user.email
+        (loginUser: any) => loginUser.email === user.email,
       );
       // Merge isLoggedIn status into the main user list for the table
       user.isLoggedIn = isLoggedIn;
@@ -125,7 +131,57 @@ const AdminDashboard = () => {
       { name: t("AdminDashboard.Pie.all_users"), value: users.length },
       { name: t("AdminDashboard.Pie.login_users"), value: loginUsers.length },
     ],
-    [users.length, loginUsers.length, t]
+    [users.length, loginUsers.length, t],
+  );
+
+  // New Calculation for Average Daily Logins
+  const averageDailyLogins = useMemo(() => {
+    if (dailyLogins.length === 0) return 0;
+    const totalLogins = dailyLogins.reduce((sum, day) => sum + day.count, 0);
+    // Round to the nearest whole number for simplicity in a dashboard statistic
+    return Math.round(totalLogins / dailyLogins.length);
+  }, [dailyLogins]);
+
+  // --- Statistics Card Component ---
+  interface StatCardProps {
+    title: string;
+    value: string | number;
+    description: string;
+    icon: React.ReactNode;
+    color: string;
+  }
+
+  const StatCard = ({
+    title,
+    value,
+    description,
+    icon,
+    color,
+  }: StatCardProps) => (
+    <div
+      className={`bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 transition-all duration-300 transform hover:scale-[1.02] border-l-4 ${color} flex flex-col justify-between`}
+    >
+      <div className="flex justify-between items-start">
+        <div>
+          <h3 className="text-sm font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">
+            {title}
+          </h3>
+          <p className="text-3xl font-extrabold text-gray-900 dark:text-white">
+            {value}
+          </p>
+        </div>
+        <div
+          className={`p-3 rounded-full ${color
+            .replace("border-", "bg-")
+            .replace("text-", "text-")} bg-opacity-10`}
+        >
+          {icon}
+        </div>
+      </div>
+      <p className="mt-4 text-xs text-gray-400 dark:text-gray-500 italic">
+        {description}
+      </p>
+    </div>
   );
 
   return (
@@ -163,7 +219,7 @@ const AdminDashboard = () => {
               <rect x="3" y="3" width="18" height="18" rx="4" />
               <path d="M7 7h10v10H7z" />
             </svg>
-            <span>Statistics</span>
+            <span>{t("AdminDashboard.statistics")}</span>
           </button>
           <button
             onClick={() => setActiveTab("activity")}
@@ -186,7 +242,7 @@ const AdminDashboard = () => {
               <path d="M6 20v-4" />
               <path d="M3 20h18" />
             </svg>
-            <span>User Activity</span>
+            <span>{t("AdminDashboard.user_activaty")}</span>
           </button>
           <button
             onClick={() => setActiveTab("users")}
@@ -209,11 +265,99 @@ const AdminDashboard = () => {
               <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
               <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
-            <span>All Users</span>
+            <span> {t("AdminDashboard.all_Users")}</span>
           </button>
         </div>
         {/* Tab Content */}
-        {activeTab === "statistics" && <></>}
+        {activeTab === "statistics" && (
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pb-10">
+            {/* Total Users Card */}
+            <StatCard
+              title={t("AdminDashboard.stats.total_users")}
+              value={users.length.toLocaleString()}
+              description={t("AdminDashboard.stats.description_total_users")}
+              color="border-[#155dfc] text-[#155dfc]"
+              icon={
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              }
+            />
+
+            {/* Logged-in Users Card */}
+            <StatCard
+              title={t("AdminDashboard.stats.logged_in_users")}
+              value={loginUsers.length.toLocaleString()}
+              description={t("AdminDashboard.stats.description_logged_in")}
+              color="border-[#21c2ad] text-[#21c2ad]"
+              icon={
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M16 17l5-5-5-5M19 12H9" />
+                  <path d="M12 22h6a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6" />
+                </svg>
+              }
+            />
+
+            {/* Average Daily Logins Card */}
+            <StatCard
+              title={t("AdminDashboard.stats.avg_daily_logins")}
+              value={averageDailyLogins.toLocaleString()}
+              description={t("AdminDashboard.stats.description_avg_logins")}
+              color="border-[#fbbf24] text-[#fbbf24]"
+              icon={
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 20v-6" />
+                  <path d="M18 20v-10" />
+                  <path d="M6 20v-4" />
+                  <path d="M3 20h18" />
+                </svg>
+              }
+            />
+
+            {/* Total Accounts Created Card (Finance Metric) */}
+            <StatCard
+              title={t("AdminDashboard.stats.total_accounts")}
+              value={totalAccountsCreated.toLocaleString()}
+              description={t("AdminDashboard.stats.description_total_accounts")}
+              color="border-[#a259e6] text-[#a259e6]"
+              icon={
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="3" y="6" width="18" height="13" rx="2" />
+                  <path d="M12 11a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+                  <path d="M16 6h2" />
+                  <path d="M16 6v3" />
+                </svg>
+              }
+            />
+          </section>
+        )}
         {activeTab === "activity" && (
           <>
             {" "}

@@ -1076,6 +1076,19 @@
   },
   "AdminDashboard": {
     "title": "Admin Dashboard",
+    "all_Users": "All Users",
+    "user_activaty": "User Activity",
+    "statistics": "Statistics",
+    "stats": {
+      "total_users": "Total Users",
+      "description_total_users": "Number of registered users",
+      "logged_in_users": "Logged In Users",
+      "description_logged_in": "Users who logged in today",
+      "avg_daily_logins": "Avg Daily Logins",
+      "description_avg_logins": "Average logins per day",
+      "total_accounts": "Total Accounts",
+      "description_total_accounts": "Number of financial accounts managed"
+    },
     "users_table": {
       "title": "All Users",
       "id": "ID",

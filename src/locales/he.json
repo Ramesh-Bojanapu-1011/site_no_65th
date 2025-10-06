@@ -1077,6 +1077,19 @@
   },
   "AdminDashboard": {
     "title": "לוח בקרה למנהל",
+    "all_Users": "כל המשתמשים",
+    "user_activaty": "פעילות משתמש",
+    "statistics": "סטטיסטיקה",
+    "stats": {
+      "total_users": "סך כל המשתמשים",
+      "description_total_users": "מספר המשתמשים הרשומים",
+      "logged_in_users": "משתמשים שנכנסו",
+      "description_logged_in": "משתמשים שנכנסו היום",
+      "avg_daily_logins": "ממוצע כניסות יומי",
+      "description_avg_logins": "ממוצע הכניסות ליום",
+      "total_accounts": "סך כל החשבונות",
+      "description_total_accounts": "מספר החשבונות הפיננסיים המנוהלים"
+    },
     "users_table": {
       "title": "כל המשתמשים",
       "id": "מספר זיהוי",
